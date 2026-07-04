@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-h: 72px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-pine-950 antialiased;
+}
+
+::selection {
+  @apply bg-ember-500/50;
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+
+  .glass {
+    @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+  }
+
+  .glass-card {
+    @apply rounded-3xl border border-pine-900/10 bg-white shadow-[0_10px_40px_rgba(15,16,19,0.06)];
+  }
+
+  .btn {
+    @apply inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-semibold transition-all duration-200 active:scale-[0.97];
+  }
+
+  /* Lime pill — primary CTA (Web Rocket style) */
+  .btn-primary {
+    @apply btn bg-ember-500 text-pine-950 shadow-lg shadow-ember-500/20 hover:bg-ember-400 hover:shadow-xl hover:shadow-ember-500/30;
+  }
+
+  /* Outline pill on light backgrounds */
+  .btn-ghost {
+    @apply btn border border-pine-950/25 bg-transparent text-pine-950 hover:border-pine-950 hover:bg-pine-950 hover:text-white;
+  }
+
+  /* Outline pill on dark backgrounds */
+  .btn-ghost-light {
+    @apply btn border border-white/30 bg-transparent text-white hover:border-white hover:bg-white hover:text-pine-950;
+  }
+
+  /* Solid white pill on dark (header CTA) */
+  .btn-white {
+    @apply btn bg-white text-pine-950 hover:bg-ember-400;
+  }
+
+  .kicker {
+    @apply mb-3 inline-block text-xs font-bold uppercase tracking-[0.18em] text-ember-600;
+  }
+
+  .gradient-text {
+    @apply text-ember-500;
+  }
+
+  /* Subtle diagonal shape overlay for dark sections (Web Rocket motif) */
+  .dark-shapes {
+    background-image:
+      linear-gradient(115deg, transparent 42%, rgba(255, 255, 255, 0.025) 42%, rgba(255, 255, 255, 0.025) 58%, transparent 58%),
+      linear-gradient(295deg, transparent 65%, rgba(255, 255, 255, 0.02) 65%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
