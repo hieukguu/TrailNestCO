@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Mountain, Twitter } from "lucide-react";
+import { Mountain } from "lucide-react";
 import { site } from "@/lib/data";
 
 const quickLinks = [
@@ -20,13 +20,6 @@ const categoryLinks = [
   { href: "/terms", label: "Terms of Service" },
 ];
 
-const socials = [
-  { label: "Instagram", Icon: Instagram },
-  { label: "Facebook", Icon: Facebook },
-  { label: "LinkedIn", Icon: Linkedin },
-  { label: "X (Twitter)", Icon: Twitter },
-];
-
 export function Footer() {
   return (
     <footer className="bg-white">
@@ -44,18 +37,6 @@ export function Footer() {
             {site.tagline} — independent gear reviews built on hands-on testing
             since {site.founded}.
           </p>
-          <div className="mt-5 flex gap-2.5">
-            {socials.map(({ label, Icon }) => (
-              <a
-                key={label}
-                href="#"
-                aria-label={`${site.name} on ${label}`}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-pine-950 text-white transition-colors hover:bg-ember-500 hover:text-pine-950"
-              >
-                <Icon size={15} />
-              </a>
-            ))}
-          </div>
         </div>
 
         <nav aria-label="Quick Links">
@@ -98,18 +79,26 @@ export function Footer() {
           <h3 className="font-display text-base font-semibold text-pine-950">
             Get the Latest Field Notes
           </h3>
-          <form className="mt-4" action="#" method="post">
+          <form
+            className="mt-4"
+            action="https://formspree.io/f/xlgywbjn"
+            method="POST"
+          >
             <label htmlFor="footer-email" className="sr-only">
               Email address
             </label>
             <input
               id="footer-email"
+              name="email"
               type="email"
               required
               autoComplete="email"
               placeholder="Enter your email *"
               className="min-h-[46px] w-full rounded-lg border border-pine-200 bg-white px-4 text-sm text-pine-950 placeholder:text-pine-400 focus:border-pine-950 focus:outline-none"
             />
+            <input type="hidden" name="_subject" value="Newsletter signup — trailnestco.com" />
+            <input type="hidden" name="form_type" value="newsletter" />
+            <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
             <button
               type="submit"
               className="mt-3 w-full rounded-lg bg-pine-950 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-pine-800"
