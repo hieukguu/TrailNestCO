@@ -1549,6 +1549,308 @@ export const articles: Article[] = [
       },
     ],
   },
+  /* ============================== EXTRA 3 ============================== */
+  {
+    slug: "best-hiking-boots-2026",
+    type: "review",
+    title: "Best Hiking Boots of 2026: Tested on Real Trails",
+    category: "Camping & Outdoor",
+    author: "Daniel Park",
+    reviewer: "James O'Brien",
+    date: "June 28, 2026",
+    readTime: "13 min read",
+    excerpt:
+      "We put seven pairs through 200+ miles of mixed terrain — granite slabs, muddy forest trails, and scree fields — to find the boots that genuinely protect your feet.",
+    image:
+      "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1600&q=70&auto=format&fit=crop",
+    alt: "Close-up of worn hiking boots on rocky mountain trail",
+    intro: [
+      "A bad pair of boots doesn't just cause blisters — it turns a three-day trip into two days of suffering and one day of limping out. We logged over 200 miles across seven testers and three different terrain types to separate the boots worth your money from the ones worth avoiding.",
+      "We evaluated ankle support, sole grip on wet rock, waterproofing durability, break-in time, and breathability in both warm and cold conditions. These are our findings.",
+    ],
+    picks: [
+      {
+        name: "Salomon X Ultra 4 GTX",
+        award: "Best Overall",
+        body: "The X Ultra 4 GTX is the benchmark for trail footwear that handles everything without excelling at nothing. The Contagrip MA outsole grips reliably on wet granite and dry scree, Gore-Tex Extended Comfort keeps feet dry in stream crossings, and the chassis provides genuine ankle protection without the stiffness that slows you down on long days.",
+        pros: [
+          "Exceptional grip on wet rock — best of all boots tested",
+          "Gore-Tex lining holds waterproofness after 50+ miles of wet conditions",
+          "Minimal break-in time — wearable out of the box",
+          "Lightweight (≈490g per boot) for the support level offered",
+          "Well-ventilated tongue reduces heat buildup on warm days",
+        ],
+        cons: [
+          "Premium price point",
+          "Not ideal for technical scrambling requiring stiff rand",
+          "Narrower fit — may require half-size up for wide feet",
+        ],
+      },
+      {
+        name: "Merrell Moab 3 Mid WP",
+        award: "Best Value",
+        body: "The Moab 3 Mid is the most proven trail boot in its price bracket. Bellabrig waterproofing holds up to standing water and persistent rain; the Vibram TC5+ outsole delivers reliable traction in most conditions. Break-in is straightforward — most testers were comfortable within 5–8 miles.",
+        pros: [
+          "Significantly lower price than Gore-Tex competitors",
+          "Durable Vibram TC5+ outsole",
+          "Comfortable from the first outing with minimal break-in",
+          "Bellabrig waterproofing performs well in rain and stream crossings",
+          "Available in wide-width options",
+        ],
+        cons: [
+          "Heavier (≈550g per boot) than premium alternatives",
+          "Less responsive underfoot on technical terrain",
+          "Insole cushioning flattens after heavy mileage",
+        ],
+      },
+      {
+        name: "Hoka Anacapa Mid GTX",
+        award: "Best for High Mileage",
+        body: "Hoka's trail boot translates the brand's maximal-cushion philosophy into a supportive hiking platform. The extended midsole significantly reduces fatigue on day three of a backpacking trip. We recorded the lowest tester complaint rate for knee and hip soreness across multi-day outings.",
+        pros: [
+          "Maximum cushioning — measurably reduces fatigue on long days",
+          "Gore-Tex liner tested waterproof throughout",
+          "Stable chassis despite thick midsole",
+          "Roomy toe box suits wider feet",
+        ],
+        cons: [
+          "Bulkier feel on technical terrain",
+          "Higher stack reduces ground feel for route-finding on exposed scrambles",
+          "Break-in takes 15–20 miles before reaching optimal comfort",
+        ],
+      },
+    ],
+    table: {
+      headers: ["Boot", "Weight (per boot)", "Waterproofing", "Best Terrain", "Price Range"],
+      rows: [
+        ["Salomon X Ultra 4 GTX", "490g", "Gore-Tex", "Mixed / wet rock", "$$$$"],
+        ["Merrell Moab 3 Mid WP", "550g", "Bellabrig", "Trails / light off-trail", "$$$"],
+        ["Hoka Anacapa Mid GTX", "510g", "Gore-Tex", "Long distance / backpacking", "$$$$"],
+      ],
+    },
+    sections: [
+      {
+        heading: "How to choose hiking boots",
+        body: [
+          "Trip type is the primary filter. Day hikes on maintained trails need less support than multi-day backpacking with a loaded pack. Technical scrambles and off-trail travel demand stiffer, more protective boots than walking paths.",
+          "Fit is more important than brand. Your heel should not slip — even 2mm of movement causes blisters on a 10-mile day. Toes need 1cm of space at the front for foot expansion on long descents. Always try boots on in the afternoon when feet are slightly swollen.",
+          "Waterproofing trade-offs: Gore-Tex membranes keep moisture out but reduce breathability significantly. In dry climates or summer hiking, a non-waterproof leather or mesh boot often keeps feet drier through sweat management than a waterproof model.",
+        ],
+      },
+      {
+        heading: "Breaking in new boots",
+        list: [
+          "Wear the socks you hike in when fitting — sock thickness changes effective boot fit.",
+          "First 2–3 outings: flat terrain, 3–5 miles, with day-hike weight only.",
+          "Miles 5–15: add some elevation, light pack.",
+          "Beyond 20 miles: the boot is broken in and ready for any terrain.",
+          "Never attempt a multi-day trip in boots with fewer than 15 break-in miles.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Waterproof or non-waterproof hiking boots?",
+        a: "Waterproof if you frequently cross streams, hike in rain, or go in shoulder seasons. Non-waterproof for summer or dry climates — they breathe significantly better and dry faster if wet.",
+      },
+      {
+        q: "Low-cut vs mid-cut vs high-cut?",
+        a: "Low-cut for light day hikes on maintained trails. Mid-cut for most hiking and light backpacking — the best balance of support and weight. High-cut for heavy loads, technical terrain, or ankle instability.",
+      },
+      {
+        q: "How long do hiking boots last?",
+        a: "500–1,000 miles depending on terrain and care. Signs of replacement: midsole compression (feels flat underfoot), delaminating outsole, or waterproofing failure that DWR retreatment no longer fixes.",
+      },
+    ],
+  },
+  {
+    slug: "best-noise-cancelling-headphones-travel",
+    type: "review",
+    title: "Best Noise-Cancelling Headphones for Travel (2026)",
+    category: "Travel & EDC",
+    author: "Mia Chen",
+    reviewer: "Sarah Nguyen",
+    date: "July 1, 2026",
+    readTime: "11 min read",
+    excerpt:
+      "We tested ANC performance on transcontinental flights, subway commutes, and open-plan offices to find the headphones that genuinely block the world out.",
+    image:
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1600&q=70&auto=format&fit=crop",
+    alt: "Premium over-ear headphones on a clean desk with travel passport",
+    intro: [
+      "Active noise cancellation varies wildly between headphones that both claim 'industry-leading ANC.' We measured attenuation at 60Hz (engine rumble), 250Hz (HVAC hum), and 1kHz (conversation) using a calibrated measurement rig on three different aircraft and two subway systems.",
+      "Battery life, call quality, comfort over 4+ hours, and multipoint Bluetooth all factor into a travel headphone purchase. Here is what our testing found.",
+    ],
+    picks: [
+      {
+        name: "Sony WH-1000XM6",
+        award: "Best Overall ANC",
+        body: "Sony's sixth-generation flagship sets a new ANC benchmark. The updated Integrated Processor V2 provides the strongest low-frequency attenuation of any headphone we have measured — engine rumble on a long-haul flight was reduced to near-silence. The 30-hour battery handles a 28-hour transoceanic trip without recharging, and multipoint Bluetooth allows seamless switching between laptop and phone.",
+        pros: [
+          "Strongest engine-noise attenuation of any tested headphone",
+          "30-hour battery with ANC enabled",
+          "Multipoint Bluetooth — two devices simultaneously",
+          "Foldable design fits carry-on overhead bins easily",
+          "Best-in-class call quality with 8-microphone array",
+        ],
+        cons: [
+          "Premium pricing",
+          "ANC disables in-flight when using included 3.5mm adapter",
+          "Ear cups can cause heat buildup on very long flights",
+        ],
+      },
+      {
+        name: "Bose QuietComfort 45",
+        award: "Best Comfort",
+        body: "Bose's QC45 prioritizes wearing comfort over everything else — and succeeds. The ear pads distribute clamping force so evenly that four-hour sessions produce zero pressure points. ANC quality is excellent for voices and mid-range noise; Sony edges it at engine frequencies but the difference is audible only on the loudest flights.",
+        pros: [
+          "Best clamping comfort for long sessions",
+          "Effective ANC across full frequency range",
+          "24-hour battery",
+          "Simple, reliable Bluetooth pairing",
+          "2.5-hour quick charge from flat",
+        ],
+        cons: [
+          "No multipoint Bluetooth (single device at a time)",
+          "Less low-frequency attenuation than Sony XM6",
+          "Microphone array underperforms in windy outdoor environments",
+        ],
+      },
+      {
+        name: "Anker Soundcore Space Q45",
+        award: "Best Budget ANC",
+        body: "At a fraction of the flagship price, the Space Q45 delivers ANC that genuinely works on aircraft and busy commutes. Low-frequency blocking does not match Sony or Bose, but the practical improvement in travel comfort is substantial. Battery life at 50 hours surpasses every premium competitor.",
+        pros: [
+          "50-hour battery — exceptional for the price",
+          "Effective ANC on mid and high frequencies",
+          "Multi-mode ANC (full, mid, wind reduction, transparency)",
+          "Affordable entry point for genuine noise cancellation",
+        ],
+        cons: [
+          "Less engine noise attenuation than flagship alternatives",
+          "Plasticky build compared to premium headphones",
+          "Call quality average in noisy environments",
+        ],
+      },
+    ],
+    table: {
+      headers: ["Headphone", "ANC Level", "Battery (ANC on)", "Multipoint", "Weight"],
+      rows: [
+        ["Sony WH-1000XM6", "Excellent", "30 hrs", "Yes", "250g"],
+        ["Bose QC45", "Very Good", "24 hrs", "No", "238g"],
+        ["Anker Space Q45", "Good", "50 hrs", "Yes", "265g"],
+      ],
+    },
+    sections: [
+      {
+        heading: "What to look for in travel headphones",
+        body: [
+          "ANC frequency coverage: most headphones excel at blocking low-frequency engine drone (60–200Hz) but struggle with mid-range conversation noise (500–2kHz). Check independent measurements rather than manufacturer marketing claims.",
+          "Battery life with ANC enabled: manufacturers often quote maximum battery without ANC active. Always check the ANC-on figure — it's typically 20–30% lower.",
+          "Multipoint Bluetooth lets you stay connected to phone and laptop simultaneously without manual pairing switches — essential for work travel.",
+          "Folding design: over-ear headphones are bulky; a flat or compact fold makes the difference between fitting in a laptop bag or requiring a separate case.",
+        ],
+      },
+      {
+        heading: "Earbuds vs over-ear for travel",
+        list: [
+          "Over-ear headphones provide better passive isolation and typically superior ANC — the larger earcup allows bigger drivers and more processing.",
+          "Earbuds pack smaller and work better for sleep on aircraft (no ear cup pressure on the headrest).",
+          "For 4+ hour listening sessions, over-ear headphones are more comfortable for most people.",
+          "If you have both, earbuds for sleep and red-eye flights, over-ear for daytime noise blocking.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Is ANC safe to use all day?",
+        a: "Yes. ANC works by generating an inverted sound wave — it does not block sound mechanically or affect hearing health. You can use it all day without concern.",
+      },
+      {
+        q: "Can I use headphones during takeoff and landing?",
+        a: "Bluetooth must be disabled for takeoff/landing on some carriers. Wired mode via the included 3.5mm cable works without wireless limitations. Check airline policy.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-choose-sleeping-bag",
+    type: "guide",
+    title: "How to Choose a Sleeping Bag: Temperature Ratings, Fill Power & More",
+    category: "Camping & Outdoor",
+    author: "James O'Brien",
+    reviewer: "Daniel Park",
+    date: "June 30, 2026",
+    readTime: "9 min read",
+    excerpt:
+      "Temperature ratings are frequently misunderstood — here is how to read them correctly and match a bag to your actual conditions.",
+    image:
+      "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1600&q=70&auto=format&fit=crop",
+    alt: "Sleeping bag and camping gear laid out at a campsite at dusk",
+    intro: [
+      "A sleeping bag rated to 0°C does not mean you will sleep comfortably at 0°C. Understanding how temperature ratings actually work — and what fill power, down vs synthetic, and shape really mean for your nights out — is the difference between solid sleep and a miserable night in the tent.",
+      "This guide covers everything you need to match a bag to your conditions, budget, and sleep habits.",
+    ],
+    sections: [
+      {
+        heading: "How temperature ratings work",
+        body: [
+          "EN 13537 / ISO 23537 is the international testing standard used by reputable manufacturers. A bag tested to this standard receives three figures: Comfort (temperature at which a cold sleeper — statistically a woman — sleeps comfortably), Lower Limit (temperature at which a warm sleeper — statistically a man — sleeps comfortably), and Extreme (survival rating, not comfort).",
+          "The Comfort rating is the number to use for most campers. A bag labeled '0°C' typically carries a Comfort rating of around +5°C and a Lower Limit of 0°C. If you sleep cold, add 5–8°C to the Lower Limit to find your practical comfort threshold.",
+          "Always check whether a bag has been independently EN-tested. Bags without testing certification can legally publish any temperature they choose.",
+        ],
+      },
+      {
+        heading: "Down vs synthetic fill",
+        body: [
+          "Down insulation (measured in fill power) compresses smaller, lasts longer, and provides a better warmth-to-weight ratio than synthetic. A 700-fill-power bag weighs less than an equivalent synthetic bag at the same temperature rating. Down's weakness: it collapses when wet and loses nearly all insulating ability. Wet down takes hours to dry in field conditions.",
+          "Synthetic insulation retains roughly 70–80% of its insulating value when wet and dries quickly. It is also hypoallergenic and significantly less expensive. The trade-off is weight and bulk — a comparable synthetic bag is 30–40% heavier and compresses less than equivalent down.",
+          "Hydrophobic down (Nikwax Hydrophobic, DriDown, etc.) bridges the gap: down clusters treated to resist moisture absorption. Not as resilient as synthetic when fully submerged, but significantly more resistant than untreated down in rain and condensation.",
+        ],
+      },
+      {
+        heading: "Bag shape: mummy vs semi-rec vs quilt",
+        list: [
+          "Mummy: tapered cut minimizes dead air space and maximizes warmth efficiency. Required for serious cold-weather camping and alpine use. Restrictive for those who move while sleeping.",
+          "Semi-rectangular (semi-rec): slightly more room in the foot box and hip area. Good for shoulder-season camping where the temperature buffer lets you trade efficiency for comfort.",
+          "Rectangular: maximum comfort and usable as a blanket. Warm-weather camping only — dead air space around the body requires more insulation to maintain warmth.",
+          "Quilts: popular with ultralight backpackers. No hood or back panel — requires a sleeping pad with integrated insulation or a top quilt + underquilt system. Saves significant weight but requires practice to use effectively.",
+        ],
+      },
+      {
+        heading: "How to read fill power",
+        body: [
+          "Fill power measures how many cubic inches one ounce of down occupies — higher fill power means more loft per ounce, which means a lighter bag for the same warmth level.",
+          "550–650 fill power: entry-level down, heavier, less expensive. Good for occasional use and frontcountry camping.",
+          "700–750 fill power: the sweet spot for most backpackers — good warmth-to-weight with reasonable cost.",
+          "800–900+ fill power: premium down used in expedition and ultralight bags. Maximum loft, minimum weight, maximum cost.",
+          "Fill power alone does not determine warmth — total fill weight matters equally. A bag with 600g of 700-fill down is warmer than one with 400g of 900-fill down.",
+        ],
+      },
+      {
+        heading: "Choosing your temperature rating",
+        list: [
+          "Summer camping (nights above 10°C): a bag rated to 7–10°C Comfort is comfortable and packs small.",
+          "Three-season (nights 0°C–10°C): a bag rated to 0°C Comfort covers most shoulder-season conditions; add 5°C buffer if you sleep cold.",
+          "Winter and alpine (nights below 0°C): rate to the coldest expected temperature. Down is strongly preferred for weight.",
+          "Always check your destination's historical low temperatures, not averages — a trip can hit a cold night that averages below the mean.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Why do I feel cold even in a bag rated warm enough?",
+        a: "Sleeping cold is almost always a sleeping pad problem, not a bag problem. The R-value of your pad determines ground insulation — a R-2 pad loses body heat to cold ground faster than the bag can replace it. A three-season sleeping bag on a R-4+ pad is warmer than a 0°C bag on a foam sit pad.",
+      },
+      {
+        q: "How do I store a sleeping bag long-term?",
+        a: "Store down and synthetic bags loosely — never in the compression sack. Hanging in a closet or storing in a large cotton bag maintains loft. Compression permanently degrades insulation over months.",
+      },
+      {
+        q: "Can I wash a sleeping bag at home?",
+        a: "Yes. Front-load washer only (top-load agitators tear baffles). Use a down-specific cleaner (Nikwax Down Wash or similar) for down, technical cleaner for synthetic. Tumble dry low with three tennis balls to break up clumps — takes 2–3 hours for down to dry fully.",
+      },
+    ],
+  },
 ];
 
 export const reviewArticles = articles.filter((a) => a.type === "review");
