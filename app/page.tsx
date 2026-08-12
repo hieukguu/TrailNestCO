@@ -81,7 +81,7 @@ export default function HomePage() {
 
           <div className="grid gap-8 lg:grid-cols-[3fr_2fr] lg:items-center">
             {/* Hero image */}
-            <a href="/reviews/ketl-mtn-outdoor-apparel/" className="group block">
+            <a href="/ketlmtn-review.html" className="group block">
               <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-stone-100">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -112,7 +112,7 @@ export default function HomePage() {
                 <span className="text-ember-600 font-semibold">Affiliate brand spotlight</span>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
-                <a href="/reviews/ketl-mtn-outdoor-apparel/" className="btn-primary">
+                <a href="/ketlmtn-review.html" className="btn-primary">
                   Read Full Review <ArrowRight size={14} />
                 </a>
                 <a
@@ -294,7 +294,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <div className="mt-5 flex flex-wrap gap-2">
-                  <a href="/reviews/ketl-mtn-outdoor-apparel/" className="btn-primary text-sm">Full Review <ArrowRight size={13} /></a>
+                  <a href="/ketlmtn-review.html" className="btn-primary text-sm">Full Review <ArrowRight size={13} /></a>
                   <a href="https://ketlmtn.com/collections/mens?ref=hpakmutk" target="_blank" rel="noopener nofollow sponsored" className="btn-ghost text-sm">Shop →</a>
                 </div>
               </div>
