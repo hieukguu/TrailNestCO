@@ -32,6 +32,8 @@ jobs:
           username: u368940276
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
+          protocol: ftps
           local-dir: ./out/
           server-dir: /domains/trailnestco.com/public_html/
           dangerous-clean-slate: true
+          timeout: 60000
