@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+﻿import type { Metadata } from "next";
+import { Inter, Lora } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { site } from "@/lib/data";
 import "./globals.css";
 
-const display = Poppins({
+const display = Lora({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const sans = Inter({
@@ -19,10 +19,16 @@ const sans = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Independent Gear Reviews, Tested in the Real World`,
+    default: `${site.name} — Independent Gear Reviews, Comparisons and Buying Guides`,
     template: `%s — ${site.name}`,
   },
   description: site.description,
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     siteName: site.name,
@@ -44,16 +50,24 @@ export default function RootLayout({
     legalName: site.company,
     url: site.url,
     email: site.email,
-    telephone: site.phone,
     foundingDate: String(site.founded),
     address: {
       "@type": "PostalAddress",
-      streetAddress: "1201 N Market St, Suite 111",
-      addressLocality: "Wilmington",
-      addressRegion: "DE",
-      postalCode: "19801",
+      streetAddress: "17224 S. Figueroa Street, #E8917",
+      addressLocality: "Gardena",
+      addressRegion: "CA",
+      postalCode: "90248",
       addressCountry: "US",
     },
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: site.name,
+    url: site.url,
+    description: site.description,
+    publisher: { "@type": "Organization", name: site.name },
   };
 
   return (
@@ -72,6 +86,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+
       </body>
     </html>
   );

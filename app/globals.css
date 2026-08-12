@@ -1,80 +1,185 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Design Tokens ─────────────────────────────────────────────── */
 :root {
-  --header-h: 72px;
+  --header-h: 64px;
+  --radius-card: 12px;
+  --shadow-card: 0 1px 4px rgba(0,0,0,0.06), 0 2px 12px rgba(0,0,0,0.04);
+  --shadow-card-hover: 0 4px 20px rgba(0,0,0,0.10);
+  --transition: 200ms ease;
 }
 
+/* ─── Base ───────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  @apply bg-white text-pine-950 antialiased;
+  @apply bg-white text-pine-950;
+  font-feature-settings: "kern", "liga", "calt";
 }
 
 ::selection {
-  @apply bg-ember-500/50;
+  @apply bg-ember-500/30 text-pine-950;
 }
 
+/* ─── Typography ─────────────────────────────────────────────────── */
+.prose-article {
+  @apply text-[17px] leading-[1.85] text-pine-800;
+}
+
+.prose-article p {
+  @apply mb-6;
+}
+
+.prose-article h2 {
+  @apply mt-12 mb-4 font-display text-2xl font-bold leading-snug text-pine-950 sm:text-3xl;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid theme('colors.ember.500');
+}
+
+.prose-article h3 {
+  @apply mt-8 mb-3 font-display text-xl font-semibold leading-snug text-pine-950;
+}
+
+/* ─── Layout ─────────────────────────────────────────────────────── */
+.container-site {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+}
+
+.container-narrow {
+  @apply mx-auto w-full max-w-3xl px-5 sm:px-8;
+}
+
+/* ─── Components ─────────────────────────────────────────────────── */
 @layer components {
-  .container-site {
-    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
-  }
 
-  .glass {
-    @apply border border-white/10 bg-white/5 backdrop-blur-xl;
-  }
-
+  /* Cards */
   .glass-card {
-    @apply rounded-3xl border border-pine-900/10 bg-white shadow-[0_10px_40px_rgba(15,16,19,0.06)];
+    @apply rounded-xl border border-stone-200 bg-white;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow var(--transition);
   }
 
+  .glass-card:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .article-card {
+    @apply overflow-hidden rounded-xl bg-white border border-stone-200;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+
+  .article-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  /* Buttons */
   .btn {
-    @apply inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-semibold transition-all duration-200 active:scale-[0.97];
+    @apply inline-flex min-h-[42px] items-center justify-center gap-2 rounded-md px-6 py-2.5 text-sm font-semibold;
+    transition: all var(--transition);
   }
 
-  /* Lime pill — primary CTA (Web Rocket style) */
   .btn-primary {
-    @apply btn bg-ember-500 text-pine-950 shadow-lg shadow-ember-500/20 hover:bg-ember-400 hover:shadow-xl hover:shadow-ember-500/30;
+    @apply btn bg-pine-950 text-white hover:bg-pine-800;
   }
 
-  /* Outline pill on light backgrounds */
   .btn-ghost {
-    @apply btn border border-pine-950/25 bg-transparent text-pine-950 hover:border-pine-950 hover:bg-pine-950 hover:text-white;
+    @apply btn border border-pine-300 bg-transparent text-pine-800 hover:border-pine-950 hover:bg-pine-950 hover:text-white;
   }
 
-  /* Outline pill on dark backgrounds */
   .btn-ghost-light {
     @apply btn border border-white/30 bg-transparent text-white hover:border-white hover:bg-white hover:text-pine-950;
   }
 
-  /* Solid white pill on dark (header CTA) */
   .btn-white {
-    @apply btn bg-white text-pine-950 hover:bg-ember-400;
+    @apply btn bg-white text-pine-950 hover:bg-stone-100;
+    box-shadow: var(--shadow-card);
   }
 
+  /* Kicker label */
   .kicker {
-    @apply mb-3 inline-block text-xs font-bold uppercase tracking-[0.18em] text-ember-600;
+    @apply mb-2 inline-block text-[11px] font-bold uppercase tracking-[0.2em] text-ember-600;
   }
 
-  .gradient-text {
-    @apply text-ember-500;
+  /* Category badge */
+  .badge {
+    @apply inline-flex items-center rounded px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider;
   }
 
-  /* Subtle diagonal shape overlay for dark sections (Web Rocket motif) */
-  .dark-shapes {
-    background-image:
-      linear-gradient(115deg, transparent 42%, rgba(255, 255, 255, 0.025) 42%, rgba(255, 255, 255, 0.025) 58%, transparent 58%),
-      linear-gradient(295deg, transparent 65%, rgba(255, 255, 255, 0.02) 65%);
+  .badge-lime {
+    @apply badge bg-ember-500 text-pine-950;
+  }
+
+  .badge-dark {
+    @apply badge border border-white/20 text-white/85;
+  }
+
+  .badge-light {
+    @apply badge border border-stone-200 bg-stone-50 text-pine-500;
+  }
+
+  /* Section label */
+  .section-label {
+    @apply flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-pine-400;
+  }
+
+  .section-label::before {
+    content: '';
+    @apply block h-px w-6 bg-ember-500;
+  }
+
+  /* Reading progress bar */
+  .progress-bar {
+    @apply fixed top-0 left-0 z-[60] h-[2px] bg-ember-500;
+    transform-origin: left;
+  }
+
+  /* Affiliate box */
+  .affiliate-box {
+    @apply rounded-xl border border-stone-200 bg-stone-50 p-6;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    @apply my-10 border-l-4 border-ember-500 pl-6 text-xl font-medium italic leading-relaxed text-pine-600;
+  }
+
+  /* Table premium */
+  .table-premium {
+    @apply w-full border-collapse text-sm;
+  }
+
+  .table-premium thead tr {
+    @apply bg-pine-950 text-white;
+  }
+
+  .table-premium thead th {
+    @apply px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider;
+  }
+
+  .table-premium tbody tr {
+    @apply border-t border-stone-200 transition-colors hover:bg-stone-50;
+  }
+
+  .table-premium tbody td {
+    @apply px-4 py-3.5;
+  }
+
+  .table-premium tbody tr:first-child td:first-child {
+    @apply font-bold text-pine-950;
   }
 }
 
+/* ─── Reduced motion ─────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;

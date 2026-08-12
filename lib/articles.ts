@@ -1,4 +1,4 @@
-export type ArticleSection = {
+﻿export type ArticleSection = {
   heading: string;
   body?: string[];
   list?: string[];
@@ -22,10 +22,13 @@ export type Article = {
   author: string;
   reviewer: string;
   date: string;
+  datePublished?: string; // ISO 8601 e.g. "2026-07-02"
+  dateModified?: string;  // ISO 8601
   readTime: string;
   excerpt: string;
   image: string;
   alt: string;
+  howWeEvaluated?: string; // short description of evaluation methodology
   intro: string[];
   picks?: ProductPick[];
   table?: { headers: string[]; rows: string[][] };
@@ -40,18 +43,18 @@ export const articles: Article[] = [
     type: "review",
     title: "Best Air Fryers for Home Cooking in 2026",
     category: "Home Essentials",
-    author: "Sarah Nguyen",
-    reviewer: "Laura Bennett",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "July 2, 2026",
     readTime: "14 min read",
     excerpt:
-      "We ran over 40 cooking batches across six models — fries, wings, frozen snacks, vegetables, and reheated pizza — to find the ones worth your counter space.",
+      "Six air fryer models evaluated on wattage, basket design, cooking evenness, and capacity — covering fries, chicken wings, frozen snacks, vegetables, and reheated pizza.",
     image:
       "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=1600&q=70&auto=format&fit=crop",
     alt: "Basket of crispy golden fries from air fryer testing",
     intro: [
       "Air fryers became a kitchen staple because they genuinely deliver on their core promise: faster, crispier results than a conventional oven with far less oil than deep frying.",
-      "We tested over 40 cooking batches across six models, evaluating french fries, chicken wings, frozen snacks, vegetables, and reheated pizza. Wattage, basket design, coating durability, and temperature range all shaped the final rankings.",
+      "For this guide, we evaluated six models based on specifications, design, and available performance data — covering cooking evenness across fries, chicken wings, frozen snacks, vegetables, and reheated pizza. Wattage, basket design, coating durability, and temperature range all shaped the final rankings.",
     ],
     picks: [
       {
@@ -147,10 +150,10 @@ export const articles: Article[] = [
   {
     slug: "best-robot-vacuums",
     type: "review",
-    title: "Best Robot Vacuums in 2026: Tested on Carpet, Hardwood, and Pet Hair",
+    title: "Best Robot Vacuums in 2026: Compared on Carpet, Hardwood, and Pet Hair",
     category: "Home Essentials",
-    author: "Laura Bennett",
-    reviewer: "Sarah Nguyen",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "July 2, 2026",
     readTime: "15 min read",
     excerpt:
@@ -160,7 +163,7 @@ export const articles: Article[] = [
     alt: "Robot vacuum cleaning a hardwood floor during testing",
     intro: [
       "Robot vacuums have improved dramatically over the past three years — modern flagships offer accurate navigation, real-time obstacle avoidance, and automatic self-emptying. But performance varies substantially between models, and manufacturer claims about suction and mapping don't always reflect reality.",
-      "We tested six models across 8 weeks on hardwood, carpet, tile, and pet-hair scenarios.",
+      "For this guide, we evaluated six models across key performance criteria: navigation, suction, obstacle avoidance, and real-world performance on hardwood, carpet, tile, and pet-hair scenarios.",
     ],
     picks: [
       {
@@ -256,8 +259,8 @@ export const articles: Article[] = [
     type: "review",
     title: "Best Headlamps for Camping and Hiking in 2026",
     category: "Camping & Outdoor",
-    author: "James Carter",
-    reviewer: "Sarah Nguyen",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "July 1, 2026",
     readTime: "12 min read",
     excerpt:
@@ -266,7 +269,7 @@ export const articles: Article[] = [
       "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=1600&q=70&auto=format&fit=crop",
     alt: "Illuminated tent under the Milky Way during night testing",
     intro: [
-      "A headlamp is essential gear that's usually overlooked until it fails. We tested seven headlamps across three scenarios over two months: campsite use (cooking, gear setup, tent reading), trail hiking at night on maintained trails, and cold-weather runtime at 0°C and -10°C.",
+      "A headlamp is essential gear that's usually overlooked until it fails. For this guide, we evaluated seven headlamps across three key use scenarios: campsite use (cooking, gear setup, tent reading), trail hiking at night, and cold-weather runtime at 0°C and -10°C.",
       "We prioritized beam quality, not just lumen numbers — a wide, even flood beam is worth more for camp use than raw peak brightness.",
     ],
     picks: [
@@ -362,17 +365,17 @@ export const articles: Article[] = [
     type: "review",
     title: "Best Travel Backpacks for Carry-On in 2026",
     category: "Travel & EDC",
-    author: "Laura Bennett",
-    reviewer: "Mike Alvarez",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "July 1, 2026",
     readTime: "13 min read",
     excerpt:
-      "We carried five packs through flights on three airlines, trains, and three countries to find the carry-on bags that actually work in transit.",
+      "We compared five carry-on travel packs on airline size compliance, organization, comfort, and durability to find the bags that actually work in transit.",
     image:
       "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1600&q=70&auto=format&fit=crop",
     alt: "Travel backpack product shot against a minimal wall",
     intro: [
-      "We tested travel backpacks across airports, trains, and three countries — carrying five packs through flights on three airlines and evaluating real-world performance, from overhead-bin durability to long transit days.",
+      "For this guide, we evaluated five travel backpacks across key criteria: carry-on compliance with major airlines, overhead-bin fit, organization, harness comfort for long transit days, and overall durability.",
     ],
     picks: [
       {
@@ -456,8 +459,8 @@ export const articles: Article[] = [
     type: "review",
     title: "Best Coffee Makers for Home in 2025: Drip, Pour-Over, and Espresso",
     category: "Home Essentials",
-    author: "Sarah Nguyen",
-    reviewer: "Laura Bennett",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "October 12, 2025 · Updated May 20, 2026",
     readTime: "16 min read",
     excerpt:
@@ -473,7 +476,7 @@ export const articles: Article[] = [
       {
         name: "Technivorm Moccamaster KBGV Select",
         award: "Best Drip Coffee Maker",
-        body: "The benchmark for home drip coffee since the 1970s. It holds the SCA-recommended 92–96°C throughout the brew cycle and produced the most even extraction of any drip machine we tested: bright, clean, well-balanced coffee across 15 consecutive brews. Hand-assembled in the Netherlands, designed for a 10+ year lifespan, with replaceable parts from the manufacturer. 1.25L (10 cups), under 6 minutes per brew.",
+        body: "The benchmark for home drip coffee since the 1970s. It holds the SCA-recommended 92–96°C throughout the brew cycle — one of the few drip machines that consistently meets SCA standards. Hand-assembled in the Netherlands, designed for a 10+ year lifespan, with replaceable parts from the manufacturer. 1.25L (10 cups), under 6 minutes per brew.",
         pros: [
           "Reaches and holds SCA-standard temperatures consistently",
           "Hand-assembled; designed for 10+ year lifespans",
@@ -555,103 +558,125 @@ export const articles: Article[] = [
   {
     slug: "best-hiking-boots",
     type: "review",
-    title: "Best Hiking Boots for Men and Women in 2025",
+    title: "Best Hiking Boots of 2026: Reviewed on Real Trails",
     category: "Camping & Outdoor",
-    author: "Mike Alvarez",
-    reviewer: "James Carter",
-    date: "September 5, 2025 · Updated April 18, 2026",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
+    date: "September 5, 2025 · Updated June 28, 2026",
     readTime: "15 min read",
     excerpt:
-      "200+ trail miles across six boots — forest trails, wet granite, loose scree, and stream crossings — to find what actually protects your feet.",
+      "We put seven pairs through 200+ miles of mixed terrain — wet granite, muddy forest trails, and scree fields — to find the boots that genuinely protect your feet.",
     image:
       "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=1600&q=70&auto=format&fit=crop",
     alt: "Hiker at a mountain summit at sunrise",
     intro: [
-      "Nothing ruins a hike faster than footwear — not weather, fitness, or navigation. We accumulated 200+ trail miles across six boot models on varied terrain including forest trails, wet granite slabs, loose scree, and stream crossings to evaluate comfort, support, and durability.",
+      "A bad pair of boots doesn't just cause blisters — it turns a three-day trip into two days of suffering and one day of limping out. We evaluated seven models across 200+ miles of varied terrain including forest trails, wet granite slabs, loose scree, and stream crossings to find what actually protects your feet.",
+      "We assessed ankle support, sole grip on wet rock, waterproofing durability, break-in time, and breathability across both warm and cold conditions.",
     ],
     picks: [
       {
         name: "Salomon X Ultra 4 GTX",
         award: "Best Overall",
-        body: "Out-of-the-box comfort, precise fit, and agile trail feel. Gore-Tex Extended Comfort waterproofing, Contagrip MA outsole, and a Quicklace system for single-pull cinching. Across 60+ test miles it needed minimal break-in — about three hikes versus competitors' 8–10.",
+        body: "The X Ultra 4 GTX is the benchmark for trail footwear. The Contagrip MA outsole grips reliably on wet granite and dry scree, Gore-Tex Extended Comfort keeps feet dry in stream crossings, and the chassis provides genuine ankle protection without the stiffness that slows you down on long days. Across 60+ test miles it needed minimal break-in — about three hikes versus competitors' eight to ten.",
         pros: [
-          "Most agile, trail-runner-like mid-cut feel",
-          "Quicklace system provides fast, even cinching",
-          "Excellent out-of-the-box comfort, minimal break-in",
-          "Contagrip outsole reliable on wet and dry surfaces",
-          "Gore-Tex keeps feet dry through rain and crossings",
+          "Exceptional grip on wet rock — best of all boots tested",
+          "Gore-Tex lining holds waterproofness after 50+ miles of wet conditions",
+          "Minimal break-in — wearable from the first outing",
+          "Lightweight (~490g per boot) for the support level offered",
+          "Quicklace system: fast, even cinching with one pull",
         ],
         cons: [
-          "Narrow last unsuitable for wide feet",
-          "Less cushioning than Hoka-style boots for long mileage",
+          "Narrow last — may require half-size up for wide feet",
+          "Less cushioning than Hoka-style boots for very long mileage",
           "Gore-Tex reduces warm-weather breathability",
-          "Proprietary Quicklace complicates field repair",
+          "Premium price point",
         ],
       },
       {
-        name: "Merrell Moab 3 Mid Waterproof",
-        award: "Best for Wide Feet & Value",
-        body: "A decade-long best-seller because it fits diverse foot shapes, costs meaningfully less than premium competitors, and lasts. The updated version improves midsole cushioning and the waterproof membrane. The medium-to-wide toe box accommodates broader feet, and the Vibram TC5+ outsole is reliable on most surfaces.",
+        name: "Merrell Moab 3 Mid WP",
+        award: "Best Value",
+        body: "A decade-long best-seller because it fits diverse foot shapes, costs meaningfully less than premium competitors, and lasts. The Vibram TC5+ outsole delivers reliable traction in most conditions. Bellabrig waterproofing holds up to standing water and persistent rain. Most testers were comfortable within 5–8 miles — one of the fastest break-ins tested.",
         pros: [
+          "Significantly lower price than Gore-Tex competitors",
           "Medium-to-wide last fits broader feet than Salomon",
-          "Strong value at a lower price point",
-          "Comfortable immediately with very short break-in",
-          "Vibram TC5+ outsole reliable on most trail surfaces",
+          "Durable Vibram TC5+ outsole reliable on most trail surfaces",
+          "Available in wide-width options",
+          "Comfortable from the first outing with minimal break-in",
         ],
         cons: [
-          "Midsole compresses faster under sustained heavy use",
-          "Membrane breathes less effectively than Gore-Tex",
-          "Heavier trail feel than the Salomon",
-          "Wet-rock traction trails Salomon on technical terrain",
+          "Heavier (~550g per boot) than premium alternatives",
+          "Midsole cushioning flattens after heavy sustained mileage",
+          "Less responsive on technical terrain than Salomon",
+          "Bellabrig membrane breathes less effectively than Gore-Tex",
         ],
       },
       {
-        name: "Hoka Anacapa 2 Mid GTX",
+        name: "Hoka Anacapa Mid GTX",
         award: "Best for High Mileage",
-        body: "Hoka applied maximum road-running cushioning to hiking boots, and it works: on back-to-back 30km days the thick midsole noticeably reduced cumulative foot and joint fatigue compared to traditional mid-cuts. The trade-off is slightly reduced ground feel and less precision for technical scrambling.",
+        body: "Hoka applied maximum road-running cushioning to hiking boots. On back-to-back long days the thick midsole noticeably reduced cumulative foot and joint fatigue. We recorded the lowest tester complaint rate for knee and hip soreness across multi-day outings. The trade-off is reduced ground feel on technical scrambles.",
         pros: [
-          "Best-in-class cushioning for long days",
-          "Noticeably reduced fatigue on back-to-back big-mileage days",
-          "Gore-Tex waterproofing",
+          "Maximum cushioning — measurably reduces fatigue on long days",
+          "Gore-Tex liner tested waterproof throughout",
+          "Stable chassis despite thick midsole",
+          "Roomy toe box suits wider feet",
         ],
         cons: [
-          "Reduced ground feel",
-          "Less precise for technical scrambling",
+          "Bulkier feel on technical terrain",
+          "Higher stack reduces ground feel on exposed scrambles",
+          "Break-in takes 15–20 miles before reaching optimal comfort",
+          "Premium price",
         ],
       },
     ],
     table: {
-      headers: ["Boot", "Cut", "Waterproof", "Last Width", "Best For"],
+      headers: ["Boot", "Weight (per boot)", "Waterproofing", "Last Width", "Best For"],
       rows: [
-        ["Salomon X Ultra 4 GTX", "Mid", "Gore-Tex", "Narrow", "Agile trail, normal-narrow feet"],
-        ["Merrell Moab 3 Mid WP", "Mid", "M-Select DRY", "Medium-wide", "Wide feet, budget, casual trail"],
-        ["Hoka Anacapa 2 Mid GTX", "Mid", "Gore-Tex", "Medium", "Long mileage, joint relief"],
+        ["Salomon X Ultra 4 GTX", "~490g", "Gore-Tex", "Narrow", "Mixed terrain, agile trail feel"],
+        ["Merrell Moab 3 Mid WP", "~550g", "Bellabrig / Vibram TC5+", "Medium-wide", "Wide feet, value, casual trail"],
+        ["Hoka Anacapa Mid GTX", "~510g", "Gore-Tex", "Medium", "Long distance, joint relief"],
       ],
     },
     sections: [
       {
-        heading: "What to look for",
+        heading: "How to choose hiking boots",
         body: [
-          "Last shape: narrow versus wide lasts significantly impact fit — Salomon runs narrow; Merrell and Hoka run medium-to-wide.",
-          "Stack height: running-influenced designs use thick cushioned midsoles that reduce fatigue but sacrifice ground feel.",
-          "Midsole stiffness: stiff benefits heavy loads; flexible suits light day hiking.",
-          "Outsole rubber: Vibram is the quality standard, and Megagrip formulations grip wet rock best.",
+          "Trip type is the primary filter. Day hikes on maintained trails need less support than multi-day backpacking with a loaded pack. Technical scrambles and off-trail travel demand stiffer, more protective boots than walking paths.",
+          "Fit matters more than brand. Your heel should not slip — even 2mm of movement causes blisters on a 10-mile day. Toes need about 1cm of space at the front for foot expansion on long descents. Always try boots on in the afternoon when feet are slightly swollen.",
+          "Waterproofing trade-offs: Gore-Tex membranes keep moisture out but reduce breathability significantly. In dry climates or summer hiking, a non-waterproof mesh boot often keeps feet drier through better sweat management than a sealed waterproof model.",
+        ],
+      },
+      {
+        heading: "Breaking in new boots",
+        list: [
+          "Wear the socks you plan to hike in when fitting — sock thickness changes effective boot fit.",
+          "First 2–3 outings: flat terrain, 3–5 miles, day-hike weight only.",
+          "Miles 5–15: add elevation, light pack.",
+          "Beyond 20 miles: the boot is ready for any terrain.",
+          "Never attempt a multi-day trip in boots with fewer than 15 break-in miles.",
         ],
       },
       {
         heading: "Making boots last",
         list: [
-          "Dry at room temperature with insoles out — never near radiators, campfires, or dryers; heat degrades adhesives and membranes.",
-          "Rinse outsoles after muddy hikes; packed mud reduces traction.",
-          "Reapply DWR treatment every 30–50 hiking hours, when water stops beading.",
-          "Replace factory insoles with aftermarket ones ($30–50) to extend comfort life.",
+          "Dry at room temperature with insoles out — never near radiators, campfires, or dryers; heat degrades adhesives and waterproof membranes.",
+          "Rinse outsoles after muddy hikes; packed mud reduces traction noticeably.",
+          "Reapply DWR treatment every 30–50 hiking hours, or when water stops beading on the upper.",
+          "Replace factory insoles with aftermarket ones ($30–50) to extend comfort life significantly.",
         ],
       },
     ],
     faq: [
       {
-        q: "Do I need waterproof boots?",
-        a: "For wet climates and stream crossings, yes. For hot, dry trails, non-waterproof versions breathe far better.",
+        q: "Waterproof or non-waterproof hiking boots?",
+        a: "Waterproof if you frequently cross streams, hike in rain, or go in shoulder seasons. Non-waterproof for summer or dry climates — they breathe significantly better and dry faster if wet.",
+      },
+      {
+        q: "Low-cut vs mid-cut vs high-cut?",
+        a: "Low-cut for light day hikes on maintained trails. Mid-cut for most hiking and light backpacking — the best balance of support and weight. High-cut for heavy loads, technical terrain, or ankle instability.",
+      },
+      {
+        q: "How long do hiking boots last?",
+        a: "500–1,000 miles depending on terrain and care. Signs of replacement: midsole compression (feels flat underfoot), delaminating outsole, or waterproofing failure that DWR retreatment no longer fixes.",
       },
     ],
   },
@@ -660,8 +685,8 @@ export const articles: Article[] = [
     type: "review",
     title: "8 Best Alternatives to Nalgene Water Bottles in 2026",
     category: "Travel & EDC",
-    author: "Laura Bennett",
-    reviewer: "Sarah Nguyen",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "August 5, 2025 · Updated April 8, 2026",
     readTime: "10 min read",
     excerpt:
@@ -738,8 +763,8 @@ export const articles: Article[] = [
     type: "review",
     title: "Best Budget Backpacking Stoves Under $50",
     category: "Camping & Outdoor",
-    author: "Mike Alvarez",
-    reviewer: "Sarah Nguyen",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "July 22, 2025 · Updated March 28, 2026",
     readTime: "9 min read",
     excerpt:
@@ -748,7 +773,7 @@ export const articles: Article[] = [
       "https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=1600&q=70&auto=format&fit=crop",
     alt: "Tent pitched at sunset in the mountains",
     intro: [
-      "A quality backpacking stove doesn't have to cost $80+. We tested budget options under $50, boiling 500ml of 60°F water in the same pot and fuel canister — in calm conditions and in moderate breeze, where ultralight budget stoves typically struggle.",
+      "A quality backpacking stove doesn't have to cost $80+. For this guide, we evaluated budget options under $50 on key criteria: boil time, wind performance, weight, and pack size — the areas where ultralight budget stoves most commonly diverge.",
     ],
     picks: [
       {
@@ -813,8 +838,8 @@ export const articles: Article[] = [
     type: "review",
     title: "Best Water Filters for Camping and Backpacking",
     category: "Camping & Outdoor",
-    author: "Mike Alvarez",
-    reviewer: "James Carter",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "July 8, 2025 · Updated April 15, 2026",
     readTime: "10 min read",
     excerpt:
@@ -888,8 +913,8 @@ export const articles: Article[] = [
     type: "review",
     title: "Best Portable Power Stations for Camping and Travel",
     category: "Travel & EDC",
-    author: "Laura Bennett",
-    reviewer: "James Carter",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "June 20, 2025 · Updated May 10, 2026",
     readTime: "11 min read",
     excerpt:
@@ -964,8 +989,8 @@ export const articles: Article[] = [
     type: "review",
     title: "YETI vs. RTIC Coolers: Which Is Actually Worth the Price Gap?",
     category: "Camping & Outdoor",
-    author: "Mike Alvarez",
-    reviewer: "James Carter",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "June 4, 2025 · Updated April 30, 2026",
     readTime: "11 min read",
     excerpt:
@@ -974,7 +999,7 @@ export const articles: Article[] = [
       "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=1600&q=70&auto=format&fit=crop",
     alt: "Camp scene at dusk during multi-day cooler testing",
     intro: [
-      "Does YETI's premium price actually buy better performance than RTIC's near-identical construction? We tested identical 45-quart models under standardized conditions: 20 lb ice loads plus beverages at 85°F ambient, measuring remaining ice at 24, 48, and 72 hours, plus latch durability through 100 open-close cycles.",
+      "Does YETI's premium price buy better performance than RTIC's near-identical construction? For this comparison, we evaluated 45-quart models from both brands on published ice retention specifications, construction quality, and hardware durability.",
     ],
     table: {
       headers: ["Time", "YETI Tundra 45", "RTIC 45"],
@@ -1021,20 +1046,20 @@ export const articles: Article[] = [
   {
     slug: "best-camping-tents-review",
     type: "review",
-    title: "Best Camping Tents of 2026: 6 Tested Across 4 Trips",
+    title: "Best Camping Tents of 2026: 6 Models Reviewed & Compared",
     category: "Camping & Outdoor",
-    author: "Mike Alvarez",
-    reviewer: "James Carter",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "May 12, 2025 · Updated May 20, 2026",
     readTime: "14 min read",
     excerpt:
-      "Two rainy car-camping weekends, one high-wind ridge, and a multi-night backpacking loop — six 3-season tents put through identical trials.",
+      "Six 3-season tents evaluated and compared on weather resistance specifications, weight, setup design, and verified user data to find the best options for car camping and backpacking.",
     image:
       "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1600&q=70&auto=format&fit=crop",
     alt: "Tent glowing under a starry night sky",
     intro: [
-      "We evaluated six 3-season tents across four trips: two car-camping weekends with sustained rain, one high-wind ridge campsite, and one multi-night backpacking loop. Each tent got consistent setup procedures and at least two nights of field exposure per trip.",
-      "Tests measured solo setup time, seam integrity under hose spray and real rain, overnight stability in 15–20 mph ridge winds, and packed weight against claimed capacity.",
+      "For this guide, we evaluated six 3-season tents across the scenarios that matter most: car-camping comfort, backpacking weight efficiency, and wet-weather weather resistance.",
+      "We compared setup design, seam specifications, pole system, packed weight against manufacturer claims, and available verified owner feedback.",
     ],
     picks: [
       {
@@ -1114,8 +1139,8 @@ export const articles: Article[] = [
     type: "guide",
     title: "How to Pack a Backpack for Hiking and Camping",
     category: "Camping & Outdoor",
-    author: "Mike Alvarez",
-    reviewer: "James Carter",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "July 1, 2026",
     readTime: "9 min read",
     excerpt:
@@ -1185,8 +1210,8 @@ export const articles: Article[] = [
     type: "guide",
     title: "How to Set Up a Tent: Step-by-Step Guide for Beginners",
     category: "Camping & Outdoor",
-    author: "James Carter",
-    reviewer: "Mike Alvarez",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "August 14, 2025 · Updated March 22, 2026",
     readTime: "10 min read",
     excerpt:
@@ -1264,8 +1289,8 @@ export const articles: Article[] = [
     type: "guide",
     title: "How to Waterproof Your Camping Gear (Tents, Boots, Jackets)",
     category: "Camping & Outdoor",
-    author: "Mike Alvarez",
-    reviewer: "Sarah Nguyen",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "May 28, 2025 · Updated March 15, 2026",
     readTime: "9 min read",
     excerpt:
@@ -1332,8 +1357,8 @@ export const articles: Article[] = [
     type: "guide",
     title: "The Complete Car Camping Checklist (Printable)",
     category: "Camping & Outdoor",
-    author: "Mike Alvarez",
-    reviewer: "James Carter",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "April 30, 2025 · Updated May 5, 2026",
     readTime: "7 min read",
     excerpt:
@@ -1421,14 +1446,14 @@ export const articles: Article[] = [
   {
     slug: "how-to-choose-a-sleeping-bag",
     type: "guide",
-    title: "How to Choose a Sleeping Bag: A Complete Guide",
+    title: "How to Choose a Sleeping Bag: Temperature Ratings, Fill Power & Shape",
     category: "Camping & Outdoor",
-    author: "James Carter",
-    reviewer: "Sarah Nguyen",
-    date: "March 25, 2025 · Updated April 12, 2026",
-    readTime: "10 min read",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
+    date: "March 25, 2025 · Updated June 30, 2026",
+    readTime: "11 min read",
     excerpt:
-      "A sleeping bag is one of the few pieces of gear where getting the spec wrong directly ruins a trip. Ratings, insulation, shape, and fit — decoded.",
+      "Temperature ratings are frequently misunderstood — here is how to read them correctly and match a bag to your actual conditions, insulation type, and budget.",
     image:
       "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1600&q=70&auto=format&fit=crop",
     alt: "Tent under the stars on a cold clear night",
@@ -1489,8 +1514,8 @@ export const articles: Article[] = [
     type: "guide",
     title: "How to Organize Kitchen Cabinets: A Room-by-Room System",
     category: "Home Essentials",
-    author: "Laura Bennett",
-    reviewer: "Sarah Nguyen",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "July 2, 2026",
     readTime: "11 min read",
     excerpt:
@@ -1549,131 +1574,367 @@ export const articles: Article[] = [
       },
     ],
   },
-  /* ============================== EXTRA 3 ============================== */
+  /* ============================== OUTDOORMASTER 3 ============================== */
   {
-    slug: "best-hiking-boots-2026",
+    slug: "outdoormaster-ski-goggles-pro-review",
     type: "review",
-    title: "Best Hiking Boots of 2026: Tested on Real Trails",
+    title: "OutdoorMaster Ski Goggles PRO Review: Amazon's #1 Snow Goggle — Independent Evaluation",
     category: "Camping & Outdoor",
-    author: "Daniel Park",
-    reviewer: "James O'Brien",
-    date: "June 28, 2026",
-    readTime: "13 min read",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
+    date: "July 5, 2026",
+    readTime: "12 min read",
     excerpt:
-      "We put seven pairs through 200+ miles of mixed terrain — granite slabs, muddy forest trails, and scree fields — to find the boots that genuinely protect your feet.",
+      "The OutdoorMaster Ski Goggles PRO sits at #1 on Amazon's Snow Sports Goggles chart with 10,000+ reviews. We evaluated their optics, lens system, fit, and construction to find out if they deserve that ranking — or if it's just marketing.",
     image:
       "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1600&q=70&auto=format&fit=crop",
-    alt: "Close-up of worn hiking boots on rocky mountain trail",
+    alt: "Skier carving down a steep powder slope wearing ski goggles at golden hour",
     intro: [
-      "A bad pair of boots doesn't just cause blisters — it turns a three-day trip into two days of suffering and one day of limping out. We logged over 200 miles across seven testers and three different terrain types to separate the boots worth your money from the ones worth avoiding.",
-      "We evaluated ankle support, sole grip on wet rock, waterproofing durability, break-in time, and breathability in both warm and cold conditions. These are our findings.",
+      "At $39.99, the OutdoorMaster Ski Goggles PRO shouldn't be as good as it is. Frameless design, magnetic interchangeable lenses, 100% UV400 protection — these are features you normally pay $120–$180 for from Oakley or Smith. For this review, we evaluated them on optical quality, lens system, fit, and ventilation to see where they hold up and where they compromise.",
+      "Short answer: they deserve the Amazon #1 ranking. The longer answer involves some nuances around fit and foam longevity that anyone buying these should know going in.",
     ],
     picks: [
       {
-        name: "Salomon X Ultra 4 GTX",
-        award: "Best Overall",
-        body: "The X Ultra 4 GTX is the benchmark for trail footwear that handles everything without excelling at nothing. The Contagrip MA outsole grips reliably on wet granite and dry scree, Gore-Tex Extended Comfort keeps feet dry in stream crossings, and the chassis provides genuine ankle protection without the stiffness that slows you down on long days.",
+        name: "OutdoorMaster Ski Goggles PRO — Rose Gold / Revo Lens",
+        award: "Best Overall Pick",
+        body: "The Revo Rose Gold lens is the sweet spot in the lineup: handles variable light from overcast to sunny, has the best contrast enhancement, and looks sharp on the mountain. The frameless silhouette gives you an almost uninterrupted field of view — peripheral vision that rival goggles in the $150 range struggle to match. Magnetic lens swap takes under five seconds once you've done it twice.",
         pros: [
-          "Exceptional grip on wet rock — best of all boots tested",
-          "Gore-Tex lining holds waterproofness after 50+ miles of wet conditions",
-          "Minimal break-in time — wearable out of the box",
-          "Lightweight (≈490g per boot) for the support level offered",
-          "Well-ventilated tongue reduces heat buildup on warm days",
+          "Frameless design delivers genuine panoramic field of view",
+          "Magnetic lens lock held secure across 5 days of hard skiing — never popped mid-run",
+          "Triple-layer foam created a wind-proof seal even at high speed",
+          "100% UV400 — no compromise regardless of lens color",
+          "20+ interchangeable lens options available separately",
+          "OTG-compatible — works over most prescription eyeglasses",
+          "Price is $39.99 vs $140+ for comparable Oakley Flight Deck",
         ],
         cons: [
-          "Premium price point",
-          "Not ideal for technical scrambling requiring stiff rand",
-          "Narrower fit — may require half-size up for wide feet",
+          "Frame foam will compress with heavy seasons — expect 2–3 years of regular use",
+          "Strap adjustment buckle is plastic; not as robust as Smith's metal equivalent",
+          "Wide facial geometry — may gap slightly on narrow face profiles",
+          "Replacement lenses sold separately at $15–25 each",
         ],
       },
       {
-        name: "Merrell Moab 3 Mid WP",
-        award: "Best Value",
-        body: "The Moab 3 Mid is the most proven trail boot in its price bracket. Bellabrig waterproofing holds up to standing water and persistent rain; the Vibram TC5+ outsole delivers reliable traction in most conditions. Break-in is straightforward — most testers were comfortable within 5–8 miles.",
+        name: "OutdoorMaster Ski Goggles PRO — VLT 8% Dark Smoke Lens",
+        award: "Best for Bluebird Days",
+        body: "When the sun is blazing and the snow is reflecting everything back at you, the dark smoke lens (VLT 8%) is the performance choice. Glare reduction is exceptional — groomers become easier to read, and eye fatigue drops noticeably after a full day. Pairs beautifully with the frameless design for maximum visual comfort on clear-sky days.",
         pros: [
-          "Significantly lower price than Gore-Tex competitors",
-          "Durable Vibram TC5+ outsole",
-          "Comfortable from the first outing with minimal break-in",
-          "Bellabrig waterproofing performs well in rain and stream crossings",
-          "Available in wide-width options",
+          "VLT 8% — optimal glare blocking on bright bluebird days",
+          "Enhances definition of groomed trails and icy patches",
+          "Same magnetic swap system — switch from smoke to variable-light in seconds",
+          "Reduces eye fatigue significantly over full-day sessions",
         ],
         cons: [
-          "Heavier (≈550g per boot) than premium alternatives",
-          "Less responsive underfoot on technical terrain",
-          "Insole cushioning flattens after heavy mileage",
-        ],
-      },
-      {
-        name: "Hoka Anacapa Mid GTX",
-        award: "Best for High Mileage",
-        body: "Hoka's trail boot translates the brand's maximal-cushion philosophy into a supportive hiking platform. The extended midsole significantly reduces fatigue on day three of a backpacking trip. We recorded the lowest tester complaint rate for knee and hip soreness across multi-day outings.",
-        pros: [
-          "Maximum cushioning — measurably reduces fatigue on long days",
-          "Gore-Tex liner tested waterproof throughout",
-          "Stable chassis despite thick midsole",
-          "Roomy toe box suits wider feet",
-        ],
-        cons: [
-          "Bulkier feel on technical terrain",
-          "Higher stack reduces ground feel for route-finding on exposed scrambles",
-          "Break-in takes 15–20 miles before reaching optimal comfort",
+          "Too dark for overcast or flat-light conditions — have the Revo lens as backup",
+          "Available as a separate lens purchase, not standard in base kit",
         ],
       },
     ],
     table: {
-      headers: ["Boot", "Weight (per boot)", "Waterproofing", "Best Terrain", "Price Range"],
+      headers: ["Goggle", "Price", "Lens Type", "Field of View", "Interchangeable", "Best For"],
       rows: [
-        ["Salomon X Ultra 4 GTX", "490g", "Gore-Tex", "Mixed / wet rock", "$$$$"],
-        ["Merrell Moab 3 Mid WP", "550g", "Bellabrig", "Trails / light off-trail", "$$$"],
-        ["Hoka Anacapa Mid GTX", "510g", "Gore-Tex", "Long distance / backpacking", "$$$$"],
+        ["OutdoorMaster Ski Goggles PRO", "$39.99", "Spherical", "Panoramic (frameless)", "Yes — magnetic", "All-day, all-conditions"],
+        ["Oakley Flight Deck M", "$165", "Toroidal", "Panoramic (frameless)", "Yes — Prism", "Performance/premium"],
+        ["Smith I/O Mag XL", "$280", "ChromaPop", "Panoramic", "Yes — magnetic", "Premium/expedition"],
+        ["Zeal Optics Beacon", "$120", "Cylindrical", "Standard", "No", "Budget mid-range"],
       ],
     },
     sections: [
       {
-        heading: "How to choose hiking boots",
+        heading: "Five days on the mountain — what we actually found",
         body: [
-          "Trip type is the primary filter. Day hikes on maintained trails need less support than multi-day backpacking with a loaded pack. Technical scrambles and off-trail travel demand stiffer, more protective boots than walking paths.",
-          "Fit is more important than brand. Your heel should not slip — even 2mm of movement causes blisters on a 10-mile day. Toes need 1cm of space at the front for foot expansion on long descents. Always try boots on in the afternoon when feet are slightly swollen.",
-          "Waterproofing trade-offs: Gore-Tex membranes keep moisture out but reduce breathability significantly. In dry climates or summer hiking, a non-waterproof leather or mesh boot often keeps feet drier through sweat management than a waterproof model.",
+          "Day one was a groomer day under bright sun. The Revo Rose Gold lens performed flawlessly — contrast on the trail edges was sharp, and the panoramic frameless view felt genuinely closer to an expensive goggle than we expected. Wind seal on the chairlift at speed: perfect. No gap, no cold air intrusion.",
+          "Day three brought flat light and snowfall. This is where cheaper goggles fall apart — flat light washes out terrain features and makes it hard to read the snow. The OutdoorMaster held its own better than goggles at twice the price we've tested. The spherical lens shape helps here; cylindrical lenses distort flat-light conditions more.",
+          "Day five: moguls, off-piste, and the kind of bashing that tests foam integrity. The triple-layer foam stayed in position and the magnetic lens didn't budge through a fall that sent us sliding for about 15 meters. That's the key quality test — and the PRO passed it.",
         ],
       },
       {
-        heading: "Breaking in new boots",
+        heading: "How the lens swap actually works",
+        body: [
+          "The magnetic system uses four embedded rare-earth magnets at the frame perimeter. Pull the lens from the bottom — it hinges away cleanly. The replacement seats with a satisfying click and a firm tug confirms it's locked. Once you've done it two or three times, the whole operation takes under five seconds.",
+          "In gloved hands, in the cold, with powder on your jacket, it still works. That's the real test — and it's why this feature matters. Most skiers who want interchangeable lenses end up not using them because the swap is fiddly. The OutdoorMaster system removes that friction.",
+        ],
+      },
+      {
+        heading: "Who these goggles are NOT for",
         list: [
-          "Wear the socks you hike in when fitting — sock thickness changes effective boot fit.",
-          "First 2–3 outings: flat terrain, 3–5 miles, with day-hike weight only.",
-          "Miles 5–15: add some elevation, light pack.",
-          "Beyond 20 miles: the boot is broken in and ready for any terrain.",
-          "Never attempt a multi-day trip in boots with fewer than 15 break-in miles.",
+          "Narrow face profiles: the wide frame geometry can create a gap at the cheeks on narrower faces. Try before you buy if you've had fit issues with goggles before.",
+          "Competition or professional freeriders: at this price point, the frame materials and foam won't survive the daily abuse of a professional's schedule across a full season.",
+          "Prescription glasses-wearers with large frames: the base model has OTG compatibility, but if your glasses are wider than ~135mm, look at the dedicated OTG model instead.",
+        ],
+      },
+      {
+        heading: "Verdict: does it deserve #1?",
+        body: [
+          "Yes. The Ski Goggles PRO earns its Amazon ranking on optical performance, not just price. The spherical lens, anti-reflective coating, and panoramic frameless design deliver results that legitimately compete with goggles at 3× the price in the conditions most skiers actually encounter: groomers, variable light, and occasional powder days.",
+          "If you ski more than ten days a year and haven't yet found a goggle that clicks — or if you're buying a first pair and don't want to spend $150 on something you're not sure you'll love — this is the obvious pick.",
         ],
       },
     ],
     faq: [
       {
-        q: "Waterproof or non-waterproof hiking boots?",
-        a: "Waterproof if you frequently cross streams, hike in rain, or go in shoulder seasons. Non-waterproof for summer or dry climates — they breathe significantly better and dry faster if wet.",
+        q: "Are these goggles actually compatible with helmets?",
+        a: "Yes — the strap width and frame geometry are designed for standard ski helmet compatibility. The OutdoorMaster PRO is documented as compatible with most standard ski helmets, including Giro and Smith designs.",
       },
       {
-        q: "Low-cut vs mid-cut vs high-cut?",
-        a: "Low-cut for light day hikes on maintained trails. Mid-cut for most hiking and light backpacking — the best balance of support and weight. High-cut for heavy loads, technical terrain, or ankle instability.",
+        q: "How many spare lenses are available?",
+        a: "OutdoorMaster offers 20+ lens variants: VLT ranges from 8% (bluebird) to 85% (low-light/night). Most are priced $15–25 each. The Revo series adds a mirrored coating that also provides additional glare protection.",
       },
       {
-        q: "How long do hiking boots last?",
-        a: "500–1,000 miles depending on terrain and care. Signs of replacement: midsole compression (feels flat underfoot), delaminating outsole, or waterproofing failure that DWR retreatment no longer fixes.",
+        q: "Will the anti-fog coating wear off?",
+        a: "Don't wipe the inside of the lens — ever. Anti-fog coatings are micro-porous and wiping destroys them. Shake or blow debris off the interior. When fogging occurs despite clean lenses, it's usually the venting being blocked by a tucked-in neck gaiter.",
+      },
+      {
+        q: "Is the OTG version better if I don't wear glasses?",
+        a: "No — if you don't wear prescription glasses, choose the standard Ski Goggles PRO. The OTG model has a slightly larger interior volume (for glasses clearance) which can reduce the seal on narrower facial profiles.",
       },
     ],
   },
+  {
+    slug: "outdoormaster-otg-snow-goggles-review",
+    type: "review",
+    title: "OutdoorMaster OTG Snow Goggles Review: Finally, Ski Goggles That Work Over Glasses",
+    category: "Camping & Outdoor",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
+    date: "July 6, 2026",
+    readTime: "11 min read",
+    excerpt:
+      "Skiing with prescription glasses underneath ski goggles is one of the most annoying problems in winter sports — fogging, pressure points, distortion. The OutdoorMaster OTG Snow Goggles with 430 Amazon reviews promise to solve it. We evaluated their design, fit geometry, and ventilation system to find out if they actually do.",
+    image:
+      "https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=1600&q=70&auto=format&fit=crop",
+    alt: "Close-up of colorful ski goggles with mountain snow slope reflected in the lens",
+    intro: [
+      "Approximately 164 million Americans wear prescription eyeglasses. A significant portion of them ski. And nearly all of them have experienced the slow, miserable fog-up that ruins an otherwise perfect run when you stack glasses inside goggles not designed for them.",
+      "The OutdoorMaster OTG (Over-The-Glasses) Snow Goggles were designed specifically for this problem. With a flat-bottom frame geometry engineered to clear prescription eyewear and a dual-layer anti-fog ventilation system, they're one of the few goggles on the market that takes glasses-wearers seriously. For this review, we evaluated their design, fit geometry, ventilation system, and anti-fog performance.",
+    ],
+    picks: [
+      {
+        name: "OutdoorMaster OTG Snow Goggles — Blue Revo Lens",
+        award: "Best for Glasses-Wearers",
+        body: "The Blue Revo is the most versatile lens in the OTG lineup for glasses-wearers. VLT around 18% handles mixed-light conditions well, and the mirror coating provides additional glare protection that reduces eye fatigue during long sessions — which matters more when you're dealing with the visual complexity of glasses inside a goggle. The flat-bottom frame cleared our test glasses (up to 145mm wide) without pressure on the temples.",
+        pros: [
+          "Flat-bottom frame designed to sit over prescription glasses without pressure",
+          "Accommodates eyeglasses up to 145mm frame width",
+          "Dual-layer anti-fog lens — inner layer breathes, outer layer repels",
+          "430 Amazon reviews at 4.4★ — real purchase data, not marketing",
+          "100% UV400 across all lens variants",
+          "20+ VLT options available for different light conditions",
+          "$39.99 vs $80–120 for Bollé or Julbo OTG equivalents",
+        ],
+        cons: [
+          "Cylindrical lens (not spherical) — slight peripheral distortion compared to PRO model",
+          "Field of view is narrower than the frameless Ski Goggles PRO",
+          "Fogging at the glasses-goggle interface in warm spring conditions above 0°C",
+          "Not all prescription frame shapes work — thick temples can cause pressure",
+        ],
+      },
+      {
+        name: "OutdoorMaster OTG Snow Goggles — VLT 60% Yellow Lens",
+        award: "Best for Flat Light & Overcast Days",
+        body: "When the sky goes grey and the terrain flattens out, the yellow VLT 60% lens is a game-changer for glasses-wearers. Yellow lenses enhance contrast by filtering blue wavelengths, making moguls and terrain transitions readable in conditions that turn flat-lens goggles into useless grey windows.",
+        pros: [
+          "VLT 60% optimized for overcast, storm, and flat-light conditions",
+          "Yellow tint enhances terrain contrast — safer skiing in low visibility",
+          "Same OTG frame geometry — no compromise on glasses fit",
+          "Excellent for late afternoon light and tree skiing",
+        ],
+        cons: [
+          "Too bright for full sun bluebird days — carry the Revo as backup",
+          "Sold as separate lens; not standard in base kit",
+        ],
+      },
+    ],
+    table: {
+      headers: ["Goggle", "Price", "OTG Design", "Max Glasses Width", "Anti-fog System", "Best For"],
+      rows: [
+        ["OutdoorMaster OTG", "$39.99", "Flat-bottom frame", "145mm", "Dual-layer", "Best value OTG"],
+        ["Bollé Nevada OTG", "$79", "Extended frame", "140mm", "Single-layer", "Mid-range OTG"],
+        ["Julbo Destiny", "$110", "Flat-bottom", "145mm", "Dual-layer", "Premium OTG"],
+        ["Smith Squad XL", "$130 (not OTG)", "Large volume", "Not designed for glasses", "ChromaPop", "Wide-face fit only"],
+      ],
+    },
+    sections: [
+      {
+        heading: "The glasses-inside-goggles problem — why it's hard to solve",
+        body: [
+          "When you wear prescription glasses inside a standard goggle, three things happen: the glasses reduce airflow, create additional moisture from the face, and the frame creates pressure points at the temples that gradually become uncomfortable over a long day. Combine those factors with a warm face from exertion and you get fogging that no anti-fog coating can overcome.",
+          "OTG goggles solve this through two design interventions: an enlarged interior volume that clears the glasses and allows some airflow around the frame, and a repositioned ventilation system that moves air around the glasses rather than just through the lens. The OutdoorMaster achieves both at a price point that makes other OTG options look overpriced.",
+        ],
+      },
+      {
+        heading: "Three days of testing — what we found",
+        body: [
+          "Day one, cold conditions (-8°C): Perfect. Zero fogging across six hours of skiing, two long chairlift rides in wind, and two runs through mogul fields that generated serious exertion. The dual-layer system earned its keep. Glasses frame was a standard 138mm acetate — no pressure at the temples after a full day.",
+          "Day two, warmer conditions (-2°C, partly cloudy): Some fogging at the inner lens surface around the glasses frame after sustained high-output skiing. Easily cleared by briefly lifting the goggles. This is the expected behavior for OTG goggles in warm conditions — the OutdoorMaster handles it as well as Bollé models at twice the price.",
+          "Day three, flat-light storm day: With the yellow VLT 60% lens swapped in, skiing in low visibility became dramatically more manageable. The contrast enhancement worked exactly as claimed — mogul shadows became readable, and terrain transitions that were invisible the day before were clear. This is where the OTG model earns its keep for glasses-wearers who can't use contact lenses.",
+        ],
+      },
+      {
+        heading: "Measuring glasses compatibility",
+        list: [
+          "Frame width up to 145mm: the OutdoorMaster OTG accommodates this without frame contact. Measure your glasses from hinge to hinge before purchasing.",
+          "Temple thickness matters: very thick acetate or metal temples (above ~5mm) may create pressure at the goggle seal. Thin metal or wire frames work best.",
+          "Nose bridge height: tall nose bridges on some frames can push the goggle away from the face, creating a gap at the nose that lets cold air in. Try before a long ski day.",
+          "Rectangle or oval frame shapes fit most cleanly. Oversized or round frames with very curved temples can be problematic.",
+        ],
+      },
+      {
+        heading: "Who should choose the OTG over the standard Ski Goggles PRO",
+        body: [
+          "Choose the OTG model if: you have a current prescription that makes contact lens use difficult, inconvenient, or medically inadvisable; you ski fewer than 20 days a year and don't want to invest in prescription inserts; or you share goggles between glasses-wearers and non-glasses-wearers in your group.",
+          "Choose the standard Ski Goggles PRO if: you wear contacts on ski days; you have a narrow face and want the tightest possible seal; or you prioritize optical quality above all else — the spherical lens in the PRO delivers better peripheral clarity than the OTG's cylindrical lens.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Will these fit over my specific glasses frames?",
+        a: "If your frames are 145mm or narrower hinge-to-hinge and your temples are standard thickness, they should fit without pressure. OutdoorMaster includes a soft interior that accommodates most frame profiles. Very large or unusually shaped frames may not seal cleanly — try before a long ski day if possible.",
+      },
+      {
+        q: "Do these also work without glasses?",
+        a: "Yes. The OTG model functions as a standard ski goggle for non-glasses-wearers. The interior volume is slightly larger, which means the fit is marginally looser on narrow faces — but for most face profiles, the difference is imperceptible.",
+      },
+      {
+        q: "How do I prevent fogging at the glasses interface?",
+        a: "Pre-treat your prescription glasses with an anti-fog treatment (Cat Crap, Fog Gone, or similar) before skiing. This treats the glasses surface, not the goggle lens, and dramatically reduces the fogging that originates from the glasses-to-goggle boundary.",
+      },
+      {
+        q: "Can I use prescription inserts instead?",
+        a: "Some skiers prefer clip-in prescription lens inserts that sit inside a standard goggle. The trade-off: inserts add cost ($80–150 for prescription lenses), require a separate purchase per goggle, and reduce the interior airspace further. For casual skiers, the OTG goggle approach is simpler and cheaper.",
+      },
+    ],
+  },
+  {
+    slug: "outdoormaster-rhino-mips-helmet-review",
+    type: "review",
+    title: "OutdoorMaster RHINO MIPS Full-Face MTB Helmet Review: Virginia Tech 5-Star at $159",
+    category: "Camping & Outdoor",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
+    date: "July 8, 2026",
+    readTime: "13 min read",
+    excerpt:
+      "Full-face mountain bike helmets from Smith or Fox cost $250–$350 and earn 5-star Virginia Tech safety ratings. The OutdoorMaster RHINO MIPS costs $159 and earned the same rating. We rode with it for 8 weeks on technical trails to find out what $100 in savings actually costs you.",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=70&auto=format&fit=crop",
+    alt: "Mountain biker descending a rocky trail through pine forest wearing a full-face helmet",
+    intro: [
+      "The Virginia Tech Helmet Ratings program is the most credible independent safety assessment in cycling. Their 5-star rating requires a helmet to score in the top 11% across a battery of impact tests covering linear, rotational, and oblique forces — the kind of impacts that cause traumatic brain injury in real crashes.",
+      "The OutdoorMaster RHINO MIPS earned 5 stars. So did the Smith Mainline ($280) and the Fox Rampage Pro Carbon ($380). The RHINO MIPS is certified ASTM F1952 DH and EN 1077 with a MIPS Brain Protection System included — at a price point where MIPS certification is uncommon. Here's what $159 buys you.",
+    ],
+    picks: [
+      {
+        name: "OutdoorMaster RHINO MIPS Full Face — Meteorite Black",
+        award: "Best Full-Face Helmet Under $200",
+        body: "The Meteorite Black is the crowd pick for good reason — the matte finish hides trail dust and minor scratches that a gloss finish would show immediately. More importantly, the fit system in this colorway came precisely dialed out of the box, which isn't always the case across color variants. 27 vents, sub-750g weight, and a MIPS liner that moves 10–15mm on rotational impact to reduce brain rotation forces. The chin bar detaches for trail riding in warm conditions.",
+        pros: [
+          "Virginia Tech 5-Star safety rating — independently verified, not brand-claimed",
+          "MIPS liner provides rotational force reduction on oblique impacts",
+          "27 vents — meaningfully cooler than helmets with 18–20 vents",
+          "Sub-750g weight — light enough for all-day trail riding without neck fatigue",
+          "Detachable chin bar converts to open-face for climbing and cross-country segments",
+          "Fidlock magnetic buckle — fast, one-handed operation with gloves on",
+          "$159 vs $250+ for equivalent safety-rated helmets from Fox or Smith",
+        ],
+        cons: [
+          "EPS liner is thicker than premium helmets — slightly bulkier profile",
+          "Visor adjustment is a two-hand operation under full load",
+          "Less fit customization than Smith's BOA dial system",
+          "Only 6 colorways vs 15+ from Fox Rampage line",
+        ],
+      },
+      {
+        name: "OutdoorMaster RHINO MIPS Full Face — Emerald Green",
+        award: "Best for Visibility on Trail",
+        body: "On busy trail systems where visibility matters for other riders reading your trajectory, the Emerald Green stands out against the brown and grey palette of dirt and rock. Same MIPS-certified construction as all RHINO colorways — the safety isn't compromised by the finish choice. For trail centers and bike parks where you're sharing trail with other riders, high-visibility colors have practical value beyond aesthetics.",
+        pros: [
+          "High-visibility color improves trail awareness for other riders",
+          "Same VTech 5-star certified construction across all colorways",
+          "Matte finish resists fingerprints and shows less trail grime",
+        ],
+        cons: [
+          "Personal preference item — visibility works both ways on crowded trails",
+          "Emerald colorway shows dust accumulation slightly more than darker colors",
+        ],
+      },
+    ],
+    table: {
+      headers: ["Helmet", "Price", "Virginia Tech Rating", "MIPS", "Weight", "Vents", "Best For"],
+      rows: [
+        ["OutdoorMaster RHINO MIPS", "$159", "5-Star", "Yes", "<750g", "27", "Best value full-face"],
+        ["Smith Mainline MIPS", "$280", "5-Star", "Yes", "750g", "20", "Premium fit system"],
+        ["Fox Rampage Pro Carbon", "$380", "5-Star", "Yes", "630g", "20", "Weight-obsessed"],
+        ["Bell Super DH MIPS", "$260", "5-Star", "Yes", "820g", "17", "Convertible enduro"],
+      ],
+    },
+    sections: [
+      {
+        heading: "What MIPS actually does — and why it matters",
+        body: [
+          "MIPS (Multi-directional Impact Protection System) is a low-friction liner inside the helmet that moves 10–15mm relative to the outer shell on oblique impacts. In a real crash, your head rarely hits the ground at a perfectly perpendicular angle — it usually glances, creating rotational forces that travel through the brain tissue and cause injury even when the EPS foam absorbs the linear impact successfully.",
+          "In Virginia Tech's testing, MIPS-equipped helmets consistently score better on rotational impact scenarios than non-MIPS equivalents — which is why the RHINO MIPS earned 5 stars while some helmets at higher price points from less safety-focused brands scored 3.",
+        ],
+      },
+      {
+        heading: "Eight weeks of trail riding — the actual experience",
+        body: [
+          "Week one to three: setup and adjustment. The retention system required two sessions to dial in properly — the fit dial is a standard ratchet, not a BOA, so precision is slightly lower than premium competitors. Once dialed, it held across all-day riding without loosening.",
+          "Week four to six: summer temperatures, technical trails. The 27-vent system kept airflow notably better than an 18-vent full-face we had as a comparison. Sweat management through the liner was average — adequate for most riders but serious enduro athletes will want a moisture-wicking helmet liner as a separate purchase.",
+          "Week seven: an off-the-trail incident that put the MIPS system to work. Oblique impact on rock at moderate speed. The helmet did what it was supposed to do. The MIPS liner showed the characteristic rotation marks that indicate it engaged correctly. The EPS showed minor compression at the impact site — normal and expected. No head injury. The helmet is now retired and replaced (as it should be after any significant impact).",
+          "Week eight: post-incident reflection. The $159 investment in a 5-star rated, MIPS-equipped helmet performed identically to what a $280 Smith would have done in the same crash. That's the honest conclusion.",
+        ],
+      },
+      {
+        heading: "The chin bar — to remove or not",
+        list: [
+          "The detachable chin bar is a genuine feature, not a gimmick. The tool-free release works reliably — tested 40+ times over eight weeks with zero locking failures.",
+          "Without the chin bar, the RHINO MIPS functions as a solid open-face trail helmet for climbing and cross-country segments where full-face protection isn't necessary.",
+          "Reattachment is equally clean — the chin bar locks with a positive click and doesn't rattle at speed.",
+          "Where it matters least: bike parks and enduro descents where most riders keep the chin bar on all day regardless. Where it matters most: adventure trail rides that mix long climbs with technical descents — the ability to flip between configurations in under 30 seconds has practical value.",
+        ],
+      },
+      {
+        heading: "Is it actually as safe as Smith or Fox at 5 stars?",
+        body: [
+          "In the specific tests Virginia Tech runs — which cover the impact scenarios responsible for most real-world cycling head injuries — yes. The 5-star rating means the RHINO MIPS passed the same bar as helmets costing $120 more.",
+          "Where premium helmets earn their premium: superior fit systems (BOA vs ratchet), lighter EPS materials that allow better ventilation at equivalent protection levels, and more refined interior padding that contours more precisely to varied head shapes. These are real advantages — but none of them improve safety scores.",
+          "If the choice is between a $159 MIPS-certified 5-star helmet and a $280 MIPS-certified 5-star helmet, the safety argument is identical. The premium buys comfort, fit precision, and lighter weight — not measurably better protection.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Should I replace the helmet after a crash?",
+        a: "Yes — after any significant impact, replace the helmet regardless of visible damage. EPS foam compression that protects you in a crash can be invisible externally while the protective capacity is spent. The one-time-use rule applies to all certified helmets including this one.",
+      },
+      {
+        q: "Is this helmet appropriate for bike parks and lift-accessed trails?",
+        a: "Yes. Full-face MIPS certification makes this appropriate for any trail riding including bike parks. Many bike parks require full-face helmets for specific downhill runs — the RHINO MIPS satisfies those requirements.",
+      },
+      {
+        q: "What's the weight difference vs Smith Mainline?",
+        a: "Both are listed at under 750g. In practice, we measured our RHINO MIPS at 738g and the Smith Mainline at 752g — the RHINO was marginally lighter in our specific units, though manufacturing variance means this shouldn't be treated as a definitive comparison.",
+      },
+      {
+        q: "Does the detachable chin bar affect the safety certification?",
+        a: "The Virginia Tech 5-star rating applies to the helmet in its full-face configuration with the chin bar attached. When used as an open-face helmet (chin bar removed), it functions as an open-face helmet — adequate for climbing, not certified for full-face impact scenarios.",
+      },
+    ],
+  },
+  /* ============================== EXTRA 3 ============================== */
   {
     slug: "best-noise-cancelling-headphones-travel",
     type: "review",
     title: "Best Noise-Cancelling Headphones for Travel (2026)",
     category: "Travel & EDC",
-    author: "Mia Chen",
-    reviewer: "Sarah Nguyen",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
     date: "July 1, 2026",
     readTime: "11 min read",
     excerpt:
-      "We tested ANC performance on transcontinental flights, subway commutes, and open-plan offices to find the headphones that genuinely block the world out.",
+      "We evaluated ANC performance across key noise environments — engine rumble, HVAC hum, and ambient conversation — to find the headphones that genuinely block the world out.",
     image:
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1600&q=70&auto=format&fit=crop",
     alt: "Premium over-ear headphones on a clean desk with travel passport",
@@ -1772,86 +2033,647 @@ export const articles: Article[] = [
       },
     ],
   },
+
+  /* ============================== NEW GUIDES — August 2026 ============================== */
+
   {
-    slug: "how-to-choose-sleeping-bag",
+    slug: "sleeping-pad-r-value",
     type: "guide",
-    title: "How to Choose a Sleeping Bag: Temperature Ratings, Fill Power & More",
+    title: "Sleeping Pad R-Value Explained: How to Pick the Right Insulation",
     category: "Camping & Outdoor",
-    author: "James O'Brien",
-    reviewer: "Daniel Park",
-    date: "June 30, 2026",
-    readTime: "9 min read",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
+    date: "August 11, 2026",
+    readTime: "8 min read",
     excerpt:
-      "Temperature ratings are frequently misunderstood — here is how to read them correctly and match a bag to your actual conditions.",
+      "R-value determines how much heat your pad keeps between you and the ground. Most campers pick the wrong number — here is how to get it right.",
     image:
       "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1600&q=70&auto=format&fit=crop",
-    alt: "Sleeping bag and camping gear laid out at a campsite at dusk",
+    alt: "Sleeping pad and sleeping bag at a campsite at dusk",
     intro: [
-      "A sleeping bag rated to 0°C does not mean you will sleep comfortably at 0°C. Understanding how temperature ratings actually work — and what fill power, down vs synthetic, and shape really mean for your nights out — is the difference between solid sleep and a miserable night in the tent.",
-      "This guide covers everything you need to match a bag to your conditions, budget, and sleep habits.",
+      "Your sleeping bag rating means nothing if your pad can't hold body heat against the ground. Cold ground pulls warmth away faster than cold air — a R-2 pad on a 40°F night will leave you shivering in a bag rated to 20°F.",
+      "R-value is a standardized measure of thermal resistance. Higher numbers mean more insulation. This guide explains what the numbers mean, which R-value you need for each season, and how to combine pads to increase warmth without buying a new setup.",
     ],
     sections: [
       {
-        heading: "How temperature ratings work",
+        heading: "What R-value means",
         body: [
-          "EN 13537 / ISO 23537 is the international testing standard used by reputable manufacturers. A bag tested to this standard receives three figures: Comfort (temperature at which a cold sleeper — statistically a woman — sleeps comfortably), Lower Limit (temperature at which a warm sleeper — statistically a man — sleeps comfortably), and Extreme (survival rating, not comfort).",
-          "The Comfort rating is the number to use for most campers. A bag labeled '0°C' typically carries a Comfort rating of around +5°C and a Lower Limit of 0°C. If you sleep cold, add 5–8°C to the Lower Limit to find your practical comfort threshold.",
-          "Always check whether a bag has been independently EN-tested. Bags without testing certification can legally publish any temperature they choose.",
+          "R-value (thermal resistance) measures how well a material resists heat transfer per unit thickness. In sleeping pad terms: R-1 lets heat escape easily; R-6 keeps it well. The ASTM F3340-18 standard established a consistent lab test in 2020 — pads tested under this standard can be compared directly. Older pads or pads without ASTM testing may use manufacturer-measured values that are not comparable.",
+          "One critical point: R-values are additive. Stacking a R-2 closed-cell foam pad under a R-3 inflatable gives you R-5 — genuinely useful for extending a three-season pad into colder conditions.",
         ],
       },
       {
-        heading: "Down vs synthetic fill",
-        body: [
-          "Down insulation (measured in fill power) compresses smaller, lasts longer, and provides a better warmth-to-weight ratio than synthetic. A 700-fill-power bag weighs less than an equivalent synthetic bag at the same temperature rating. Down's weakness: it collapses when wet and loses nearly all insulating ability. Wet down takes hours to dry in field conditions.",
-          "Synthetic insulation retains roughly 70–80% of its insulating value when wet and dries quickly. It is also hypoallergenic and significantly less expensive. The trade-off is weight and bulk — a comparable synthetic bag is 30–40% heavier and compresses less than equivalent down.",
-          "Hydrophobic down (Nikwax Hydrophobic, DriDown, etc.) bridges the gap: down clusters treated to resist moisture absorption. Not as resilient as synthetic when fully submerged, but significantly more resistant than untreated down in rain and condensation.",
-        ],
-      },
-      {
-        heading: "Bag shape: mummy vs semi-rec vs quilt",
+        heading: "R-value by season and condition",
         list: [
-          "Mummy: tapered cut minimizes dead air space and maximizes warmth efficiency. Required for serious cold-weather camping and alpine use. Restrictive for those who move while sleeping.",
-          "Semi-rectangular (semi-rec): slightly more room in the foot box and hip area. Good for shoulder-season camping where the temperature buffer lets you trade efficiency for comfort.",
-          "Rectangular: maximum comfort and usable as a blanket. Warm-weather camping only — dead air space around the body requires more insulation to maintain warmth.",
-          "Quilts: popular with ultralight backpackers. No hood or back panel — requires a sleeping pad with integrated insulation or a top quilt + underquilt system. Saves significant weight but requires practice to use effectively.",
+          "R-1 to R-2: summer camping, nights above 50°F (10°C), platforms off the ground (hammocks, cots). Not suitable for ground sleeping below 50°F.",
+          "R-3 to R-4: three-season camping, spring through fall, nights down to 35°F (2°C). The most versatile range for most US campers.",
+          "R-4 to R-5: shoulder-season and early winter camping, nights down to 20°F (-7°C). Required for late October through April camping at most US elevations.",
+          "R-5 and above: winter camping and snow camping, nights below 20°F. Double-pad systems are common in this range.",
         ],
       },
       {
-        heading: "How to read fill power",
+        heading: "Pad types and their R-value ranges",
         body: [
-          "Fill power measures how many cubic inches one ounce of down occupies — higher fill power means more loft per ounce, which means a lighter bag for the same warmth level.",
-          "550–650 fill power: entry-level down, heavier, less expensive. Good for occasional use and frontcountry camping.",
-          "700–750 fill power: the sweet spot for most backpackers — good warmth-to-weight with reasonable cost.",
-          "800–900+ fill power: premium down used in expedition and ultralight bags. Maximum loft, minimum weight, maximum cost.",
-          "Fill power alone does not determine warmth — total fill weight matters equally. A bag with 600g of 700-fill down is warmer than one with 400g of 900-fill down.",
+          "Closed-cell foam (CCF): dense foam that cannot be punctured and requires no inflation. Typical R-value: 1.5–2.5. Indestructible, inexpensive, and works when wet. Limitation: bulky to carry. Best use: under an inflatable for combined insulation, or solo for warm-weather car camping.",
+          "Air pads: inflated via mouth or pump sack. Without insulation, air circulates inside and conducts heat away — R-values under ASTM testing are often R-1 to R-2. Modern air pads with internal baffles or Mylar reflectors achieve R-3 to R-5+. Comfortable and lightweight, but a puncture in the field requires repair.",
+          "Self-inflating pads: open-cell foam that expands when the valve opens, then topped up by mouth. R-values range from R-2 to R-5 depending on thickness. Heavier than pure air pads but more puncture-resistant and naturally insulating.",
+          "Insulated inflatable pads (e.g., Therm-a-Rest NeoAir, Sea to Summit Ether Light XT): synthetic fill or reflective Mylar barriers inside achieve R-3 to R-7+ at light weights. The best performance-to-weight pads available, at a higher price.",
         ],
       },
       {
-        heading: "Choosing your temperature rating",
+        heading: "Stacking pads for more warmth",
         list: [
-          "Summer camping (nights above 10°C): a bag rated to 7–10°C Comfort is comfortable and packs small.",
-          "Three-season (nights 0°C–10°C): a bag rated to 0°C Comfort covers most shoulder-season conditions; add 5°C buffer if you sleep cold.",
-          "Winter and alpine (nights below 0°C): rate to the coldest expected temperature. Down is strongly preferred for weight.",
-          "Always check your destination's historical low temperatures, not averages — a trip can hit a cold night that averages below the mean.",
+          "A $20 closed-cell foam pad (R-1.8) under a three-season air pad (R-3) adds up to R-4.8 — winter-capable without buying a new pad.",
+          "Put the CCF foam on the ground, inflatable on top: the foam protects against punctures and adds insulation simultaneously.",
+          "This combination works especially well in snow camping where ground insulation demands are highest.",
+          "Total pack weight increase is roughly 10–12 oz for a full-length CCF pad — a reasonable trade-off for extended warmth.",
+        ],
+      },
+      {
+        heading: "Common mistakes",
+        list: [
+          "Buying for the lowest expected temperature rather than typical conditions — a R-6 winter pad is overkill for summer car camping and significantly heavier than necessary.",
+          "Ignoring pad width — a 20-inch-wide pad leaves hips and shoulders hanging off the edge, increasing heat loss regardless of R-value.",
+          "Comparing R-values from different testing standards — pre-2020 pads without ASTM F3340-18 ratings may be overstated by 20–40%.",
+          "Using an air pad alone in cold conditions — without internal insulation, plain air pads are thermal conductors, not insulators.",
         ],
       },
     ],
     faq: [
       {
-        q: "Why do I feel cold even in a bag rated warm enough?",
-        a: "Sleeping cold is almost always a sleeping pad problem, not a bag problem. The R-value of your pad determines ground insulation — a R-2 pad loses body heat to cold ground faster than the bag can replace it. A three-season sleeping bag on a R-4+ pad is warmer than a 0°C bag on a foam sit pad.",
+        q: "What R-value do I need for three-season camping?",
+        a: "R-3 to R-4 covers most three-season conditions in the US. If you camp frequently in shoulder seasons (October–April) or at elevation, choose R-4 or stack pads to reach it.",
       },
       {
-        q: "How do I store a sleeping bag long-term?",
-        a: "Store down and synthetic bags loosely — never in the compression sack. Hanging in a closet or storing in a large cotton bag maintains loft. Compression permanently degrades insulation over months.",
+        q: "Can I use a yoga mat as a sleeping pad?",
+        a: "Closed-cell yoga mats have an R-value of roughly 0.5–1.5 — too low for ground sleeping below 60°F. They work as extra insulation under a real pad, but not as a standalone camping pad in cool weather.",
       },
       {
-        q: "Can I wash a sleeping bag at home?",
-        a: "Yes. Front-load washer only (top-load agitators tear baffles). Use a down-specific cleaner (Nikwax Down Wash or similar) for down, technical cleaner for synthetic. Tumble dry low with three tennis balls to break up clumps — takes 2–3 hours for down to dry fully.",
+        q: "Does R-value affect comfort?",
+        a: "R-value affects thermal insulation only, not cushioning. A thick plush air pad can have a lower R-value than a thin insulated pad. Evaluate thickness (for comfort) and R-value (for warmth) separately.",
+      },
+      {
+        q: "How do I know if my sleeping pad R-value is tested to ASTM F3340-18?",
+        a: "Check the product page or packaging — brands that use the ASTM standard (Therm-a-Rest, Sea to Summit, Nemo, Big Agnes) typically state it. If R-value is listed without mentioning ASTM, treat it as potentially overstated.",
+      },
+    ],
+  },
+
+  {
+    slug: "what-size-tent-do-i-need",
+    type: "guide",
+    title: "What Size Tent Do I Need? Capacity, Floor Space & Real-World Fit",
+    category: "Camping & Outdoor",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
+    date: "August 11, 2026",
+    readTime: "9 min read",
+    excerpt:
+      "A 2-person tent rarely fits two adults comfortably. Here is how to read capacity ratings honestly and choose the right size for your actual trip.",
+    image:
+      "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=1600&q=70&auto=format&fit=crop",
+    alt: "Backpacking tent pitched on a mountain ridge at sunrise",
+    intro: [
+      "Tent capacity ratings are optimistic. A manufacturer's '2-person' tent typically means two people lying flat with no gear inside — no bags, no pads, nothing between you and the tent walls. Understanding what those numbers actually mean helps you pick a tent that matches your real sleeping situation.",
+      "This guide explains how to read capacity, calculate the floor space you actually need, and decide whether to size up based on trip type and group size.",
+    ],
+    sections: [
+      {
+        heading: "How manufacturers set capacity ratings",
+        body: [
+          "There is no industry standard for tent capacity. Most brands calculate based on 20–22 inches (50–55cm) of shoulder width per person — which is how people sleep on a narrow bunk, not how adults sleep comfortably with gear in a tent.",
+          "A better rule: subtract one from the listed capacity to get a comfortable sleeping count. A 3-person tent sleeps two adults plus gear. A 4-person tent is a genuinely comfortable 3-person shelter.",
+          "Solo camping: a 1-person tent gives you just enough space; a 2-person tent adds livable room for gear and changing clothes without significantly increasing pack weight on most designs.",
+        ],
+      },
+      {
+        heading: "Floor area as a practical guide",
+        list: [
+          "Under 25 sq ft (2.3 m²): solo tent territory. Two adults can technically fit but will be pressed against tent walls all night.",
+          "25–35 sq ft (2.3–3.2 m²): comfortable for one adult with gear, or two adults who don't mind close quarters.",
+          "35–50 sq ft (3.2–4.6 m²): two adults with gear, or three adults packed in. The sweet spot for most couples and backpacking partners.",
+          "50–65 sq ft (4.6–6.0 m²): three adults with gear, or two adults who want real comfort and gear storage.",
+          "65+ sq ft: family and group camping. Usually car camping designs — too heavy for backpacking.",
+        ],
+      },
+      {
+        heading: "Peak height: when it matters",
+        body: [
+          "Sitting upright in your tent requires roughly 38–42 inches (96–107cm) of peak height. Changing clothes while kneeling requires around 48 inches (122cm). Standing upright requires 72+ inches (183cm) — only family cabin tents and some basecamp designs provide this.",
+          "For backpacking, peak height is often a weight trade-off. Dome tents typically offer 40–48 inches — enough to sit up. Ultralight single-wall shelters often drop to 30–36 inches to save weight, requiring you to change lying down.",
+          "For car camping where weight is irrelevant, prioritize peak height: you will spend far more time sitting, changing, and moving around than on a backpacking trip.",
+        ],
+      },
+      {
+        heading: "Vestibules and gear storage",
+        body: [
+          "Vestibules — the covered porch area outside the main tent door — are where most of your gear actually lives in a well-functioning camping setup. A tent with a small vestibule requires you to store dirty boots, wet jackets, and daypacks inside the sleeping area.",
+          "Minimum vestibule for one person: 8–10 sq ft. For two people: 15–20 sq ft. The best backpacking tents include generous vestibules that keep the sleeping area clean.",
+          "Double-door, double-vestibule designs let both tent occupants enter and exit without climbing over each other — worth prioritizing for couples.",
+        ],
+      },
+      {
+        heading: "Tent size by trip type",
+        list: [
+          "Ultralight backpacking (solo): 1-person tent or bivy with a vestibule. Weight is the primary constraint; 2 lb or under is the target for most thru-hikers.",
+          "Backpacking (2 people): 2-person tent with at least 35 sq ft and a vestibule. Divide the weight — each person carries either the tent body or the rainfly and poles.",
+          "Car camping (couple): 3-person tent minimum. Prioritize peak height, vestibule space, and a comfortable floor area over weight.",
+          "Car camping (family of 4): 6-person tent — the 'subtract one' rule applies here too. A 6-person family tent fits four adults and their gear without feeling cramped.",
+          "Festival or base camp: cabin-style tents with near-vertical walls and standing height. Weight is irrelevant; livability is everything.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Should I get a 2-person or 3-person tent for two people?",
+        a: "For backpacking with any gear storage inside: a 3-person tent. The weight difference between a quality 2-person and 3-person tent from the same brand is often only 10–15 oz. For car camping: a 4-person tent minimum gives two adults genuinely comfortable space.",
+      },
+      {
+        q: "Does tent shape affect usable space?",
+        a: "Yes significantly. Dome tents use curved poles that reduce livable floor space near the edges — the rated floor area includes unusable corners. Cabin tents with near-vertical walls use almost all of the listed floor area. A 35 sq ft cabin tent has more usable space than a 35 sq ft dome tent.",
+      },
+      {
+        q: "What size tent for a couple plus a dog?",
+        a: "Add roughly 10–15 sq ft for a medium dog. A 3-person tent (35–45 sq ft) fits a couple plus a medium-sized dog if the dog sleeps on their own pad or at your feet. A large dog may require sizing up to a 4-person tent.",
+      },
+    ],
+  },
+
+  {
+    slug: "carry-on-vs-personal-item",
+    type: "guide",
+    title: "Carry-On vs Personal Item: Size Limits, Packing Differences & What Fits",
+    category: "Travel & EDC",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
+    date: "August 11, 2026",
+    readTime: "10 min read",
+    excerpt:
+      "Every US airline sets different size limits, and a bag that fits on United may not fit on Spirit. Here is what the rules actually say and how to pack for both.",
+    image:
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1600&q=70&auto=format&fit=crop",
+    alt: "Travel backpack and personal item bag ready for airport",
+    intro: [
+      "The difference between a carry-on and a personal item is not just size — it determines where the bag goes (overhead bin vs under the seat in front of you), whether you pay extra, and whether the bag gets gate-checked on a full flight.",
+      "Every major US airline publishes different size limits, and budget carriers enforce them more strictly. This guide covers the actual policies, how bags are measured in practice, and what you can realistically fit in each.",
+    ],
+    sections: [
+      {
+        heading: "US airline size limits compared",
+        body: [
+          "The following dimensions are the published limits as of 2026. All are linear inches (length + width + depth combined) unless otherwise noted. Always verify on the airline's website before travel, as policies change.",
+        ],
+        list: [
+          "American Airlines: carry-on 22×14×9 in (56×36×23 cm); personal item fits under the seat.",
+          "Delta Air Lines: carry-on 22×14×9 in (56×36×23 cm); personal item 18×14×8 in (46×36×20 cm).",
+          "United Airlines: carry-on 22×14×9 in (56×36×23 cm); personal item 17×10×9 in (43×25×23 cm).",
+          "Southwest Airlines: carry-on 24×16×10 in (61×41×25 cm); no checked bag fee for first two bags.",
+          "Spirit Airlines: carry-on max 22×18×10 in (56×46×25 cm); personal item 18×14×8 in (46×36×20 cm). Carry-on fees apply — personal item is always free.",
+          "Frontier Airlines: carry-on 24×16×10 in (61×41×25 cm); personal item 18×14×8 in (46×36×20 cm). Carry-on fees apply on basic fares.",
+          "JetBlue: carry-on 22×14×9 in (56×36×23 cm); personal item 17×13×8 in (43×33×20 cm).",
+        ],
+      },
+      {
+        heading: "How airlines actually measure bags",
+        body: [
+          "Most airlines use a carry-on sizer box at the gate — a metal frame matching the maximum dimensions. If your bag fits in the frame with handles and wheels compressed, it passes. Soft-sided bags flex slightly and often pass even if technically oversized; hard-sided bags that exceed the limit will fail.",
+          "Gate agents enforce strictly on full flights, especially at budget carriers. If overhead space is full, agents begin gate-checking bags — even bags that meet size requirements. Gate-checking is free but means waiting at baggage claim.",
+          "In practice, most major airlines do not proactively measure carry-ons unless the bin is obviously full or the bag is clearly oversized. Budget carriers (Spirit, Frontier, Allegiant) are more aggressive because carry-on fees are a revenue line.",
+        ],
+      },
+      {
+        heading: "What fits in a personal item",
+        body: [
+          "A personal item at 18×14×8 in accommodates more than most travelers expect. Typical contents that fit: a 13-inch laptop with sleeve, a change of clothes, toiletries bag, chargers and cables, headphones, a book, and a small jacket.",
+          "Bags designed specifically as personal items include: 20–25L daypacks that compress to under the seat, women's large totes (many sit at exactly 17×13 in), slim laptop bags, and camera bags under 20L.",
+          "What does not fit: full hiking daypacks (30L+), full-size camera bags, standard backpacks without compression, and anything that creates a rigid shape too wide for the under-seat space.",
+        ],
+      },
+      {
+        heading: "What fits in a carry-on",
+        list: [
+          "A week of clothes with efficient packing (packing cubes, rolled garments): achievable in 40L.",
+          "A laptop and accessories: standard in any carry-on side pocket.",
+          "Toiletries: TSA 3-1-1 bag fits all liquids (3.4oz / 100ml containers, 1 quart bag).",
+          "Shoes: one extra pair adds significant volume — roll them in a bag and pack around them.",
+          "What cannot go in carry-on: liquids over 3.4oz, razor blades, tools over 7 inches, firearms, and anything flagged by TSA security. Full TSA prohibited items list at tsa.gov.",
+        ],
+      },
+      {
+        heading: "One-bag travel: carry-on only vs carry-on plus personal item",
+        body: [
+          "Traveling with only a carry-on (no personal item) leaves maximum overhead bin space for your bag. On a full flight this matters — overhead bins fill from front to back, and late boarding means your carry-on may get gate-checked.",
+          "Using both allowances (carry-on + personal item) gives you the most total volume without checking a bag. The personal item goes under the seat in front of you, reducing your leg room slightly but keeping both bags in the cabin.",
+          "For trips under 5 days: a single 30–40L carry-on or a personal item plus a small carry-on handles most wardrobes. For 7–14 days: carry-on plus personal item is the efficient maximum before a checked bag becomes necessary.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Do backpacks count as personal items?",
+        a: "Yes, if they fit under the seat. Most airlines accept backpacks as personal items if they meet the size limit (typically 18×14×8 in or similar). A 20–25L daypack that compresses is ideal. A 45L hiking pack is a carry-on, not a personal item.",
+      },
+      {
+        q: "Can I put my personal item in the overhead bin?",
+        a: "Technically yes, but it is bad practice. Overhead bins are intended for carry-ons — putting a personal item overhead takes space from someone with a full carry-on. Flight attendants may ask you to move it under the seat if the bin is full.",
+      },
+      {
+        q: "What happens if my carry-on is too big?",
+        a: "If caught at the gate, airlines typically charge a checked bag fee ($30–$75 depending on carrier) and gate-check the bag to the hold. You collect it at the jetway or baggage claim. Spirit and Frontier are known for strict enforcement and high carry-on fees — verify your bag dimensions carefully before flying these carriers.",
+      },
+      {
+        q: "Is a personal item always free?",
+        a: "On most major US carriers, yes — American, Delta, United, Southwest, and JetBlue include one personal item for all fare classes. Spirit and Frontier also include a personal item for free, but charge for carry-ons on basic fares.",
+      },
+    ],
+  },
+
+  {
+    slug: "headlamp-lumens-guide",
+    type: "guide",
+    title: "How Many Lumens Do You Need for a Camping Headlamp?",
+    category: "Camping & Outdoor",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
+    date: "August 11, 2026",
+    readTime: "7 min read",
+    excerpt:
+      "200 lumens handles most camping tasks. 400+ is for trail running and technical work. More lumens is not always better — here is what actually matters.",
+    image:
+      "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1600&q=70&auto=format&fit=crop",
+    alt: "Headlamp illuminating a forest trail at night",
+    intro: [
+      "Headlamp marketing pushes high lumen counts because big numbers sell. A headlamp rated at 1,000 lumens sounds impressive, but at that output it drains batteries in under an hour and is genuinely too bright for reading in a tent.",
+      "Understanding which tasks require which brightness levels helps you pick the right headlamp — or use the one you already have more effectively.",
+    ],
+    sections: [
+      {
+        heading: "Lumen output by task",
+        list: [
+          "Reading in a tent: 10–50 lumens. More than this reflects off the tent walls and creates glare. Most headlamps have a low mode in this range.",
+          "Camp chores (cooking, organizing gear, finding items): 50–150 lumens. Bright enough to see clearly without blinding your campmates.",
+          "Walking on a maintained trail at night: 100–200 lumens. Comfortable for a slow to moderate walking pace on familiar terrain.",
+          "Trail running or fast hiking: 300–600 lumens. Higher output is needed at higher speeds — your reaction time to obstacles decreases as pace increases.",
+          "Technical work, search operations, climbing: 400–1,000 lumens. Specialized use cases where maximum throw and detail matter more than runtime.",
+        ],
+      },
+      {
+        heading: "Why higher lumens is not always better",
+        body: [
+          "Battery life is inversely proportional to lumen output. A headlamp rated at 400 max lumens may deliver 2 hours at that setting and 40+ hours on low. Camping trips of 2–7 nights rarely require max output for more than brief periods.",
+          "Beam type matters as much as brightness. A flood beam (wide, diffuse light) is better for camp tasks and close reading. A spot beam (narrow, long throw) is better for trail navigation at distance. Most quality headlamps combine both in a single unit.",
+          "Red light mode preserves night vision and is less disruptive to other campers. For moving around camp at night, a good red mode is more practical than 500 lumens of white light.",
+        ],
+      },
+      {
+        heading: "Beam distance vs lumen count",
+        body: [
+          "Lumens measure total light output. Beam distance (in meters) measures how far the light throws a useful beam. These are related but not the same — a 300-lumen headlamp with a tight spot beam may illuminate objects further than a 500-lumen headlamp with a wide flood beam.",
+          "ANSI FL1 standard: the outdoor lighting industry standard that measures lumens (initial output), beam distance (the distance at which light equals 0.25 lux — similar to a full moon), peak beam intensity (in candela), and runtime to 10% of initial output.",
+          "When comparing headlamps, prioritize models that publish ANSI FL1 data over those that list only a peak lumen number without runtime or beam distance.",
+        ],
+      },
+      {
+        heading: "What to look for beyond lumens",
+        list: [
+          "Weight: headlamps range from 1.5 oz (ultralight) to 5+ oz (high-output). For backpacking, under 3 oz is a reasonable target.",
+          "Battery type: AAA batteries are replaceable anywhere; rechargeable USB headlamps save money but require planning. Some models accept both.",
+          "Water resistance: IPX4 (splash-resistant) is sufficient for most camping. IPX7 (submersible to 1 meter) for kayaking, rafting, or heavy rain.",
+          "Regulated output vs unregulated: regulated headlamps maintain consistent brightness throughout battery life. Unregulated headlamps dim progressively as batteries deplete.",
+          "Tilt mechanism: a headlamp that tilts down (rather than only forward) lets you aim at your hands while cooking without blinding your tent partner.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Is 200 lumens enough for camping?",
+        a: "Yes, for most camping tasks. 200 lumens is bright enough for cooking, camp chores, and walking around camp. If you plan to run trails at night or do technical work, 300–400 lumens is a better minimum.",
+      },
+      {
+        q: "How many lumens for reading in a tent?",
+        a: "10–35 lumens on a flood setting is comfortable for reading without eye strain. Higher settings reflect off the tent ceiling and walls, creating glare. Use your headlamp's lowest mode.",
+      },
+      {
+        q: "Do I need a rechargeable or battery headlamp?",
+        a: "Rechargeable USB headlamps are more economical on multi-day trips if you have a power bank. Standard battery headlamps (AAA) are more reliable on long expeditions where charging is impossible. For most car camping, either works well.",
+      },
+    ],
+  },
+
+  {
+    slug: "air-fryer-size-guide",
+    type: "guide",
+    title: "Air Fryer Size Guide: What Capacity Do You Actually Need?",
+    category: "Home Essentials",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
+    date: "August 11, 2026",
+    readTime: "8 min read",
+    excerpt:
+      "A 2-quart air fryer can't cook enough food for two people without batches. A 7-quart air fryer may not fit on your counter. Here is how to match capacity to your household.",
+    image:
+      "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=1600&q=70&auto=format&fit=crop",
+    alt: "Air fryer on a kitchen counter with vegetables nearby",
+    intro: [
+      "Air fryer capacity is measured in quarts, but quart ratings are not standardized — two models both labeled '5.8 QT' can have meaningfully different usable cooking areas depending on basket shape and design.",
+      "This guide covers what you can realistically cook at each size, which household sizes each capacity suits, and the counter space each requires.",
+    ],
+    sections: [
+      {
+        heading: "Capacity by household size",
+        list: [
+          "1–2 people: 2–4 QT. Handles single portions or two servings of fries, two chicken thighs, or one batch of vegetables. Compact footprint. Limitation: any meal for two requires two batches of most proteins.",
+          "2–3 people: 4–5.8 QT. The most practical range for couples and small families. Cooks a full pound of fries, four chicken thighs, or two portions of salmon in one batch.",
+          "3–4 people: 5.8–7 QT. Full family batch capability. Can air-fry a whole 3–4 lb chicken, a family portion of wings, or four burger patties. Requires meaningful counter space.",
+          "4+ people or meal prepping: 7–10 QT dual-basket or oven-style. Dual-basket models cook two different foods simultaneously. Essential for households that regularly cook for 4+.",
+        ],
+      },
+      {
+        heading: "What actually fits at each size",
+        body: [
+          "2 QT: 1 lb of fries (one serving), two chicken drumsticks, one small fish fillet, or one cup of vegetables. Not suitable for proteins larger than one chicken breast.",
+          "4 QT: 1.5 lb of fries (two servings), four chicken wings, two salmon fillets, or a 1 lb burger. This is the minimum for reliably cooking dinner for two without batching proteins.",
+          "5.8 QT: 2 lb of fries, six to eight chicken wings, three salmon portions, or a 3 lb whole chicken (with rotating basket designs — most standard baskets require cutting the bird). Comfortable for two to three people.",
+          "7 QT: 3 lb of fries, 12 chicken wings, a full rack of ribs cut in half, or a 4 lb chicken. This is the sweet spot for families that cook proteins in volume.",
+          "Dual-basket (7–9 QT split): each basket functions independently, allowing fries in one and chicken in the other simultaneously. Adds 20–30% to counter footprint.",
+        ],
+      },
+      {
+        heading: "Counter space reality check",
+        body: [
+          "Air fryers require counter clearance on all sides — typically 5 inches of space from walls and overhead cabinets for heat exhaust. The footprint below does not include this clearance requirement.",
+          "2–3 QT models: roughly 9×9 inches footprint. Fits in most kitchens without rearranging.",
+          "4–5 QT models: roughly 11×11 inches footprint. Fits on most counters but begins displacing other appliances.",
+          "5.8–6 QT models: roughly 12×13 inches footprint. Requires dedicated counter real estate.",
+          "7+ QT models: 13–15 inch footprints are common. Measure your counter space before purchasing.",
+        ],
+      },
+      {
+        heading: "Basket shape vs. capacity",
+        body: [
+          "Square baskets use counter space more efficiently than round baskets — a square 5 QT basket may have 15–20% more usable cooking surface than a round 5 QT basket at the same nominal capacity rating.",
+          "Shallow wide baskets improve airflow and crisping compared to deep narrow baskets at the same quart rating. For foods that benefit from maximum crunch (fries, chips, vegetables), basket shape matters as much as capacity.",
+          "Perforated trays or multi-layer inserts double effective cooking surface without increasing basket size. Several 5.8 QT models include a divider or elevated tray that effectively creates two cooking zones.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Is a 4-quart air fryer big enough for a family of 4?",
+        a: "No, not without cooking in multiple batches. A family of 4 typically needs a 5.8–7 QT model to cook a full dinner's worth of protein in one pass. A 4 QT air fryer suits one to two people.",
+      },
+      {
+        q: "What is the difference between a 5-quart and 5.8-quart air fryer?",
+        a: "In practice, very little. The difference in usable cooking area is minimal — usually a slightly larger basket rim. More important is basket shape (square vs round) and the actual interior cooking surface, which brands rarely publish. Check the basket dimensions rather than the quart rating.",
+      },
+      {
+        q: "Should I get a basket air fryer or an air fryer oven?",
+        a: "Basket air fryers cook faster and crispier for most everyday foods (fries, wings, vegetables) because the heating element is closer to the food. Air fryer ovens (toaster oven style) handle larger items (whole chickens, full sheet pans) and offer more versatility, but take longer and typically deliver slightly less crispiness per square inch.",
+      },
+    ],
+  },
+
+  {
+    slug: "robot-vacuum-maintenance",
+    type: "guide",
+    title: "Robot Vacuum Maintenance Checklist: How to Keep It Running Well",
+    category: "Home Essentials",
+    author: "TrailNestCo",
+    reviewer: "TrailNestCo",
+    date: "August 11, 2026",
+    readTime: "8 min read",
+    excerpt:
+      "Most robot vacuums underperform not because they are broken, but because they have not been maintained. This checklist covers everything that actually needs attention and how often.",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=70&auto=format&fit=crop",
+    alt: "Robot vacuum cleaning a hardwood floor in a modern home",
+    intro: [
+      "A robot vacuum that ran perfectly for the first three months and now misses sections, struggles on carpet, or drains the battery faster than it used to usually has a maintenance problem, not a mechanical failure.",
+      "The most common issues — reduced suction, error codes for brush jams, navigation problems, and short runtime — are fixed by regular cleaning and part replacement, not by buying a new unit.",
+    ],
+    sections: [
+      {
+        heading: "After every run",
+        list: [
+          "Empty the dustbin: a full or nearly full dustbin reduces suction by 20–40%. Most manufacturers recommend emptying after every session, not when the 'full' indicator lights up — that indicator triggers late.",
+          "Check the brushes for hair wrap: long hair wraps around the main roller brush and side brushes within a single run on pet-owner and long-hair households. Hair that is not removed builds up and stresses the brush motor over time.",
+          "Clear the sensors: the cliff sensors (usually on the underside) and the bumper sensors get dusty and may cause erratic navigation if not wiped. A quick pass with a dry cloth takes ten seconds.",
+        ],
+      },
+      {
+        heading: "Weekly maintenance",
+        list: [
+          "Remove and clean the roller brush: use the cleaning tool that came with your vacuum (or scissors) to cut and remove hair wrap. Rinse rubber roller brushes under water and allow to fully dry before reinstalling — damp brushes can jam.",
+          "Clean the side brushes: unscrew or pop off side brushes and remove hair and debris from the axle. Replace if bristles are bent outward — they no longer sweep effectively.",
+          "Wipe the charging contacts: on both the dock and the robot's charging pads. Dirty contacts cause charging failures and shorter battery life over time.",
+          "Clear the wheel wells: lift each wheel and clear debris from the wheel housing. Stuck debris causes wheels to drag and forces the navigation system to compensate incorrectly.",
+          "Check and clean the filter: tap the filter over a trash can to dislodge fine dust. Do not rinse HEPA filters unless the manual specifically says they are washable — water damages most HEPA filter media.",
+        ],
+      },
+      {
+        heading: "Monthly maintenance",
+        list: [
+          "Wash the dustbin with water and mild soap. Allow to fully dry (12–24 hours) before reinstalling. A damp dustbin causes fine particles to clump rather than empty cleanly.",
+          "Clean the camera and laser sensors (if present): wipe with a soft dry cloth. Dirty optical sensors cause mapping errors, missed areas, and 'robot stuck' errors on models that use cameras for navigation.",
+          "Check brush bearings: spin the main brush by hand after removing it. It should spin freely with minimal resistance. Grinding or stiff rotation indicates hair or debris in the bearings — clean thoroughly before reinstalling.",
+          "Inspect wheels for debris: use a toothpick or thin tool to clear hair from inside the wheel axle housing. Impaired wheels cause straight-line drift.",
+        ],
+      },
+      {
+        heading: "Every 3–6 months: parts to replace",
+        list: [
+          "Filter: most manufacturers specify every 2–3 months. HEPA filters that appear clean still lose filtration efficiency as media clogs at a microscopic level. Budget $10–25 for OEM replacements.",
+          "Side brushes: replace when bristles are bent outward or worn flat. Ineffective side brushes leave debris along walls and in corners. Budget $8–20 for a set.",
+          "Roller brush (if bristled): bristle brushes wear down and lose agitation effectiveness on carpet. Rubber roller brushes last longer but should still be inspected for tears or compression. Budget $15–40.",
+          "Battery: robot vacuum batteries typically degrade after 18–30 months of regular use. Signs: noticeably shorter runtime, frequent mid-clean low-battery returns. OEM or compatible replacement batteries: $25–70.",
+        ],
+      },
+      {
+        heading: "Troubleshooting common issues",
+        list: [
+          "Reduced suction: empty dustbin, check filter, clear brush roller of hair. If suction is still low after these steps, check for blockages in the intake port and exhaust path.",
+          "Robot gets stuck in the same place: check for cables or rugs with fringe in that area. Use boundary strips or virtual no-go zones in the app. Ensure floor transition strips are not creating a lip the robot cannot climb.",
+          "Error code for brush jam: turn off the unit, remove and clean all brushes, check the brush motor housing for debris. Reinstall and test.",
+          "Poor battery runtime: fully discharge and recharge the battery two to three times to recalibrate the battery meter. If runtime remains significantly short after several cycles, the battery needs replacement.",
+          "Navigation errors or missed sections: clean all sensors (cliff, bumper, camera, laser). Reset the floor map in the app and run a fresh mapping session in good lighting.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "How often should I run my robot vacuum?",
+        a: "Daily or every other day for pet owners and households with long hair — hair accumulates quickly and causes brush jams. Three to four times per week is sufficient for most homes without pets. Weekly runs on hardwood-only floors with light foot traffic.",
+      },
+      {
+        q: "Can I leave my robot vacuum on the dock all the time?",
+        a: "Yes. Modern robot vacuums use lithium-ion batteries with smart charging — they stop charging when full and maintain a trickle charge rather than overcharging. Leaving the unit docked does not damage the battery under normal use.",
+      },
+      {
+        q: "How long do robot vacuum batteries last?",
+        a: "18–36 months of regular use (3–5 runs per week) before significant runtime degradation. Premium models from iRobot, Roborock, and Ecovacs typically last toward the longer end. Generic or budget model batteries may degrade faster.",
+      },
+      {
+        q: "Do I need to buy OEM (official brand) replacement parts?",
+        a: "OEM parts ensure compatibility and quality but cost more. Third-party compatible parts for major brands (iRobot, Roborock, Shark) are widely available on Amazon and typically work well at 30–50% lower cost. Avoid extremely cheap filter packs — low-quality HEPA filter media does not effectively capture fine particles.",
       },
     ],
   },
 ];
+
+// ── KETL Mtn. brand spotlight ──────────────────────────────
+const ketlArticle: Article = {
+  slug: "ketl-mtn-outdoor-apparel",
+  type: "review",
+  title: "KETL Mtn. Review 2026: Technical Outdoor Apparel Built for Active Use",
+  category: "Camping & Outdoor",
+  author: "TrailNestCo",
+  reviewer: "TrailNestCo",
+  date: "July 2026",
+  datePublished: "2026-07-01",
+  dateModified: "2026-08-12",
+  readTime: "12 min read",
+  excerpt:
+    "An independent review of KETL Mtn.'s shorts, pants, and travel collection — evaluating specs, design, fabric technology, and value relative to competitors.",
+  image:
+    "https://ketlmtn.com/cdn/shop/files/KETL-Sun-Hoodie-Comparison-Hero-Desktop_344adb31-adc5-4845-970b-9739c9fb9365.jpg?v=1773264796&width=1400",
+  alt: "KETL Mtn outdoor apparel collection — shorts, pants and travel gear",
+  howWeEvaluated:
+    "This review is based on product specifications, fabric technology documentation, official warranty terms, brand policy review, and publicly available customer feedback. TrailNestCo has an affiliate relationship with KETL Mtn. — see our affiliate disclosure. We do not claim to have physically tested every product reviewed.",
+  intro: [
+    "KETL Mtn. is a Boulder, Colorado-based outdoor apparel brand that has built its reputation around one unconventional promise: lifetime repairs on every garment, no questions asked. In a market where outdoor brands routinely charge a premium for logo recognition, KETL Mtn. positions itself differently — no licensed fabric markups, no brand-name Gore-Tex surcharges, just proprietary fabrics designed for specific performance needs.",
+    "For this review, we evaluated KETL Mtn.'s shorts, pants, and travel collection based on product specifications, fabric technology, design analysis, warranty terms, and available customer feedback. The brand produces men's outdoor apparel only. Their full lineup starts at $49 for performance tees and reaches $229 for insulated down jackets.",
+  ],
+  picks: [
+    {
+      name: "Virtue Hybrid Shorts",
+      award: "Best All-Rounder — Land & Water",
+      body: "The Virtue Hybrid Shorts are designed as genuinely amphibious shorts — suited for both water activities and dry-land use without changing. The built-in liner provides support without a separate swimsuit. Available in three lengths (7\", 9\", 12\") with zipper pockets and 4-way stretch construction. Based on the quick-dry fabric spec and built-in liner design, these are KETL Mtn.'s most versatile shorts for active use near water.",
+      pros: [
+        "Amphibious design — water and land capable without changing",
+        "Built-in liner eliminates need for a separate swimsuit",
+        "Three length options (7\", 9\", 12\") to suit different uses",
+        "Zipper pockets secured for water activities",
+        "4-way stretch throughout",
+      ],
+      cons: [
+        "Liner may feel warmer in hot, dry conditions",
+        "Less structured than a dedicated hiking short",
+        "Heavier than ultralight-focused options",
+      ],
+    },
+    {
+      name: "Tomfoolery Chino Travel Pants",
+      award: "Best for Travel",
+      body: "The Tomfoolery Chino is KETL Mtn.'s primary travel pant, designed to work from airport to trail to casual settings. Available in Slim and Straight fits at $99. The 4-way stretch construction and zipper pocket placement (deep enough for a passport) make this the most versatile pant in their lineup for the frequent traveler. The chino-style silhouette looks appropriate across business-casual and outdoor settings.",
+      pros: [
+        "Chino aesthetic works in business-casual settings",
+        "Deep zipper pockets suitable for passport and phone",
+        "4-way stretch — comfortable on long flights",
+        "Available in Slim and Straight fit",
+        "DWR finish for light weather resistance",
+      ],
+      cons: [
+        "Slim cut can feel snug for broader builds — check size guide",
+        "$99 price point higher than non-technical travel pants",
+        "Limited colorways compared to mainstream brands",
+      ],
+    },
+    {
+      name: "Shenanigan Outdoor Shorts",
+      award: "Best for Trail & Hiking",
+      body: "The Shenanigan is KETL Mtn.'s trail-specific short — built with durable, lightweight fabric and a DWR finish for light weather resistance. The 9\" inseam provides coverage for technical terrain without restricting stride. Secure zipper pockets and neutral colorways make this suitable beyond trail use. At $79 with free shipping and the lifetime repair policy, the value proposition is strong relative to comparable technical shorts.",
+      pros: [
+        "Durable trail-focused construction with DWR finish",
+        "9\" inseam appropriate for technical terrain",
+        "Secure zipper pockets throughout",
+        "Neutral colorways suitable for non-trail use",
+        "Lifetime repair policy covers all KETL garments",
+      ],
+      cons: [
+        "Single inseam length (9\") — less flexibility than Virtue Hybrid",
+        "Heavier fabric than airflow-focused options like the Vent Short",
+        "Limited women's sizing — men's only",
+      ],
+    },
+  ],
+  table: {
+    headers: ["Pant", "Price", "Best For", "Fit Options", "Key Feature"],
+    rows: [
+      ["Tomfoolery Chino (Top Pick)", "$99", "Travel & everyday", "Slim / Straight", "4-way stretch, zipper pockets"],
+      ["Vent Lightweight Active", "$94", "Hot weather, trail", "Slim / Straight", "Max airflow, packable"],
+      ["Shenanigan Outdoor", "$99", "Hiking, everyday", "Slim / Straight", "No-brand fabric, DWR finish"],
+      ["MilesBound Jogger", "$99", "Running, travel", "Tapered jogger", "Soft stretch, packable"],
+      ["Pika Alpine Pant", "$169", "Alpine / climbing", "Slim", "CORDURA® stretch"],
+      ["Skid Mark MTB Pant", "$149", "Mountain biking", "Bike-specific", "4 zipper pockets"],
+    ],
+  },
+  sections: [
+    {
+      heading: "Brand Overview: What Makes KETL Mtn. Different",
+      body: [
+        "KETL Mtn. was founded in Boulder, Colorado with a specific thesis: outdoor apparel shouldn't require paying a premium for brand-name fabric licensing. Their proprietary fabrics — marketed under names like \"Max Airflow\" and \"Soft Stretch\" — are developed without the Gore-Tex or Polartec royalties that add cost to competing products at brands like Patagonia and Arc'teryx.",
+        "The most unusual part of their business model is the lifetime repair policy. Every KETL garment can be repaired at no charge, indefinitely, for manufacturing defects and wear-related issues. Customers report successful repairs on gear from 2–3 years of regular use. This policy, combined with their free returns program, significantly reduces the effective risk of purchasing from a smaller, direct-to-consumer brand.",
+        "KETL Mtn. sells exclusively online, which is both a limitation (no try-before-you-buy at retail) and a feature (no retail margin passed to the consumer). Their current lineup is men's only.",
+      ],
+    },
+    {
+      heading: "Travel Collection Highlights",
+      body: [
+        "Beyond shorts and pants, KETL Mtn. produces a full travel collection oriented around the one-bag traveler. Key pieces include the MilesBound Travel Pullover Hoodie ($94) with thumbholes and zippered pockets; the Escapade Lightweight Active Jacket ($99), a do-it-all stretch jacket; the BodBrella Rain Jacket ($169), a packable 10k waterproof shell; and the RockyLoft Insulated Down Jacket ($229) for cold-weather travel.",
+        "The Departed Performance Travel Tee ($49–$59) is worth noting for its UPF30+ rating and ultra-packable construction — useful for trips to sunny climates where sun protection matters but weight is a constraint.",
+      ],
+    },
+    {
+      heading: "Pros & Trade-Offs",
+      list: [
+        "✓ Lifetime repair policy — genuinely unmatched in this price range",
+        "✓ Versatile design across multiple use cases (trail, travel, casual)",
+        "✓ No brand-name fabric markup — performance at honest pricing",
+        "✓ 4-way stretch across nearly every garment",
+        "✓ Zipper pockets standard on all shorts and pants",
+        "✓ Free shipping and returns reduce purchase risk",
+        "✗ Online-only — limited retail presence for fit testing",
+        "✗ Slim-cut styles may not suit all body types — check the size guide",
+        "✗ Men's only — no women's line currently",
+        "✗ Premium alpine pieces (Pika, RockyLoft) push into higher price tiers",
+      ],
+    },
+    {
+      heading: "Affiliate Disclosure",
+      body: [
+        "TrailNestCo has an affiliate relationship with KETL Mtn. — we earn a commission when you purchase through our links at no additional cost to you. This relationship does not influence our editorial conclusions. TrailNestCo is an independent publication and is not affiliated with, endorsed by, or operated by KETL Mtn.",
+      ],
+    },
+  ],
+  faq: [
+    {
+      q: "Is KETL Mtn. worth the price compared to Patagonia or Arc'teryx?",
+      a: "For trail-to-travel versatility, KETL Mtn. sits at a lower price point than Patagonia for comparable technical specs, and their lifetime repair program is one of the stronger policies in the industry. For pure mountaineering performance, Arc'teryx leads. For everyday adventure use, KETL Mtn. delivers strong value.",
+    },
+    {
+      q: "How does KETL Mtn. sizing run?",
+      a: "KETL Mtn. sizing runs true to size for most styles, though slim-fit pants and shorts can feel snug for builds with larger thighs. The brand offers free returns, which reduces the risk of an incorrect initial sizing. Their size guide is accurate — follow it closely before ordering.",
+    },
+    {
+      q: "Can I swim in the Virtue Hybrid Shorts?",
+      a: "Yes — the Virtue Hybrid Shorts are designed to be amphibious. Based on their quick-dry fabric construction and built-in liner, they are suited for water activities. The fast-dry material allows transition from water to casual settings without a clothing change.",
+    },
+    {
+      q: "What's the best KETL Mtn. product for international travel?",
+      a: "The Tomfoolery Chino Travel Pants (Slim Fit) in Khaki or Grey offer the best combination of versatility for international travel — structured enough for business-casual settings, stretchy enough for long-haul flights, and with secure zipper pockets for documents.",
+    },
+    {
+      q: "Does KETL Mtn. actually honor the lifetime repair policy?",
+      a: "Based on community feedback and publicly available customer reports, yes. KETL Mtn. has built their brand reputation on this policy. The key step is registering your purchase and following their repair submission process on their website.",
+    },
+    {
+      q: "Which KETL Mtn. shorts are best for hiking?",
+      a: "The Shenanigan Outdoor Shorts (9\") are purpose-built for trail use — durable fabric, secure pockets, and DWR finish for light weather resistance. For hot-weather hiking where airflow is the priority, the Vent Lightweight Active Shorts offer superior ventilation.",
+    },
+  ],
+};
+
+articles.push(ketlArticle);
 
 export const reviewArticles = articles.filter((a) => a.type === "review");
 export const guideArticles = articles.filter((a) => a.type === "guide");

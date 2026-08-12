@@ -4,6 +4,7 @@ import { site } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Affiliate Disclosure",
+  alternates: { canonical: "https://www.trailnestco.com/affiliate-disclosure/" },
   description: "How TrailNestCo earns money, in plain language.",
 };
 
@@ -11,9 +12,14 @@ export default function AffiliateDisclosurePage() {
   return (
     <ProsePage kicker="Disclosure" title="Affiliate Disclosure" updated="2026">
       <p>
-        {site.name} is reader-supported. Some links on this site are affiliate
-        links: if you click one and make a qualifying purchase, we may earn a
-        commission at no additional cost to you.
+        TrailNestCo is owned and operated by Arrow Group LLC and may earn
+        commissions from qualifying purchases made through affiliate links on
+        this site, at no additional cost to you.
+      </p>
+      <p>
+        {site.name} is reader-supported. When you click an affiliate link and
+        make a qualifying purchase, we earn a small commission — the price you
+        pay is never affected.
       </p>
       <h2>What this means in practice</h2>
       <p>
@@ -25,7 +31,7 @@ export default function AffiliateDisclosurePage() {
       <h2>What never changes</h2>
       <ul>
         <li>
-          Our rankings and ratings, which are determined by testing — never by
+          Our rankings and ratings, which are determined by independent research — never by
           commission rates.
         </li>
         <li>

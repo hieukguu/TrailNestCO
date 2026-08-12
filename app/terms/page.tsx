@@ -4,6 +4,7 @@ import { site } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
+  alternates: { canonical: "https://www.trailnestco.com/terms/" },
   description: "Terms governing use of the TrailNestCo website.",
 };
 

@@ -15,7 +15,20 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = getArticle(slug);
   if (!article) return {};
-  return { title: article.title, description: article.excerpt };
+  const canonical = `https://www.trailnestco.com/guides/${slug}/`;
+  return {
+    title: article.title,
+    description: article.excerpt,
+    alternates: { canonical },
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url: canonical,
+      type: "article",
+      images: [{ url: article.image, alt: article.alt }],
+    },
+    twitter: { card: "summary_large_image", title: article.title, description: article.excerpt },
+  };
 }
 
 export default async function GuideArticleRoute({

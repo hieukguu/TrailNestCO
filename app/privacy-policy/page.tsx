@@ -5,6 +5,7 @@ import { site } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "What data TrailNestCo collects and how it is used.",
+  alternates: { canonical: "https://www.trailnestco.com/privacy-policy/" },
 };
 
 export default function PrivacyPolicyPage() {
@@ -41,7 +42,7 @@ export default function PrivacyPolicyPage() {
       </p>
       <h2>Contact</h2>
       <p>
-        {site.company}, {site.address} · {site.phone}
+        {site.company}, {site.address}
       </p>
     </ProsePage>
   );

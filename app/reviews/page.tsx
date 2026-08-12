@@ -8,7 +8,13 @@ import { categories, featuredGuide, reviews } from "@/lib/data";
 export const metadata: Metadata = {
   title: "All Reviews & Top Picks",
   description:
-    "Every TrailNestCo review, built on hands-on testing across camping & outdoor, home essentials, and travel & EDC.",
+    "Every TrailNestCo review — independent product research across camping & outdoor, home essentials, and travel & EDC.",
+  alternates: { canonical: "https://www.trailnestco.com/reviews/" },
+  openGraph: {
+    title: "All Reviews & Top Picks — TrailNestCo",
+    description: "Independent product research across camping & outdoor, home essentials, and travel & EDC.",
+    url: "https://www.trailnestco.com/reviews/",
+  },
 };
 
 export default function ReviewsPage() {
@@ -28,11 +34,11 @@ export default function ReviewsPage() {
           <FadeIn>
             <span className="kicker !text-ember-400">Top Picks</span>
             <h1 className="max-w-2xl font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Reviews built on testing, not talking points
+              Reviews built on research, not talking points
             </h1>
             <p className="mt-4 max-w-xl text-lg text-sand-100/80">
-              Every recommendation below went through hands-on testing or
-              verified research — and gets updated when products change.
+              Every recommendation is based on independent research and
+              verified specifications — and gets updated when products change.
             </p>
           </FadeIn>
         </div>

@@ -8,6 +8,9 @@ const nextConfig = {
     unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "ketlmtn.com" },
+      { protocol: "https", hostname: "outdoormaster.com" },
+      { protocol: "https", hostname: "sunjoyshop.com" },
     ],
   },
 };

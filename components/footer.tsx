@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Mountain } from "lucide-react";
 import { site } from "@/lib/data";
 
@@ -12,9 +12,9 @@ const quickLinks = [
 ];
 
 const categoryLinks = [
-  { href: "/reviews#camping-outdoor", label: "Camping & Outdoor" },
-  { href: "/reviews#home-essentials", label: "Home Essentials" },
-  { href: "/reviews#travel-edc", label: "Travel & EDC" },
+  { href: "/categories/camping-outdoor/", label: "Camping & Outdoor" },
+  { href: "/categories/home-essentials/", label: "Home Essentials" },
+  { href: "/categories/travel-edc/", label: "Travel & EDC" },
   { href: "/affiliate-disclosure", label: "Affiliate Disclosure" },
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms of Service" },
@@ -22,25 +22,30 @@ const categoryLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-white">
-      <div className="container-site grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
+    <footer className="bg-pine-950">
+      {/* Main grid */}
+      <div className="container-site grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">
+
+        {/* Brand col */}
         <div>
-          <div className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-pine-950 text-ember-500">
-              <Mountain size={18} strokeWidth={2.4} />
+          <Link href="/" className="flex items-center gap-2" aria-label="TrailNestCo home">
+            <Mountain size={18} strokeWidth={2} className="text-ember-500" />
+            <span className="font-display text-[16px] font-bold text-white tracking-tight">
+              TrailNestCo
             </span>
-            <span className="font-display text-lg font-bold uppercase tracking-wide text-pine-950">
-              {site.name}
-            </span>
-          </div>
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-pine-500">
-            {site.tagline} — independent gear reviews built on hands-on testing
-            since {site.founded}.
+          </Link>
+          <p className="mt-4 max-w-xs text-[14px] leading-relaxed text-white/45">
+            {site.tagline} — independent product reviews, comparisons and buying guides since {site.founded}.
           </p>
+          <div className="mt-5 inline-flex items-center gap-2 rounded border border-white/10 px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-white/40">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            Zero sponsored rankings
+          </div>
         </div>
 
+        {/* Quick links */}
         <nav aria-label="Quick Links">
-          <h3 className="font-display text-base font-semibold text-pine-950">
+          <h3 className="text-[11px] font-bold uppercase tracking-widest text-white/35">
             Quick Links
           </h3>
           <ul className="mt-4 space-y-2.5">
@@ -48,7 +53,7 @@ export function Footer() {
               <li key={l.label}>
                 <Link
                   href={l.href}
-                  className="text-sm text-pine-500 transition-colors hover:text-pine-950"
+                  className="text-[14px] text-white/55 transition-colors hover:text-white"
                 >
                   {l.label}
                 </Link>
@@ -57,8 +62,9 @@ export function Footer() {
           </ul>
         </nav>
 
+        {/* Categories */}
         <nav aria-label="Categories & Legal">
-          <h3 className="font-display text-base font-semibold text-pine-950">
+          <h3 className="text-[11px] font-bold uppercase tracking-widest text-white/35">
             Categories
           </h3>
           <ul className="mt-4 space-y-2.5">
@@ -66,7 +72,7 @@ export function Footer() {
               <li key={l.label}>
                 <Link
                   href={l.href}
-                  className="text-sm text-pine-500 transition-colors hover:text-pine-950"
+                  className="text-[14px] text-white/55 transition-colors hover:text-white"
                 >
                   {l.label}
                 </Link>
@@ -75,51 +81,53 @@ export function Footer() {
           </ul>
         </nav>
 
+        {/* Newsletter */}
         <div>
-          <h3 className="font-display text-base font-semibold text-pine-950">
-            Get the Latest Field Notes
+          <h3 className="text-[11px] font-bold uppercase tracking-widest text-white/35">
+            Field Notes Newsletter
           </h3>
+          <p className="mt-3 text-[13px] leading-relaxed text-white/40">
+            New reviews, buying guides, and gear intel — straight to your inbox.
+          </p>
           <form
             className="mt-4"
             action="https://formspree.io/f/xlgywbjn"
             method="POST"
           >
-            <label htmlFor="footer-email" className="sr-only">
-              Email address
-            </label>
+            <label htmlFor="footer-email" className="sr-only">Email address</label>
             <input
               id="footer-email"
               name="email"
               type="email"
               required
               autoComplete="email"
-              placeholder="Enter your email *"
-              className="min-h-[46px] w-full rounded-lg border border-pine-200 bg-white px-4 text-sm text-pine-950 placeholder:text-pine-400 focus:border-pine-950 focus:outline-none"
+              placeholder="Your email address"
+              className="min-h-[42px] w-full rounded-md border border-white/10 bg-white/5 px-4 text-[14px] text-white placeholder:text-white/25 focus:border-ember-500 focus:outline-none transition-colors"
             />
             <input type="hidden" name="_subject" value="Newsletter signup — trailnestco.com" />
             <input type="hidden" name="form_type" value="newsletter" />
             <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
             <button
               type="submit"
-              className="mt-3 w-full rounded-lg bg-pine-950 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-pine-800"
+              className="btn-primary mt-3 w-full justify-center"
             >
-              Subscribe Now
+              Subscribe Free
             </button>
           </form>
-          <p className="mt-3 text-xs leading-relaxed text-pine-400">
-            {site.address} · {site.phone}
+          <p className="mt-4 text-[11px] leading-relaxed text-white/25">
+            {site.address}
           </p>
         </div>
       </div>
 
-      <div className="container-site">
-        <div className="border-t border-pine-200 py-6">
-          <p className="mx-auto max-w-3xl text-center text-xs leading-relaxed text-pine-400">
-            {site.name} is reader-supported. When you buy through links on our
-            site, we may earn an affiliate commission at no extra cost to you —
-            this never determines which products we recommend or how we rank
-            them. Copyright © {new Date().getFullYear()} {site.company}. All
-            rights reserved.
+      {/* Bottom bar */}
+      <div className="border-t border-white/8">
+        <div className="container-site flex flex-col items-center justify-between gap-3 py-5 sm:flex-row">
+          <p className="text-[12px] text-white/30">
+            © {new Date().getFullYear()} {site.name}. Owned and operated by Arrow Group LLC.
+          </p>
+          <p className="text-[12px] text-white/25 sm:text-right">
+            {site.name} is reader-supported. Affiliate commissions never influence our rankings.
           </p>
         </div>
       </div>

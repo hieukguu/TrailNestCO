@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { FadeIn } from "@/components/motion";
 import { site } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Contact Us",
+  alternates: { canonical: "https://www.trailnestco.com/contact/" },
   description:
     "Get in touch with the TrailNestCo team — corrections, partnership inquiries, press, or writing for us.",
 };
@@ -18,7 +19,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xlgywbjn";
 
 const contactItems = [
   { Icon: Mail, label: "Email", value: site.email, href: `mailto:${site.email}` },
-  { Icon: Phone, label: "Phone", value: site.phone, href: `tel:${site.phone.replace(/[^+\d]/g, "")}` },
+
   { Icon: MapPin, label: "Office", value: site.address },
 ];
 
@@ -54,6 +55,24 @@ export default function ContactPage() {
               We aim to reply within 2 business days. For corrections, include
               the article URL so we can verify quickly.
             </p>
+
+            {/* Business info */}
+            <div className="mt-6 rounded-lg border border-stone-200 bg-stone-50 px-5 py-4">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-pine-400">Business</p>
+              <div className="mt-2 space-y-0.5 text-[14px]">
+                <p><span className="font-semibold text-pine-950">Arrow Group LLC</span></p>
+                <p className="text-pine-500">Brand: TrailNestCo</p>
+                <p className="text-pine-500">
+                  <a href="https://www.trailnestco.com/" className="hover:underline underline-offset-2">
+                    trailnestco.com
+                  </a>
+                </p>
+              </div>
+              <p className="mt-3 text-[13px] leading-relaxed text-pine-600">
+                For business inquiries, affiliate partnerships, editorial questions, or website-related matters, please contact TrailNestCo.
+              </p>
+            </div>
+
             <ul className="mt-8 space-y-6">
               {contactItems.map(({ Icon, label, value, href }) => (
                 <li key={label} className="flex items-start gap-4">

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block internal/admin paths that shouldn't be indexed
+Disallow: /api/
+Disallow: /_next/
+Disallow: /404.html
+Disallow: /avantlink_confirmation.txt
+
+Sitemap: https://www.trailnestco.com/sitemap.xml

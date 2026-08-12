@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark background -->
+  <rect width="32" height="32" rx="7" fill="#0f1013"/>
+  <!-- Mountain body (ember/lime) -->
+  <polygon points="16,5 29,27 3,27" fill="#c6ef37"/>
+  <!-- Snow cap (white) -->
+  <polygon points="16,5 21,15 11,15" fill="#ffffff" opacity="0.95"/>
+  <!-- Subtle base line -->
+  <rect x="3" y="26" width="26" height="1.5" rx="0.75" fill="#c6ef37" opacity="0.4"/>
+</svg>

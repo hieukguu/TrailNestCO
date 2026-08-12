@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "Gear Guides & How-Tos",
   description:
     "Practical, step-by-step guides to help you choose, use, and maintain your gear.",
+  alternates: { canonical: "https://www.trailnestco.com/guides/" },
+  openGraph: {
+    title: "Gear Guides & How-Tos — TrailNestCo",
+    description: "Practical guides to help you choose, use, and maintain your camping and outdoor gear.",
+    url: "https://www.trailnestco.com/guides/",
+  },
 };
 
 export default function GuidesPage() {

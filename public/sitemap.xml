@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url><loc>https://www.trailnestco.com/</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.trailnestco.com/guides/</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.trailnestco.com/about/</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.trailnestco.com/contact/</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.trailnestco.com/editorial-policy/</loc><lastmod>2026-08-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.trailnestco.com/affiliate-disclosure/</loc><lastmod>2026-08-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.trailnestco.com/privacy-policy/</loc><lastmod>2026-08-12</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.trailnestco.com/terms/</loc><lastmod>2026-08-12</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+
+  <!-- Category hubs -->
+  <url><loc>https://www.trailnestco.com/categories/camping-outdoor/</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.trailnestco.com/categories/home-essentials/</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.trailnestco.com/categories/travel-edc/</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+
+  <!-- Review articles — Camping & Outdoor (KETL brand spotlight) -->
+  <url><loc>https://www.trailnestco.com/reviews/ketl-mtn-outdoor-apparel/</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/best-camping-tents-review/</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/best-headlamps-camping/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/best-hiking-boots/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/best-budget-backpacking-stoves/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/best-water-filters-camping/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/yeti-vs-rtic-coolers/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/outdoormaster-ski-goggles-pro-review/</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/outdoormaster-otg-snow-goggles-review/</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/outdoormaster-rhino-mips-helmet-review/</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Review articles — Home Essentials -->
+  <url><loc>https://www.trailnestco.com/reviews/best-air-fryers-home/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/best-robot-vacuums/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/best-coffee-makers-home/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Review articles — Travel & EDC -->
+  <url><loc>https://www.trailnestco.com/reviews/best-travel-backpack-carry-on/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/best-alternatives-to-nalgene-bottles/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/best-portable-power-stations/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.trailnestco.com/reviews/best-noise-cancelling-headphones-travel/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Guide articles — Camping & Outdoor -->
+  <url><loc>https://www.trailnestco.com/guides/how-to-set-up-a-tent/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.trailnestco.com/guides/how-to-waterproof-gear/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.trailnestco.com/guides/car-camping-checklist/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.trailnestco.com/guides/how-to-choose-a-sleeping-bag/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.trailnestco.com/guides/sleeping-pad-r-value/</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.trailnestco.com/guides/what-size-tent-do-i-need/</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.trailnestco.com/guides/headlamp-lumens-guide/</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Guide articles — Travel & EDC -->
+  <url><loc>https://www.trailnestco.com/guides/how-to-pack-a-backpack/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.trailnestco.com/guides/carry-on-vs-personal-item/</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Guide articles — Home Essentials -->
+  <url><loc>https://www.trailnestco.com/guides/how-to-organize-kitchen-cabinets/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.trailnestco.com/guides/air-fryer-size-guide/</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.trailnestco.com/guides/robot-vacuum-maintenance/</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+</urlset>
