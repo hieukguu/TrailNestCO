@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Core pages -->
@@ -18,7 +18,7 @@
   <url><loc>https://www.trailnestco.com/categories/travel-edc/</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
 
   <!-- Review articles — Camping & Outdoor (KETL brand spotlight) -->
-  <url><loc>https://www.trailnestco.com/reviews/ketl-mtn-outdoor-apparel/</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.trailnestco.com/ketlmtn-review.html</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://www.trailnestco.com/reviews/best-camping-tents-review/</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://www.trailnestco.com/reviews/best-headlamps-camping/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.trailnestco.com/reviews/best-hiking-boots/</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -59,3 +59,4 @@
   <url><loc>https://www.trailnestco.com/guides/robot-vacuum-maintenance/</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
 </urlset>
+

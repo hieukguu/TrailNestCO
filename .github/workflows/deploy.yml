@@ -25,15 +25,13 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy via rsync over SSH
+        uses: burnett01/rsync-deployments@7.0.1
         with:
-          server: 217.196.54.198
-          username: u368940276
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          protocol: ftps
-          local-dir: ./out/
-          server-dir: /domains/trailnestco.com/public_html/
-          dangerous-clean-slate: true
-          timeout: 60000
+          switches: -avzr --delete
+          path: out/
+          remote_path: /home/u368940276/domains/trailnestco.com/public_html/
+          remote_host: 217.196.54.198
+          remote_port: 65002
+          remote_user: u368940276
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
