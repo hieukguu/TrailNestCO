@@ -33,5 +33,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           local-dir: ./out/
-          server-dir: /public_html/
+          server-dir: /domains/trailnestco.com/public_html/
           dangerous-clean-slate: true
