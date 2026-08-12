@@ -2535,7 +2535,7 @@ const ketlArticle: Article = {
   excerpt:
     "An independent review of KETL Mtn.'s shorts, pants, and travel collection — evaluating specs, design, fabric technology, and value relative to competitors.",
   image:
-    "https://ketlmtn.com/cdn/shop/files/KETL-Sun-Hoodie-Comparison-Hero-Desktop_344adb31-adc5-4845-970b-9739c9fb9365.jpg?v=1773264796&width=1400",
+    "/images/ketl/KETL-Sun-Hoodie-Comparison-Hero-Desktop.jpg",
   alt: "KETL Mtn outdoor apparel collection — shorts, pants and travel gear",
   howWeEvaluated:
     "This review is based on product specifications, fabric technology documentation, official warranty terms, brand policy review, and publicly available customer feedback. TrailNestCo has an affiliate relationship with KETL Mtn. — see our affiliate disclosure. We do not claim to have physically tested every product reviewed.",
