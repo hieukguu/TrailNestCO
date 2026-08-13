@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,6 +9,7 @@
   <link rel="canonical" href="https://www.trailnestco.com/cellercise-rebounder/" />
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preload" as="image" href="/images/cellercise/cellerciser-tri-fold-pro-hero-lg.webp" fetchpriority="high" />
   <link rel="preconnect" href="https://cellercise.com" crossorigin />
@@ -221,7 +222,8 @@
     .site-header { position: sticky; top: 0; z-index: 80; background: rgba(255,255,255,.94); backdrop-filter: saturate(180%) blur(12px); border-bottom: 1px solid var(--line); }
     .header-inner { display: flex; align-items: center; gap: 20px; min-height: 64px; }
     .brand { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; font-size: 17px; font-weight: 800; letter-spacing: -.02em; flex-shrink: 0; }
-    .brand svg { flex-shrink: 0; }
+    /* ember-600 — same mark colour the site header uses on white */
+    .brand svg { flex-shrink: 0; color: #71950c; }
     .anchor-nav { display: flex; align-items: center; gap: 4px; margin-left: auto; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
     .anchor-nav::-webkit-scrollbar { display: none; }
     .anchor-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; font-size: 14px; font-weight: 600; color: var(--ink-5); white-space: nowrap; border-radius: 8px; }
@@ -424,8 +426,9 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="/">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 20h18L12 4 3 20Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
       </svg>
       TrailNestCo
     </a>
@@ -1229,3 +1232,4 @@
 
 </body>
 </html>
+

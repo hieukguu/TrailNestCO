@@ -1,10 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Dark background -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="TrailNestCo">
+  <!-- Dark rounded square keeps the mark legible on both light and dark tab bars -->
   <rect width="32" height="32" rx="7" fill="#0f1013"/>
-  <!-- Mountain body (ember/lime) -->
-  <polygon points="16,5 29,27 3,27" fill="#c6ef37"/>
-  <!-- Snow cap (white) -->
-  <polygon points="16,5 21,15 11,15" fill="#ffffff" opacity="0.95"/>
-  <!-- Subtle base line -->
-  <rect x="3" y="26" width="26" height="1.5" rx="0.75" fill="#c6ef37" opacity="0.4"/>
+  <!--
+    Same silhouette as the site logo (lucide "mountain", used in the header,
+    footer and homepage). Filled rather than stroked so it still reads at 16px.
+    Source path is authored on a 24x24 grid: m8 3 4 8 5-5 5 15H2L8 3z
+  -->
+  <g transform="translate(2.8 2.8) scale(1.1)">
+    <path d="m8 3 4 8 5-5 5 15H2L8 3z" fill="#c6ef37" stroke="#c6ef37" stroke-width="1.6" stroke-linejoin="round"/>
+  </g>
 </svg>
