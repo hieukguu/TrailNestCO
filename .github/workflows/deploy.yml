@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -25,13 +26,42 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy via rsync over SSH
-        uses: burnett01/rsync-deployments@7.0.1
+      # Hostinger FTP occasionally drops the control socket. Try up to 3 times.
+      - name: Deploy via FTP (attempt 1)
+        id: ftp1
+        continue-on-error: true
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          switches: -avzr --delete
-          path: out/
-          remote_path: /home/u368940276/domains/trailnestco.com/public_html/
-          remote_host: 217.196.54.198
-          remote_port: 65002
-          remote_user: u368940276
-          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          server: 217.196.54.198
+          username: u368940276
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          local-dir: ./out/
+          server-dir: /domains/trailnestco.com/public_html/
+          timeout: 120000
+
+      - name: Deploy via FTP (attempt 2)
+        id: ftp2
+        if: steps.ftp1.outcome == 'failure'
+        continue-on-error: true
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: 217.196.54.198
+          username: u368940276
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          local-dir: ./out/
+          server-dir: /domains/trailnestco.com/public_html/
+          timeout: 120000
+
+      - name: Deploy via FTP (attempt 3)
+        if: steps.ftp1.outcome == 'failure' && steps.ftp2.outcome == 'failure'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: 217.196.54.198
+          username: u368940276
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          local-dir: ./out/
+          server-dir: /domains/trailnestco.com/public_html/
+          timeout: 120000

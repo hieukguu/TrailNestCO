@@ -13,6 +13,68 @@ import {
   Backpack,
 } from "lucide-react";
 import { categories, guides, reviews, site } from "@/lib/data";
+import { FeaturedSlider, type FeaturedBrand } from "@/components/featured-slider";
+
+/* Brand landing pages rotated in the Featured Review slider. */
+const featuredBrands: FeaturedBrand[] = [
+  {
+    id: "ketl",
+    kicker: "Brand Spotlight · Outdoor Apparel",
+    title: "KETL Mtn. — The Best-Kept Secret in Outdoor Apparel",
+    excerpt:
+      "Lifetime repairs, no swoosh fabric, and technical shorts & pants that outperform brands twice the price — backed by a zero-risk return policy.",
+    readTime: "12 min read",
+    href: "/ketlmtn-review.html",
+    shopHref: "https://ketlmtn.com/collections/mens?ref=hpakmutk",
+    shopLabel: "Shop KETL Mtn. →",
+    image: "/images/ketl/KETL-Sun-Hoodie-Comparison-Hero-Desktop.jpg",
+    alt: "KETL Mtn outdoor apparel — brand review",
+  },
+  {
+    id: "cellercise",
+    kicker: "Brand Spotlight · Home Fitness",
+    title: "Cellerciser® — Tri-Fold vs Bi-Fold Rebounders Compared",
+    excerpt:
+      "Three foldable, all-steel rebounders built for low-impact home workouts. Compare balance bar options, portability and current pricing side by side.",
+    readTime: "10 min read",
+    href: "/cellercise-rebounder/",
+    shopHref:
+      "https://cellercise.com/pages/rebounder-home-gym-shop?sca_ref=11990000.3yDQMFCi1X",
+    shopLabel: "Shop Cellercise →",
+    image: "/images/cellercise/cellerciser-tri-fold-pro-hero-lg.webp",
+    alt: "Cellerciser Tri-Fold Pro rebounder with balance bar and wheeled travel case",
+  },
+  {
+    id: "sunjoy",
+    kicker: "Brand Spotlight · Outdoor Structures",
+    title: "Sunjoy — Hampton Cedar Gazebo, Pergolas & Patio Swings",
+    excerpt:
+      "10 million backyards built since 2001. The Hampton 12×16 hardtop gazebo handles rain, snow and UV — starting at $1,717.",
+    readTime: "15 min read",
+    href: "/sunjoy-review.html",
+    shopHref:
+      "https://sunjoyshop.com/collections/outdoor-gazebo-for-sale?ref=TRAILNESTCO",
+    shopLabel: "Shop Sunjoy →",
+    image:
+      "https://sunjoyshop.com/cdn/shop/files/SUNJOY_12x16_Wooden_Gazebo_A102032660_26H1_world_cup.webp?v=1775803685&width=1400",
+    alt: "Sunjoy Hampton 12x16 cedar hardtop gazebo in a backyard",
+  },
+  {
+    id: "outdoormaster",
+    kicker: "Brand Spotlight · Water & Cycling Sports",
+    title: "OutdoorMaster — SUP Pumps, MIPS Helmets & ZEISS Sunglasses",
+    excerpt:
+      "The SHARK 3 inflates a full SUP board in under 4 minutes. MIPS-certified helmets from $55. ZEISS-lens sunglasses from $139.",
+    readTime: "13 min read",
+    href: "/outdoormaster-review.html",
+    shopHref:
+      "https://outdoormaster.com/collections/electric-sup-pump?ref=gvghbqwy&utm_medium=inhouse&utm_source=affiliate",
+    shopLabel: "Shop OutdoorMaster →",
+    image:
+      "https://outdoormaster.com/cdn/shop/files/OutdoorMaster-RHINO_MIPS_Full_Face_Bike_Helmets-Pearl_White-01.webp?width=1400",
+    alt: "OutdoorMaster RHINO MIPS full face bike helmet",
+  },
+];
 
 export const metadata: Metadata = {
   title: "TrailNestCo — Independent Gear Reviews, Comparisons & Buying Guides",
@@ -79,53 +141,8 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-[3fr_2fr] lg:items-center">
-            {/* Hero image */}
-            <a href="/ketlmtn-review.html" className="group block">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-stone-100">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://ketlmtn.com/cdn/shop/files/KETL-Sun-Hoodie-Comparison-Hero-Desktop_344adb31-adc5-4845-970b-9739c9fb9365.jpg?v=1773264796&width=1400"
-                  alt="KETL Mtn outdoor apparel — brand review"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                />
-                <span className="absolute left-4 top-4 rounded border border-white/30 bg-black/40 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur-sm">
-                  Affiliate
-                </span>
-              </div>
-            </a>
-
-            {/* Editorial text */}
-            <div>
-              <span className="kicker">Brand Spotlight · Outdoor Apparel</span>
-              <h2 className="mt-3 font-display text-3xl font-bold leading-snug text-pine-950 sm:text-4xl">
-                KETL Mtn. — The Best-Kept Secret in Outdoor Apparel
-              </h2>
-              <p className="mt-4 text-[16px] leading-relaxed text-pine-600">
-                Lifetime repairs, no swoosh fabric, and technical shorts &amp; pants that outperform brands twice the price — backed by a zero-risk return policy.
-              </p>
-              <div className="mt-4 flex items-center gap-2 text-[13px] text-pine-400">
-                <span>TrailNestCo Editorial</span>
-                <span>·</span>
-                <span>12 min read</span>
-                <span>·</span>
-                <span className="text-ember-600 font-semibold">Affiliate brand spotlight</span>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a href="/ketlmtn-review.html" className="btn-primary">
-                  Read Full Review <ArrowRight size={14} />
-                </a>
-                <a
-                  href="https://ketlmtn.com/collections/mens?ref=hpakmutk"
-                  target="_blank"
-                  rel="noopener nofollow sponsored"
-                  className="btn-ghost"
-                >
-                  Shop KETL Mtn. →
-                </a>
-              </div>
-            </div>
-          </div>
+          <h2 className="sr-only">Featured brand reviews</h2>
+          <FeaturedSlider brands={featuredBrands} />
         </div>
       </section>
 
@@ -186,7 +203,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {/* ── Sunjoy ── */}
             <div className="flex flex-col overflow-hidden rounded-xl border border-stone-200 bg-white">
               <div className="grid grid-cols-2 gap-1 p-2">
@@ -218,7 +235,7 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-5 flex flex-wrap gap-2 xl:flex-col">
                   <a href="/sunjoy-review.html" className="btn-primary text-sm">Full Review <ArrowRight size={13} /></a>
                   <a href="https://sunjoyshop.com/collections/outdoor-gazebo-for-sale?ref=TRAILNESTCO" target="_blank" rel="noopener nofollow sponsored" className="btn-ghost text-sm">Shop →</a>
                 </div>
@@ -256,7 +273,7 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-5 flex flex-wrap gap-2 xl:flex-col">
                   <a href="/outdoormaster-review.html" className="btn-primary text-sm">Full Review <ArrowRight size={13} /></a>
                   <a href="https://outdoormaster.com/collections/electric-sup-pump?ref=gvghbqwy&utm_medium=inhouse&utm_source=affiliate" target="_blank" rel="noopener nofollow sponsored" className="btn-ghost text-sm">Shop →</a>
                 </div>
@@ -293,9 +310,47 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-5 flex flex-wrap gap-2 xl:flex-col">
                   <a href="/ketlmtn-review.html" className="btn-primary text-sm">Full Review <ArrowRight size={13} /></a>
                   <a href="https://ketlmtn.com/collections/mens?ref=hpakmutk" target="_blank" rel="noopener nofollow sponsored" className="btn-ghost text-sm">Shop →</a>
+                </div>
+              </div>
+            </div>
+
+            {/* ── Cellercise ── */}
+            <div className="flex flex-col overflow-hidden rounded-xl border border-stone-200 bg-white">
+              <div className="grid grid-cols-2 gap-1 p-2">
+                {[
+                  { src: "/images/cellercise/cellerciser-tri-fold-pro.webp", alt: "Cellerciser Tri-Fold Pro rebounder with balance bar" },
+                  { src: "/images/cellercise/cellerciser-bi-fold-balance-bar.webp", alt: "Cellerciser Bi-Fold rebounder with removable balance bar" },
+                  { src: "/images/cellercise/cellerciser-tridaptable-spring.webp", alt: "Tapered TriDaptable springs on a Cellerciser rebounder" },
+                  { src: "/images/cellercise/cellerciser-tri-fold-dolly-case.webp", alt: "Cellerciser Tri-Fold Pro packed in its wheeled travel case" },
+                ].map((img, i) => (
+                  <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-lg bg-stone-100">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={img.src} alt={img.alt} loading="lazy" className="h-full w-full object-cover" />
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <span className="kicker !text-red-600">Home Fitness</span>
+                <h3 className="font-display text-lg font-bold leading-snug text-pine-950">
+                  Cellerciser® — Foldable Rebounders for Low-Impact Workouts
+                </h3>
+                <p className="mt-2 text-[14px] leading-relaxed text-pine-500">
+                  Three all-steel models compared on fold style, balance bar and portability. Patented TriDaptable® springs, lifetime frame warranty.
+                </p>
+                <div className="mt-4 grid grid-cols-3 gap-2 text-center text-[12px]">
+                  {[{ val: "3 models", label: "Compared" }, { val: "400 lb", label: "Max capacity" }, { val: "Lifetime", label: "Frame warranty" }].map(s => (
+                    <div key={s.label} className="rounded-lg border border-stone-200 bg-stone-50 py-2.5">
+                      <p className="font-bold text-pine-950">{s.val}</p>
+                      <p className="text-[10px] text-pine-400 mt-0.5">{s.label}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-5 flex flex-wrap gap-2 xl:flex-col">
+                  <a href="/cellercise-rebounder/" className="btn-primary text-sm">Full Review <ArrowRight size={13} /></a>
+                  <a href="https://cellercise.com/pages/rebounder-home-gym-shop?sca_ref=11990000.3yDQMFCi1X" target="_blank" rel="noopener nofollow sponsored" className="btn-ghost text-sm">Shop →</a>
                 </div>
               </div>
             </div>
