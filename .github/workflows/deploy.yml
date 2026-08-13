@@ -6,6 +6,11 @@ on:
       - main
   workflow_dispatch:
 
+# Never let two deploys write to public_html at the same time.
+concurrency:
+  group: hostinger-deploy
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -26,42 +31,22 @@ jobs:
       - name: Build
         run: npm run build
 
-      # Hostinger FTP occasionally drops the control socket. Try up to 3 times.
-      - name: Deploy via FTP (attempt 1)
-        id: ftp1
-        continue-on-error: true
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: 217.196.54.198
-          username: u368940276
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          local-dir: ./out/
-          server-dir: /domains/trailnestco.com/public_html/
-          timeout: 120000
+      - name: Fail early if the export is empty
+        run: |
+          test -f out/index.html || { echo "out/index.html missing — refusing to deploy"; exit 1; }
+          echo "Built $(find out -type f | wc -l) files"
 
-      - name: Deploy via FTP (attempt 2)
-        id: ftp2
-        if: steps.ftp1.outcome == 'failure'
-        continue-on-error: true
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      # rsync over SSH. Hostinger's FTP endpoint drops the control socket
+      # intermittently, which made the FTP action unreliable.
+      - name: Deploy to Hostinger via rsync
+        uses: burnett01/rsync-deployments@7.0.1
         with:
-          server: 217.196.54.198
-          username: u368940276
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          local-dir: ./out/
-          server-dir: /domains/trailnestco.com/public_html/
-          timeout: 120000
-
-      - name: Deploy via FTP (attempt 3)
-        if: steps.ftp1.outcome == 'failure' && steps.ftp2.outcome == 'failure'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: 217.196.54.198
-          username: u368940276
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          local-dir: ./out/
-          server-dir: /domains/trailnestco.com/public_html/
-          timeout: 120000
+          # -a archive, -z compress, -r recursive, --delete prune removed files.
+          # .well-known is excluded so Let's Encrypt renewal files survive.
+          switches: -avzr --delete --exclude=.well-known/ --exclude=.ftp-deploy-sync-state.json
+          path: out/
+          remote_path: /home/u368940276/domains/trailnestco.com/public_html/
+          remote_host: 217.196.54.198
+          remote_port: 65002
+          remote_user: u368940276
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
