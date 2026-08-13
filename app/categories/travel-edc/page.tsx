@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Backpack } from "lucide-react";
@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Travel & EDC — Reviews, Comparisons & Buying Guides",
   description:
     "Independent reviews and buying guides for travel backpacks, water bottles, power stations, noise-cancelling headphones, and everyday carry essentials.",
+  alternates: { canonical: "https://www.trailnestco.com/categories/travel-edc/" },
   openGraph: {
     title: "Travel & EDC Reviews — TrailNestCo",
     description:
@@ -132,3 +133,4 @@ export default function TravelEdcPage() {
     </>
   );
 }
+

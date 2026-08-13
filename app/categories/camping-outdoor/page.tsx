@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Tent } from "lucide-react";
@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Camping & Outdoor Gear — Reviews, Comparisons & Buying Guides",
   description:
     "Independent reviews and buying guides for camping tents, sleeping bags, headlamps, hiking boots, backpacking stoves, water filters, and more outdoor gear.",
+  alternates: { canonical: "https://www.trailnestco.com/categories/camping-outdoor/" },
   openGraph: {
     title: "Camping & Outdoor Gear Reviews — TrailNestCo",
     description:
@@ -182,3 +183,4 @@ export default function CampingOutdoorPage() {
     </>
   );
 }
+

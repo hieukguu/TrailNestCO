@@ -27,7 +27,7 @@ const featuredBrands: FeaturedBrand[] = [
     href: "/ketlmtn-review.html",
     shopHref: "https://ketlmtn.com/collections/mens?ref=hpakmutk",
     shopLabel: "Shop KETL Mtn. →",
-    image: "/images/ketl/KETL-Sun-Hoodie-Comparison-Hero-Desktop.jpg",
+    image: "/images/ketl/KETL-Sun-Hoodie-Comparison-Hero-Desktop.webp",
     alt: "KETL Mtn outdoor apparel — brand review",
   },
   {
@@ -285,9 +285,9 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-1 p-2">
                 {[
                   { src: "https://ketlmtn.com/cdn/shop/files/KETL-Shenanigan-Outdoor-Pant-Brown-PDP-2-2026.jpg?v=1784152795&width=800", alt: "KETL Mtn Shenanigan Outdoor Pants Brown" },
-                  { src: "https://ketlmtn.com/cdn/shop/files/KETL-Vent-Lightweight-Short-PDP-Green-1.jpg?v=1&width=800", alt: "KETL Mtn Vent Lightweight Shorts Green" },
-                  { src: "https://ketlmtn.com/cdn/shop/files/KETL-Escapade-LW-Jacket-Green-4x5-PDP-11.jpg?v=1&width=800", alt: "KETL Mtn Escapade Jacket Green" },
-                  { src: "https://ketlmtn.com/cdn/shop/files/KETL-Virtue-Hybrid-Short-Black-Brown-PDP-4x5-3.jpg?v=1&width=800", alt: "KETL Mtn Virtue Hybrid Shorts" },
+                  { src: "https://ketlmtn.com/cdn/shop/files/KETL-Vent-Lightweight-Short-PDP-Green-1.webp?v=1&width=800", alt: "KETL Mtn Vent Lightweight Shorts Green" },
+                  { src: "https://ketlmtn.com/cdn/shop/files/KETL-Escapade-LW-Jacket-Green-4x5-PDP-11.webp?v=1&width=800", alt: "KETL Mtn Escapade Jacket Green" },
+                  { src: "https://ketlmtn.com/cdn/shop/files/KETL-Virtue-Hybrid-Short-Black-Brown-PDP-4x5-3.webp?v=1&width=800", alt: "KETL Mtn Virtue Hybrid Shorts" },
                 ].map((img, i) => (
                   <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-lg bg-stone-100">
                     <Image src={img.src} alt={img.alt} fill sizes="25vw" className="object-cover" />

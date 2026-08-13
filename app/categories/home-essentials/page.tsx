@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Home } from "lucide-react";
@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Home Essentials — Reviews, Comparisons & Buying Guides",
   description:
     "Independent reviews and buying guides for air fryers, robot vacuums, coffee makers, and other home appliances. Based on specifications and verified data.",
+  alternates: { canonical: "https://www.trailnestco.com/categories/home-essentials/" },
   openGraph: {
     title: "Home Essentials Reviews — TrailNestCo",
     description:
@@ -132,3 +133,4 @@ export default function HomeEssentialsPage() {
     </>
   );
 }
+
