@@ -4,12 +4,32 @@
   list?: string[];
 };
 
+/** Rough price band. Used instead of a figure, which goes stale fast. */
+export type PriceTier = "$" | "$$" | "$$$" | "$$$$";
+
 export type ProductPick = {
   name: string;
   award: string;
   body: string;
   pros: string[];
   cons: string[];
+
+  /** Product shot. Local path under /images/… or a host allowed in next.config. */
+  image?: string;
+  imageAlt?: string;
+  /** Shown under the image, e.g. "Image: Manufacturer press kit". */
+  imageCredit?: string;
+
+  bestFor?: string;
+  priceTier?: PriceTier;
+  /** Short verifiable specs pulled from official documentation. */
+  keySpecs?: { label: string; value: string }[];
+
+  /** Outbound link. Neutral wording only — no "lowest price" claims. */
+  ctaLabel?: string;
+  ctaUrl?: string;
+  /** True only when ctaUrl carries a real tracking parameter. */
+  ctaIsAffiliate?: boolean;
 };
 
 export type Faq = { q: string; a: string };
@@ -18,7 +38,11 @@ export type Article = {
   slug: string;
   type: "review" | "guide";
   title: string;
-  category: "Camping & Outdoor" | "Home Essentials" | "Travel & EDC";
+  category:
+    | "Camping & Outdoor"
+    | "Home Essentials"
+    | "Travel & EDC"
+    | "Home Fitness";
   author: string;
   reviewer: string;
   date: string;
@@ -29,11 +53,30 @@ export type Article = {
   image: string;
   alt: string;
   howWeEvaluated?: string; // short description of evaluation methodology
+  /** Overrides `excerpt` for the meta description when the excerpt runs long. */
+  metaDescription?: string;
+  /** Credit line for the hero image. */
+  imageCredit?: string;
+
   intro: string[];
+  /** Scannable summary shown above the fold. */
+  keyTakeaways?: string[];
+  /** One-paragraph answer for readers who will not read the whole piece. */
+  quickVerdict?: string;
+
   picks?: ProductPick[];
   table?: { headers: string[]; rows: string[][] };
   sections: ArticleSection[];
+
+  /** What to weigh up before buying, rendered after the detailed picks. */
+  buyingGuide?: ArticleSection[];
+  whoFor?: string[];
+  whoShouldSkip?: string[];
+  verdict?: string;
+
   faq: Faq[];
+  /** Slugs of related articles. Rendered as cards at the end. */
+  related?: string[];
 };
 
 export const articles: Article[] = [

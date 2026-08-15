@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ChevronRight, X, ArrowLeft, FileSearch } from "lucide-react";
-import type { Article } from "@/lib/articles";
+import { Check, ChevronRight, X, ArrowLeft, FileSearch, ArrowUpRight } from "lucide-react";
+import { articles, type Article } from "@/lib/articles";
 import { site } from "@/lib/data";
 import { useEffect, useState } from "react";
 
@@ -70,6 +70,47 @@ export function ArticlePage({ article }: { article: Article }) {
       { "@type": "ListItem", position: 3, name: article.title, item: canonicalUrl },
     ],
   };
+
+  /* Ranked round-ups get an ItemList. No Offer or AggregateRating nodes:
+     TrailNestCo is not the seller and holds no rating data of its own. */
+  const itemListJsonLd =
+    article.picks && article.picks.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: article.title,
+          numberOfItems: article.picks.length,
+          itemListElement: article.picks.map((p, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "Product",
+              name: p.name,
+              ...(p.image ? { image: p.image.startsWith("http") ? p.image : site.url + p.image } : {}),
+              ...(p.ctaUrl ? { url: p.ctaUrl } : {}),
+            },
+          })),
+        }
+      : null;
+
+  /* FAQ markup only when the questions are actually rendered below. */
+  const faqJsonLd =
+    article.faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: article.faq.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }
+      : null;
+
+  const relatedArticles = (article.related ?? [])
+    .map((slug) => articles.find((a) => a.slug === slug))
+    .filter((a): a is Article => Boolean(a) && a!.slug !== article.slug)
+    .slice(0, 3);
 
   return (
     <>
@@ -152,6 +193,39 @@ export function ArticlePage({ article }: { article: Article }) {
             ))}
           </div>
 
+          {/* Key takeaways — scannable summary above the fold */}
+          {article.keyTakeaways && article.keyTakeaways.length > 0 && (
+            <aside
+              aria-labelledby="key-takeaways"
+              className="mt-8 rounded-xl border border-pine-200 bg-pine-50 p-6"
+            >
+              <h2
+                id="key-takeaways"
+                className="mb-4 font-display text-[15px] font-bold text-pine-950"
+              >
+                Key takeaways
+              </h2>
+              <ul className="space-y-2.5">
+                {article.keyTakeaways.map((t) => (
+                  <li key={t} className="flex gap-2.5 text-[15px] leading-relaxed text-pine-700">
+                    <Check size={15} className="mt-1 shrink-0 text-ember-600" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )}
+
+          {/* Quick verdict */}
+          {article.quickVerdict && (
+            <div className="mt-8 rounded-xl border-l-4 border-ember-500 bg-stone-50 p-6">
+              <h2 className="mb-2 text-[11px] font-bold uppercase tracking-widest text-pine-500">
+                Quick verdict
+              </h2>
+              <p className="text-[16px] leading-relaxed text-pine-800">{article.quickVerdict}</p>
+            </div>
+          )}
+
           {/* How We Evaluated */}
           {article.howWeEvaluated && (
             <div className="mt-8 rounded-xl border border-stone-200 bg-stone-50 p-6">
@@ -176,7 +250,59 @@ export function ArticlePage({ article }: { article: Article }) {
                 {pick.name}
               </h2>
 
-              <p className="mt-4 text-[16px] leading-relaxed text-pine-700">{pick.body}</p>
+              {(pick.bestFor || pick.priceTier) && (
+                <div className="mt-3 flex flex-wrap items-center gap-2 text-[13px]">
+                  {pick.bestFor && (
+                    <span className="rounded-full bg-stone-100 px-3 py-1 text-pine-700">
+                      Best for {pick.bestFor}
+                    </span>
+                  )}
+                  {pick.priceTier && (
+                    <span
+                      className="rounded-full bg-stone-100 px-3 py-1 font-semibold text-pine-700"
+                      title="Approximate price band, not a live price"
+                    >
+                      {pick.priceTier}
+                    </span>
+                  )}
+                </div>
+              )}
+
+              {/* Product image. Lazy — these all sit below the fold. */}
+              {pick.image && (
+                <figure className="mt-6">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-stone-200 bg-stone-50">
+                    <Image
+                      src={pick.image}
+                      alt={pick.imageAlt ?? pick.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 720px"
+                      loading="lazy"
+                      className="object-contain p-4"
+                    />
+                  </div>
+                  {pick.imageCredit && (
+                    <figcaption className="mt-2 text-[12px] text-pine-400">
+                      {pick.imageCredit}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
+
+              <p className="mt-6 text-[16px] leading-relaxed text-pine-700">{pick.body}</p>
+
+              {pick.keySpecs && pick.keySpecs.length > 0 && (
+                <dl className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-stone-200 bg-stone-200 sm:grid-cols-4">
+                  {pick.keySpecs.map((s) => (
+                    <div key={s.label} className="bg-white p-3">
+                      <dt className="text-[10px] font-bold uppercase tracking-wider text-pine-400">
+                        {s.label}
+                      </dt>
+                      <dd className="mt-1 text-[14px] font-semibold text-pine-950">{s.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-5">
@@ -206,6 +332,28 @@ export function ArticlePage({ article }: { article: Article }) {
                   </ul>
                 </div>
               </div>
+
+              {pick.ctaUrl && (
+                <div className="mt-5 flex flex-wrap items-center gap-3">
+                  <a
+                    href={pick.ctaUrl}
+                    target="_blank"
+                    rel={
+                      pick.ctaIsAffiliate
+                        ? "noopener nofollow sponsored"
+                        : "noopener noreferrer"
+                    }
+                    className="btn-primary"
+                  >
+                    {pick.ctaLabel ?? "Check Current Price"} <ArrowUpRight size={14} />
+                  </a>
+                  <span className="text-[12px] text-pine-400">
+                    {pick.ctaIsAffiliate
+                      ? "Affiliate link — we may earn a commission at no extra cost to you."
+                      : "Links to the manufacturer. We earn nothing from this link."}
+                  </span>
+                </div>
+              )}
             </section>
           ))}
 
@@ -270,6 +418,79 @@ export function ArticlePage({ article }: { article: Article }) {
             </section>
           ))}
 
+          {/* Buying guide */}
+          {article.buyingGuide?.map((s) => (
+            <section key={s.heading} className="mt-12">
+              <h2
+                className="mb-4 pb-2 font-display text-2xl font-bold tracking-tight text-pine-950 sm:text-[26px]"
+                style={{ borderBottom: "2px solid #c6ef37" }}
+              >
+                {s.heading}
+              </h2>
+              {s.body?.map((p) => (
+                <p key={p.slice(0, 40)} className="mt-4 text-[16px] leading-[1.85] text-pine-700">
+                  {p}
+                </p>
+              ))}
+              {s.list && (
+                <ul className="mt-4 space-y-3">
+                  {s.list.map((item) => (
+                    <li key={item} className="flex gap-3 text-[16px] leading-relaxed text-pine-700">
+                      <span aria-hidden className="mt-2.5 h-1.5 w-4 shrink-0 rounded-full bg-ember-500" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </section>
+          ))}
+
+          {/* Who it suits / who should look elsewhere */}
+          {(article.whoFor || article.whoShouldSkip) && (
+            <div className="mt-14 grid gap-4 sm:grid-cols-2">
+              {article.whoFor && (
+                <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6">
+                  <h2 className="mb-3 text-[11px] font-bold uppercase tracking-widest text-emerald-700">
+                    Who this is for
+                  </h2>
+                  <ul className="space-y-2.5">
+                    {article.whoFor.map((w) => (
+                      <li key={w} className="flex gap-2.5 text-[15px] leading-snug text-pine-800">
+                        <Check size={14} className="mt-1 shrink-0 text-emerald-600" />
+                        {w}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {article.whoShouldSkip && (
+                <div className="rounded-xl border border-orange-200 bg-orange-50 p-6">
+                  <h2 className="mb-3 text-[11px] font-bold uppercase tracking-widest text-orange-700">
+                    Who should skip it
+                  </h2>
+                  <ul className="space-y-2.5">
+                    {article.whoShouldSkip.map((w) => (
+                      <li key={w} className="flex gap-2.5 text-[15px] leading-snug text-pine-800">
+                        <X size={14} className="mt-1 shrink-0 text-orange-500" />
+                        {w}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Final verdict */}
+          {article.verdict && (
+            <section className="mt-14 rounded-xl bg-pine-950 p-7 sm:p-9">
+              <h2 className="mb-3 text-[11px] font-bold uppercase tracking-widest text-ember-400">
+                Final verdict
+              </h2>
+              <p className="text-[17px] leading-relaxed text-white/85">{article.verdict}</p>
+            </section>
+          )}
+
           {article.faq.length > 0 && (
             <div className="mt-14">
               <h2 className="mb-5 font-display text-2xl font-bold tracking-tight text-pine-950 sm:text-3xl">
@@ -291,6 +512,40 @@ export function ArticlePage({ article }: { article: Article }) {
                 ))}
               </div>
             </div>
+          )}
+
+          {/* Related articles */}
+          {relatedArticles.length > 0 && (
+            <section className="mt-14">
+              <h2 className="mb-5 font-display text-2xl font-bold tracking-tight text-pine-950 sm:text-3xl">
+                Related reading
+              </h2>
+              <div className="grid gap-5 sm:grid-cols-3">
+                {relatedArticles.map((r) => (
+                  <Link
+                    key={r.slug}
+                    href={`/${r.type === "review" ? "reviews" : "guides"}/${r.slug}/`}
+                    className="group block rounded-xl border border-stone-200 bg-white p-4 transition-shadow hover:shadow-md"
+                  >
+                    <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-stone-100">
+                      <Image
+                        src={r.image}
+                        alt={r.alt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                        loading="lazy"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none"
+                      />
+                    </div>
+                    <p className="kicker !mb-0 mt-3">{r.category}</p>
+                    <h3 className="mt-1.5 font-display text-[15px] font-bold leading-snug text-pine-950 group-hover:text-ember-600">
+                      {r.title}
+                    </h3>
+                    <p className="mt-1 text-[12px] text-pine-400">{r.readTime}</p>
+                  </Link>
+                ))}
+              </div>
+            </section>
           )}
 
           <div className="mt-14 overflow-hidden rounded-xl bg-pine-950">
@@ -330,6 +585,18 @@ export function ArticlePage({ article }: { article: Article }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
         />
+        {itemListJsonLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+          />
+        )}
+        {faqJsonLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          />
+        )}
       </article>
     </>
   );

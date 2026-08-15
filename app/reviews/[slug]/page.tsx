@@ -18,11 +18,11 @@ export async function generateMetadata({
   const canonical = `https://www.trailnestco.com/reviews/${slug}/`;
   return {
     title: article.title,
-    description: article.excerpt,
+    description: article.metaDescription ?? article.excerpt,
     alternates: { canonical },
     openGraph: {
       title: article.title,
-      description: article.excerpt,
+      description: article.metaDescription ?? article.excerpt,
       url: canonical,
       type: "article",
       images: [{ url: article.image, alt: article.alt }],
