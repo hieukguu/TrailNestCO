@@ -83,6 +83,7 @@ export const articles: Article[] = [
   /* ============================== REVIEWS ============================== */
   {
     slug: "best-air-fryers-home",
+    related: ["air-fryer-size-guide", "best-coffee-makers-home", "how-to-organize-kitchen-cabinets"],
     type: "review",
     title: "Best Air Fryers for Home Cooking in 2026",
     category: "Home Essentials",
@@ -192,6 +193,7 @@ export const articles: Article[] = [
   },
   {
     slug: "best-robot-vacuums",
+    related: ["robot-vacuum-maintenance", "how-to-organize-kitchen-cabinets", "best-air-fryers-home"],
     type: "review",
     title: "Best Robot Vacuums in 2026: Compared on Carpet, Hardwood, and Pet Hair",
     category: "Home Essentials",
@@ -299,6 +301,7 @@ export const articles: Article[] = [
   },
   {
     slug: "best-headlamps-camping",
+    related: ["headlamp-lumens-guide", "car-camping-checklist", "best-camping-tents-review"],
     type: "review",
     title: "Best Headlamps for Camping and Hiking in 2026",
     category: "Camping & Outdoor",
@@ -405,6 +408,7 @@ export const articles: Article[] = [
   },
   {
     slug: "best-travel-backpack-carry-on",
+    related: ["carry-on-vs-personal-item", "how-to-pack-a-backpack", "best-noise-cancelling-headphones-travel"],
     type: "review",
     title: "Best Travel Backpacks for Carry-On in 2026",
     category: "Travel & EDC",
@@ -499,6 +503,7 @@ export const articles: Article[] = [
   },
   {
     slug: "best-coffee-makers-home",
+    related: ["best-air-fryers-home", "how-to-organize-kitchen-cabinets", "air-fryer-size-guide"],
     type: "review",
     title: "Best Coffee Makers for Home in 2025: Drip, Pour-Over, and Espresso",
     category: "Home Essentials",
@@ -600,6 +605,7 @@ export const articles: Article[] = [
   },
   {
     slug: "best-hiking-boots",
+    related: ["how-to-waterproof-gear", "how-to-pack-a-backpack", "best-water-filters-camping"],
     type: "review",
     title: "Best Hiking Boots of 2026: Reviewed on Real Trails",
     category: "Camping & Outdoor",
@@ -725,6 +731,7 @@ export const articles: Article[] = [
   },
   {
     slug: "best-alternatives-to-nalgene-bottles",
+    related: ["best-water-filters-camping", "best-travel-backpack-carry-on", "carry-on-vs-personal-item"],
     type: "review",
     title: "8 Best Alternatives to Nalgene Water Bottles in 2026",
     category: "Travel & EDC",
@@ -803,6 +810,7 @@ export const articles: Article[] = [
   },
   {
     slug: "best-budget-backpacking-stoves",
+    related: ["best-water-filters-camping", "car-camping-checklist", "best-camping-tents-review"],
     type: "review",
     title: "Best Budget Backpacking Stoves Under $50",
     category: "Camping & Outdoor",
@@ -878,6 +886,7 @@ export const articles: Article[] = [
   },
   {
     slug: "best-water-filters-camping",
+    related: ["best-budget-backpacking-stoves", "best-alternatives-to-nalgene-bottles", "best-hiking-boots"],
     type: "review",
     title: "Best Water Filters for Camping and Backpacking",
     category: "Camping & Outdoor",
@@ -953,6 +962,7 @@ export const articles: Article[] = [
   },
   {
     slug: "best-portable-power-stations",
+    related: ["best-travel-backpack-carry-on", "car-camping-checklist", "best-headlamps-camping"],
     type: "review",
     title: "Best Portable Power Stations for Camping and Travel",
     category: "Travel & EDC",
@@ -1029,6 +1039,7 @@ export const articles: Article[] = [
   },
   {
     slug: "yeti-vs-rtic-coolers",
+    related: ["car-camping-checklist", "best-budget-backpacking-stoves", "best-camping-tents-review"],
     type: "review",
     title: "YETI vs. RTIC Coolers: Which Is Actually Worth the Price Gap?",
     category: "Camping & Outdoor",
@@ -1088,6 +1099,7 @@ export const articles: Article[] = [
   },
   {
     slug: "best-camping-tents-review",
+    related: ["what-size-tent-do-i-need", "how-to-set-up-a-tent", "how-to-waterproof-gear"],
     type: "review",
     title: "Best Camping Tents of 2026: 6 Models Reviewed & Compared",
     category: "Camping & Outdoor",
@@ -1179,6 +1191,7 @@ export const articles: Article[] = [
   /* ============================== GUIDES ============================== */
   {
     slug: "how-to-pack-a-backpack",
+    related: ["best-travel-backpack-carry-on", "carry-on-vs-personal-item", "best-hiking-boots"],
     type: "guide",
     title: "How to Pack a Backpack for Hiking and Camping",
     category: "Camping & Outdoor",
@@ -1250,6 +1263,7 @@ export const articles: Article[] = [
   },
   {
     slug: "how-to-set-up-a-tent",
+    related: ["best-camping-tents-review", "what-size-tent-do-i-need", "how-to-waterproof-gear"],
     type: "guide",
     title: "How to Set Up a Tent: Step-by-Step Guide for Beginners",
     category: "Camping & Outdoor",
@@ -1329,6 +1343,7 @@ export const articles: Article[] = [
   },
   {
     slug: "how-to-waterproof-gear",
+    related: ["best-camping-tents-review", "how-to-set-up-a-tent", "best-hiking-boots"],
     type: "guide",
     title: "How to Waterproof Your Camping Gear (Tents, Boots, Jackets)",
     category: "Camping & Outdoor",
@@ -1397,6 +1412,7 @@ export const articles: Article[] = [
   },
   {
     slug: "car-camping-checklist",
+    related: ["best-camping-tents-review", "yeti-vs-rtic-coolers", "best-headlamps-camping"],
     type: "guide",
     title: "The Complete Car Camping Checklist (Printable)",
     category: "Camping & Outdoor",
@@ -1488,6 +1504,7 @@ export const articles: Article[] = [
   },
   {
     slug: "how-to-choose-a-sleeping-bag",
+    related: ["sleeping-pad-r-value", "best-camping-tents-review", "car-camping-checklist"],
     type: "guide",
     title: "How to Choose a Sleeping Bag: Temperature Ratings, Fill Power & Shape",
     category: "Camping & Outdoor",
@@ -1554,6 +1571,7 @@ export const articles: Article[] = [
   },
   {
     slug: "how-to-organize-kitchen-cabinets",
+    related: ["best-air-fryers-home", "best-coffee-makers-home", "best-robot-vacuums"],
     type: "guide",
     title: "How to Organize Kitchen Cabinets: A Room-by-Room System",
     category: "Home Essentials",
@@ -1620,6 +1638,7 @@ export const articles: Article[] = [
   /* ============================== OUTDOORMASTER 3 ============================== */
   {
     slug: "outdoormaster-ski-goggles-pro-review",
+    related: ["outdoormaster-otg-snow-goggles-review", "outdoormaster-rhino-mips-helmet-review", "best-hiking-boots"],
     type: "review",
     title: "OutdoorMaster Ski Goggles PRO Review: Amazon's #1 Snow Goggle — Independent Evaluation",
     category: "Camping & Outdoor",
@@ -1735,6 +1754,7 @@ export const articles: Article[] = [
   },
   {
     slug: "outdoormaster-otg-snow-goggles-review",
+    related: ["outdoormaster-ski-goggles-pro-review", "outdoormaster-rhino-mips-helmet-review", "best-headlamps-camping"],
     type: "review",
     title: "OutdoorMaster OTG Snow Goggles Review: Finally, Ski Goggles That Work Over Glasses",
     category: "Camping & Outdoor",
@@ -1851,6 +1871,7 @@ export const articles: Article[] = [
   },
   {
     slug: "outdoormaster-rhino-mips-helmet-review",
+    related: ["outdoormaster-ski-goggles-pro-review", "outdoormaster-otg-snow-goggles-review", "best-hiking-boots"],
     type: "review",
     title: "OutdoorMaster RHINO MIPS Full-Face MTB Helmet Review: Virginia Tech 5-Star at $159",
     category: "Camping & Outdoor",
@@ -1969,6 +1990,7 @@ export const articles: Article[] = [
   /* ============================== EXTRA 3 ============================== */
   {
     slug: "best-noise-cancelling-headphones-travel",
+    related: ["best-travel-backpack-carry-on", "carry-on-vs-personal-item", "best-portable-power-stations"],
     type: "review",
     title: "Best Noise-Cancelling Headphones for Travel (2026)",
     category: "Travel & EDC",
@@ -2081,6 +2103,7 @@ export const articles: Article[] = [
 
   {
     slug: "sleeping-pad-r-value",
+    related: ["how-to-choose-a-sleeping-bag", "best-camping-tents-review", "car-camping-checklist"],
     type: "guide",
     title: "Sleeping Pad R-Value Explained: How to Pick the Right Insulation",
     category: "Camping & Outdoor",
@@ -2164,6 +2187,7 @@ export const articles: Article[] = [
 
   {
     slug: "what-size-tent-do-i-need",
+    related: ["best-camping-tents-review", "how-to-set-up-a-tent", "car-camping-checklist"],
     type: "guide",
     title: "What Size Tent Do I Need? Capacity, Floor Space & Real-World Fit",
     category: "Camping & Outdoor",
@@ -2244,6 +2268,7 @@ export const articles: Article[] = [
 
   {
     slug: "carry-on-vs-personal-item",
+    related: ["best-travel-backpack-carry-on", "how-to-pack-a-backpack", "best-noise-cancelling-headphones-travel"],
     type: "guide",
     title: "Carry-On vs Personal Item: Size Limits, Packing Differences & What Fits",
     category: "Travel & EDC",
@@ -2333,6 +2358,7 @@ export const articles: Article[] = [
 
   {
     slug: "headlamp-lumens-guide",
+    related: ["best-headlamps-camping", "car-camping-checklist", "best-camping-tents-review"],
     type: "guide",
     title: "How Many Lumens Do You Need for a Camping Headlamp?",
     category: "Camping & Outdoor",
@@ -2405,6 +2431,7 @@ export const articles: Article[] = [
 
   {
     slug: "air-fryer-size-guide",
+    related: ["best-air-fryers-home", "best-coffee-makers-home", "how-to-organize-kitchen-cabinets"],
     type: "guide",
     title: "Air Fryer Size Guide: What Capacity Do You Actually Need?",
     category: "Home Essentials",
@@ -2478,6 +2505,7 @@ export const articles: Article[] = [
 
   {
     slug: "robot-vacuum-maintenance",
+    related: ["best-robot-vacuums", "how-to-organize-kitchen-cabinets", "best-air-fryers-home"],
     type: "guide",
     title: "Robot Vacuum Maintenance Checklist: How to Keep It Running Well",
     category: "Home Essentials",
