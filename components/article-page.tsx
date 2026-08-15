@@ -268,15 +268,17 @@ export function ArticlePage({ article }: { article: Article }) {
                 </div>
               )}
 
-              {/* Product image. Lazy — these all sit below the fold. */}
+              {/* Product image. Lazy, since these all sit below the fold.
+                  Width is capped: these are studio shots on a plain background
+                  and at full body width they dwarf the copy around them. */}
               {pick.image && (
-                <figure className="mt-6">
+                <figure className="mt-6 max-w-md">
                   <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-stone-200 bg-stone-50">
                     <Image
                       src={pick.image}
                       alt={pick.imageAlt ?? pick.name}
                       fill
-                      sizes="(max-width: 768px) 100vw, 720px"
+                      sizes="(max-width: 640px) 92vw, 448px"
                       loading="lazy"
                       className="object-contain p-4"
                     />

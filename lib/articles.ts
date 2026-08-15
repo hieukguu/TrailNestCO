@@ -1917,6 +1917,9 @@ export const articles: Article[] = [
     picks: [
       {
         name: "OutdoorMaster Ski Goggles PRO — Rose Gold / Revo Lens",
+        image: "https://outdoormaster.com/cdn/shop/files/PRO_GOGGLES.jpg",
+        imageAlt: "OutdoorMaster Ski Goggles PRO frameless snow goggle with a mirrored revo lens",
+        imageCredit: "Image: OutdoorMaster",
         award: "Best Overall Pick",
         body: "The Revo Rose Gold lens is the sweet spot in the lineup: handles variable light from overcast to sunny, has the best contrast enhancement, and looks sharp on the mountain. The frameless silhouette gives you an almost uninterrupted field of view — peripheral vision that rival goggles in the $150 range struggle to match. Magnetic lens swap takes under five seconds once you've done it twice.",
         pros: [
@@ -2053,6 +2056,9 @@ export const articles: Article[] = [
     picks: [
       {
         name: "OutdoorMaster OTG Snow Goggles — Blue Revo Lens",
+        image: "https://outdoormaster.com/cdn/shop/files/outdoormaster-otg_snow_goggles-ski-goggles-black_frame_vlt_10_00001.webp",
+        imageAlt: "OutdoorMaster OTG snow goggle with a black frame and mirrored lens, shown side on",
+        imageCredit: "Image: OutdoorMaster",
         award: "Best for Glasses-Wearers",
         body: "The Blue Revo is the most versatile lens in the OTG lineup for glasses-wearers. VLT around 18% handles mixed-light conditions well, and the mirror coating provides additional glare protection that reduces eye fatigue during long sessions — which matters more when you're dealing with the visual complexity of glasses inside a goggle. The flat-bottom frame cleared our test glasses (up to 145mm wide) without pressure on the temples.",
         pros: [
@@ -2190,6 +2196,9 @@ export const articles: Article[] = [
     picks: [
       {
         name: "OutdoorMaster RHINO MIPS Full Face — Meteorite Black",
+        image: "https://outdoormaster.com/cdn/shop/files/OutdoorMaster-RHINO_Full_Face_Bike_Helmets-Meteorite_Black-01.webp",
+        imageAlt: "OutdoorMaster RHINO MIPS full-face mountain bike helmet in meteorite black",
+        imageCredit: "Image: OutdoorMaster",
         award: "Best Full-Face Helmet Under $200",
         body: "The Meteorite Black is the crowd pick for good reason — the matte finish hides trail dust and minor scratches that a gloss finish would show immediately. More importantly, the fit system in this colorway came precisely dialed out of the box, which isn't always the case across color variants. 27 vents, sub-750g weight, and a MIPS liner that moves 10–15mm on rotational impact to reduce brain rotation forces. The chin bar detaches for trail riding in warm conditions.",
         pros: [
@@ -2210,6 +2219,9 @@ export const articles: Article[] = [
       },
       {
         name: "OutdoorMaster RHINO MIPS Full Face — Emerald Green",
+        image: "https://outdoormaster.com/cdn/shop/files/04-emerald_green-rhino_full_face_bike_helmets_42926468-6c72-489b-8b87-df9677aae432.jpg",
+        imageAlt: "OutdoorMaster RHINO MIPS full-face mountain bike helmet in emerald green",
+        imageCredit: "Image: OutdoorMaster",
         award: "Best for Visibility on Trail",
         body: "On busy trail systems where visibility matters for other riders reading your trajectory, the Emerald Green stands out against the brown and grey palette of dirt and rock. Same MIPS-certified construction as all RHINO colorways — the safety isn't compromised by the finish choice. For trail centers and bike parks where you're sharing trail with other riders, high-visibility colors have practical value beyond aesthetics.",
         pros: [
