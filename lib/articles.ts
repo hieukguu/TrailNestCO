@@ -1272,8 +1272,8 @@ export const articles: Article[] = [
     excerpt:
       "Identical 45-quart models, 20 lbs of ice, 85°F heat, 72 hours. The gap is real — but it only matters for some trips.",
     image:
-      "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=1600&q=70&auto=format&fit=crop",
-    alt: "Camp scene at dusk during multi-day cooler testing",
+      "https://images.unsplash.com/photo-1544376798-89aa6b82c6cd?w=1600&q=70&auto=format&fit=crop",
+    alt: "Wooden rowing boats moored on a still alpine lake below mist-covered peaks",
     intro: [
       "Does YETI's premium price buy better performance than RTIC's near-identical construction? For this comparison, we evaluated 45-quart models from both brands on published ice retention specifications, construction quality, and hardware durability.",
     ],
@@ -1443,8 +1443,8 @@ export const articles: Article[] = [
     excerpt:
       "Where your gear goes inside a pack matters more than how much you carry. A zone-based system that saves your back and your patience.",
     image:
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1600&q=70&auto=format&fit=crop",
-    alt: "Backpack ready to be packed for a trip",
+      "https://images.unsplash.com/photo-1622260614153-03223fb72052?w=1600&q=70&auto=format&fit=crop",
+    alt: "Green hiking backpack standing on rocks at the edge of a lake",
     intro: [
       "Where your gear goes inside a pack matters more than how much you carry. A systematic approach based on weight distribution relative to your center of gravity prevents back pain and keeps essentials reachable on the trail.",
     ],
@@ -1515,8 +1515,8 @@ export const articles: Article[] = [
     excerpt:
       "From arriving at your campsite to being fully storm-ready — including the parts most setup guides skip.",
     image:
-      "https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=1600&q=70&auto=format&fit=crop",
-    alt: "Tent pitched on a mountainside at sunset",
+      "https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?w=1600&q=70&auto=format&fit=crop",
+    alt: "Person sitting with a dog in the doorway of a pitched tent looking out over a lake",
     intro: [
       "This guide covers everything from arriving at your campsite to being fully storm-ready — including the parts most setup guides skip.",
       "First, practice the pitch at home. Two complete setup-and-takedown cycles will reveal missing components, clarify confusing steps without time pressure, and expose manufacturing defects before you're in a remote location.",
@@ -1595,8 +1595,8 @@ export const articles: Article[] = [
     excerpt:
       "Waterproofing isn't a one-time feature — it's a coating that wears off. How to renew tents, boots, and jackets before they fail on you.",
     image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&q=70&auto=format&fit=crop",
-    alt: "Wet forest trail conditions that test gear waterproofing",
+      "https://images.unsplash.com/photo-1527489377706-5bf97e608852?w=1600&q=70&auto=format&fit=crop",
+    alt: "Fast-flowing turquoise river running through a forested mountain valley",
     intro: [
       "Waterproofing isn't a one-time feature — it's a coating that wears off with use, washing, and UV exposure, and it needs periodic renewal.",
       "Most waterproof gear combines a membrane or coating that blocks water with a Durable Water Repellent (DWR) treatment on the outer fabric. The DWR wears off first — which is why jackets 'leak' despite an intact membrane once the outer fabric saturates.",
@@ -1664,8 +1664,8 @@ export const articles: Article[] = [
     excerpt:
       "Car camping means you can bring almost anything — which makes it easy to forget something specific. A category-by-category checklist.",
     image:
-      "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=1600&q=70&auto=format&fit=crop",
-    alt: "Car camping setup with a lit camper at dusk",
+      "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600&q=70&auto=format&fit=crop",
+    alt: "Flat lay of a paper map, camera, notebook and small backpack laid out for trip planning",
     intro: [
       "Car camping allows far more flexibility than backpacking thanks to vehicle storage — but that same advantage makes it easy to forget something specific. Run through this checklist by category before you leave.",
     ],
@@ -1756,8 +1756,8 @@ export const articles: Article[] = [
     excerpt:
       "Temperature ratings are frequently misunderstood — here is how to read them correctly and match a bag to your actual conditions, insulation type, and budget.",
     image:
-      "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1600&q=70&auto=format&fit=crop",
-    alt: "Tent under the stars on a cold clear night",
+      "https://images.unsplash.com/photo-1496545672447-f699b503d270?w=1600&q=70&auto=format&fit=crop",
+    alt: "Tent and an unrolled sleeping bag on a ridge with the sun low on the horizon",
     intro: [
       "A sleeping bag is one of the few pieces of gear where getting the spec wrong directly ruins a trip — too warm and you're sweating and sleepless; too cold and you're miserable or, in bad cases, at real risk.",
     ],
@@ -2447,8 +2447,8 @@ export const articles: Article[] = [
     excerpt:
       "R-value determines how much heat your pad keeps between you and the ground. Most campers pick the wrong number — here is how to get it right.",
     image:
-      "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1600&q=70&auto=format&fit=crop",
-    alt: "Sleeping pad and sleeping bag at a campsite at dusk",
+      "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=1600&q=70&auto=format&fit=crop",
+    alt: "Campfire burning beside a lit tent in a forest under a sky full of stars",
     intro: [
       "Your sleeping bag rating means nothing if your pad can't hold body heat against the ground. Cold ground pulls warmth away faster than cold air — a R-2 pad on a 40°F night will leave you shivering in a bag rated to 20°F.",
       "R-value is a standardized measure of thermal resistance. Higher numbers mean more insulation. This guide explains what the numbers mean, which R-value you need for each season, and how to combine pads to increase warmth without buying a new setup.",
@@ -2531,8 +2531,8 @@ export const articles: Article[] = [
     excerpt:
       "A 2-person tent rarely fits two adults comfortably. Here is how to read capacity ratings honestly and choose the right size for your actual trip.",
     image:
-      "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=1600&q=70&auto=format&fit=crop",
-    alt: "Backpacking tent pitched on a mountain ridge at sunrise",
+      "https://images.unsplash.com/photo-1445308394109-4ec2920981b1?w=1600&q=70&auto=format&fit=crop",
+    alt: "Yellow and grey dome tent pitched at a desert campsite below red rock cliffs",
     intro: [
       "Tent capacity ratings are optimistic. A manufacturer's '2-person' tent typically means two people lying flat with no gear inside — no bags, no pads, nothing between you and the tent walls. Understanding what those numbers actually mean helps you pick a tent that matches your real sleeping situation.",
       "This guide explains how to read capacity, calculate the floor space you actually need, and decide whether to size up based on trip type and group size.",
@@ -2612,8 +2612,8 @@ export const articles: Article[] = [
     excerpt:
       "Every US airline sets different size limits, and a bag that fits on United may not fit on Spirit. Here is what the rules actually say and how to pack for both.",
     image:
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1600&q=70&auto=format&fit=crop",
-    alt: "Travel backpack and personal item bag ready for airport",
+      "https://images.unsplash.com/photo-1502301197179-65228ab57f78?w=1600&q=70&auto=format&fit=crop",
+    alt: "Open suitcase on a floor packed with folded clothes, a sun hat and a camera",
     intro: [
       "The difference between a carry-on and a personal item is not just size — it determines where the bag goes (overhead bin vs under the seat in front of you), whether you pay extra, and whether the bag gets gate-checked on a full flight.",
       "Every major US airline publishes different size limits, and budget carriers enforce them more strictly. This guide covers the actual policies, how bags are measured in practice, and what you can realistically fit in each.",
@@ -2775,8 +2775,8 @@ export const articles: Article[] = [
     excerpt:
       "A 2-quart air fryer can't cook enough food for two people without batches. A 7-quart air fryer may not fit on your counter. Here is how to match capacity to your household.",
     image:
-      "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=1600&q=70&auto=format&fit=crop",
-    alt: "Air fryer on a kitchen counter with vegetables nearby",
+      "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=1600&q=70&auto=format&fit=crop",
+    alt: "Stir-fried noodles served on a wooden plate with chopsticks resting across it",
     intro: [
       "Air fryer capacity is measured in quarts, but quart ratings are not standardized — two models both labeled '5.8 QT' can have meaningfully different usable cooking areas depending on basket shape and design.",
       "This guide covers what you can realistically cook at each size, which household sizes each capacity suits, and the counter space each requires.",
@@ -2849,8 +2849,8 @@ export const articles: Article[] = [
     excerpt:
       "Most robot vacuums underperform not because they are broken, but because they have not been maintained. This checklist covers everything that actually needs attention and how often.",
     image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=70&auto=format&fit=crop",
-    alt: "Robot vacuum cleaning a hardwood floor in a modern home",
+      "https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?w=1600&q=70&auto=format&fit=crop",
+    alt: "Minimalist living room with a wall-mounted television and storage bench on hardwood flooring",
     intro: [
       "A robot vacuum that ran perfectly for the first three months and now misses sections, struggles on carpet, or drains the battery faster than it used to usually has a maintenance problem, not a mechanical failure.",
       "The most common issues — reduced suction, error codes for brush jams, navigation problems, and short runtime — are fixed by regular cleaning and part replacement, not by buying a new unit.",
