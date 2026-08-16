@@ -1,4 +1,6 @@
-﻿export type ArticleSection = {
+﻿import { newCampingArticles } from "./articles-camping";
+
+export type ArticleSection = {
   heading: string;
   body?: string[];
   list?: string[];
@@ -2921,6 +2923,10 @@ export const articles: Article[] = [
     ],
   },
 ];
+
+// Newer Camping & Outdoor round-ups live in their own module to keep this
+// file from growing further.
+articles.push(...newCampingArticles);
 
 export const reviewArticles = articles.filter((a) => a.type === "review");
 export const guideArticles = articles.filter((a) => a.type === "guide");
