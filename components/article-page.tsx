@@ -1,38 +1,9 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { Check, ChevronRight, X, ArrowLeft, FileSearch, ArrowUpRight } from "lucide-react";
+import { ReadingProgress } from "@/components/reading-progress";
 import { articles, type Article } from "@/lib/articles";
 import { site } from "@/lib/data";
-import { useEffect, useState } from "react";
-
-/* ── Reading progress bar ───────────────────────────────────────── */
-function ReadingProgress() {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const update = () => {
-      const el = document.documentElement;
-      const scrollTop = el.scrollTop || document.body.scrollTop;
-      const height = el.scrollHeight - el.clientHeight;
-      setProgress(height > 0 ? (scrollTop / height) * 100 : 0);
-    };
-    window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
-  }, []);
-
-  return (
-    <div
-      className="progress-bar"
-      style={{ width: `${progress}%` }}
-      role="progressbar"
-      aria-valuenow={Math.round(progress)}
-      aria-valuemin={0}
-      aria-valuemax={100}
-    />
-  );
-}
 
 /* ── Main component ─────────────────────────────────────────────── */
 export function ArticlePage({ article }: { article: Article }) {
@@ -118,55 +89,64 @@ export function ArticlePage({ article }: { article: Article }) {
 
       <article>
         {/* ── Hero ─────────────────────────────────────────────── */}
-        <header className="relative overflow-hidden bg-pine-950 pb-16 pt-[calc(var(--header-h)+40px)]">
-          <Image
-            src={article.image}
-            alt=""
-            aria-hidden
-            fill
-            sizes="100vw"
-            className="object-cover opacity-20"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-pine-950/50 to-pine-950" />
+        <header className="relative overflow-hidden bg-pine-950 pb-12 pt-[calc(var(--header-h)+32px)] sm:pb-16 sm:pt-[calc(var(--header-h)+40px)]">
+          <div className="pointer-events-none absolute inset-0 opacity-35 [background-image:radial-gradient(circle_at_12%_18%,rgba(215,125,47,0.18),transparent_28%),radial-gradient(circle_at_88%_80%,rgba(114,148,126,0.22),transparent_32%)]" />
 
-          <div className="container-site relative z-10 max-w-4xl">
-            {/* Breadcrumb */}
-            <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-[13px] text-white/50">
-              <Link href="/" className="transition-colors hover:text-white/80">Home</Link>
-              <ChevronRight size={13} />
-              <Link href={hubHref} className="transition-colors hover:text-white/80">{hubLabel}</Link>
-              <ChevronRight size={13} />
-              <span className="text-white/75">{article.category}</span>
-            </nav>
+          <div className="container-site relative z-10">
+            <div className="grid items-center gap-9 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:gap-12">
+              <div>
+                {/* Breadcrumb */}
+                <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-[13px] text-white/50">
+                  <Link href="/" className="transition-colors hover:text-white/80">Home</Link>
+                  <ChevronRight size={13} />
+                  <Link href={hubHref} className="transition-colors hover:text-white/80">{hubLabel}</Link>
+                  <ChevronRight size={13} />
+                  <span className="text-white/75">{article.category}</span>
+                </nav>
 
-            <div className="mt-5 flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center rounded bg-ember-500 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-pine-950">
-                {typeLabel}
-              </span>
-              <span className="inline-flex items-center rounded border border-white/15 px-3 py-1 text-[11px] text-white/60">
-                {article.category}
-              </span>
-              <span className="inline-flex items-center rounded border border-white/10 px-3 py-1 text-[11px] text-white/45">
-                {article.readTime}
-              </span>
-            </div>
+                <div className="mt-5 flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center rounded bg-ember-500 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-pine-950">
+                    {typeLabel}
+                  </span>
+                  <span className="inline-flex items-center rounded border border-white/15 px-3 py-1 text-[11px] text-white/60">
+                    {article.category}
+                  </span>
+                  <span className="inline-flex items-center rounded border border-white/10 px-3 py-1 text-[11px] text-white/45">
+                    {article.readTime}
+                  </span>
+                </div>
 
-            {/* Title */}
-            <h1 className="mt-5 font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-              {article.title}
-            </h1>
+                {/* Title */}
+                <h1 className="mt-5 text-balance font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+                  {article.title}
+                </h1>
 
-            {/* Excerpt */}
-            <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-white/70">
-              {article.excerpt}
-            </p>
+                {/* Excerpt */}
+                <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-white/70">
+                  {article.excerpt}
+                </p>
 
-            {/* Meta */}
-            <div className="mt-7 flex flex-wrap items-center gap-x-1 gap-y-2 text-sm text-white/50">
-              <span>By <strong className="font-semibold text-white/80">TrailNestCo Editorial</strong></span>
-              <span className="mx-2 text-white/25">·</span>
-              <span>{article.date}</span>
+                {/* Meta */}
+                <div className="mt-7 flex flex-wrap items-center gap-x-1 gap-y-2 text-sm text-white/50">
+                  <span>By <strong className="font-semibold text-white/80">TrailNestCo Editorial</strong></span>
+                  <span className="mx-2 text-white/25">·</span>
+                  <span>{article.date}</span>
+                </div>
+              </div>
+
+              <figure className="relative order-first overflow-hidden rounded-2xl border border-white/15 bg-pine-900 shadow-[0_24px_60px_rgba(4,12,8,0.35)] lg:order-none">
+                <div className="relative aspect-[16/10] lg:aspect-[4/3]">
+                  <Image
+                    src={article.image}
+                    alt={article.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 46vw"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+              </figure>
             </div>
           </div>
         </header>

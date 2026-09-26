@@ -1,5 +1,7 @@
 ﻿import { newCampingArticles } from "./articles-camping";
 
+import { ketlReviews } from "./articles-ketl";
+
 export type ArticleSection = {
   heading: string;
   body?: string[];
@@ -143,6 +145,9 @@ export const articles: Article[] = [
       {
         name: "Instant Vortex Plus (6 QT)",
         award: "Best for Multi-Function Cooking",
+        image: "/images/products/instant-vortex-plus.webp",
+        imageAlt: "Instant Vortex Plus 6-quart air fryer",
+        imageCredit: "Image: Instant Pot",
         body: "This versatile unit delivers six cooking functions — air fry, roast, bake, broil, dehydrate, and reheat. The 6-quart capacity handles whole chickens of roughly 1.5 kg, finishing evenly in about 50 minutes in roast mode.",
         pros: [
           "Six distinct cooking functions",
@@ -384,6 +389,9 @@ export const articles: Article[] = [
       {
         name: "Black Diamond Spot 400",
         award: "Best Overall",
+        image: "/images/products/black-diamond-spot-400.webp",
+        imageAlt: "Black Diamond Spot 400 headlamp",
+        imageCredit: "Image: Black Diamond",
         body: "400 lumens on high with a 10-lumen camp mode and red night vision. The beam combines a central spot with flood spill for balanced visibility. Runtime is about 3.5 hours at full brightness and over 200 hours on low, on three AAA batteries. IPX8 waterproof — genuinely submersible to 1 meter — with simple one-button, glove-friendly operation.",
         pros: [
           "400 lumens with sustained, honest runtime",
@@ -510,6 +518,9 @@ export const articles: Article[] = [
       {
         name: "Osprey Farpoint 40",
         award: "Best Overall",
+        image: "/images/products/osprey-farpoint-40.webp",
+        imageAlt: "Osprey Farpoint 40 travel backpack",
+        imageCredit: "Image: Osprey",
         body: "The most consistently recommended travel backpack, for good reason. This 40-liter pack features a panel-loading clamshell that's easy to pack and unpack, a laptop compartment with tablet pocket, lockable zippers, and a suspension system genuinely comfortable for travel without being overly technical. The hip belt tucks away when not needed. 40L / 1.6 kg.",
         pros: [
           "Panel-loading clamshell — easy to pack and unpack",
@@ -1088,6 +1099,9 @@ export const articles: Article[] = [
       {
         name: "Sawyer Squeeze",
         award: "Best Lightweight Option",
+        image: "/images/products/sawyer-squeeze.webp",
+        imageAlt: "Sawyer Squeeze water filtration system",
+        imageCredit: "Image: Sawyer",
         body: "At 3 ounces, a backpacking standard for good reason. It maintains strong initial flow and recovers nearly to original speed after backflushing with the included syringe. Rated for 100,000+ gallons.",
         pros: [
           "Weighs just 3 oz",
@@ -2927,6 +2941,7 @@ export const articles: Article[] = [
 // Newer Camping & Outdoor round-ups live in their own module to keep this
 // file from growing further.
 articles.push(...newCampingArticles);
+articles.push(...ketlReviews);
 
 export const reviewArticles = articles.filter((a) => a.type === "review");
 export const guideArticles = articles.filter((a) => a.type === "guide");

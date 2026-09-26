@@ -219,7 +219,7 @@ export function FeaturedSlider({ brands }: { brands: FeaturedBrand[] }) {
               onClick={() => scrollTo(i)}
               aria-label={`Show ${b.title}`}
               aria-current={i === selected}
-              className="group flex h-11 items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember-500"
+              className="group flex h-11 min-w-11 items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember-500"
             >
               <span
                 className={`block rounded-full transition-all duration-300 motion-reduce:transition-none ${

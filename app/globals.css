@@ -4,23 +4,40 @@
 
 /* ─── Design Tokens ─────────────────────────────────────────────── */
 :root {
-  --header-h: 64px;
-  --radius-card: 12px;
-  --shadow-card: 0 1px 4px rgba(0,0,0,0.06), 0 2px 12px rgba(0,0,0,0.04);
-  --shadow-card-hover: 0 4px 20px rgba(0,0,0,0.10);
-  --transition: 200ms ease;
+  --header-h: 68px;
+  --radius-card: 14px;
+  --shadow-card: 0 1px 2px rgba(16, 29, 23, 0.06), 0 8px 24px rgba(16, 29, 23, 0.06);
+  --shadow-card-hover: 0 16px 40px rgba(16, 29, 23, 0.12);
+  --transition: 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* ─── Base ───────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 24px);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  @apply bg-white text-pine-950;
+  @apply overflow-x-clip bg-sand-50 text-pine-950;
   font-feature-settings: "kern", "liga", "calt";
+}
+
+a,
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 3px solid #d77d2f;
+  outline-offset: 3px;
 }
 
 ::selection {
@@ -29,7 +46,8 @@ body {
 
 /* ─── Typography ─────────────────────────────────────────────────── */
 .prose-article {
-  @apply text-[17px] leading-[1.85] text-pine-800;
+  @apply text-[17px] leading-[1.82] text-pine-800;
+  text-wrap: pretty;
 }
 
 .prose-article p {
@@ -48,7 +66,7 @@ body {
 
 /* ─── Layout ─────────────────────────────────────────────────────── */
 .container-site {
-  @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  @apply mx-auto w-full max-w-7xl px-4 min-[390px]:px-5 sm:px-8 lg:px-10;
 }
 
 .container-narrow {
@@ -60,7 +78,7 @@ body {
 
   /* Cards */
   .glass-card {
-    @apply rounded-xl border border-stone-200 bg-white;
+    @apply rounded-[var(--radius-card)] border border-stone-200 bg-white;
     box-shadow: var(--shadow-card);
     transition: box-shadow var(--transition);
   }
@@ -70,7 +88,7 @@ body {
   }
 
   .article-card {
-    @apply overflow-hidden rounded-xl bg-white border border-stone-200;
+    @apply overflow-hidden rounded-[var(--radius-card)] bg-white border border-stone-200;
     box-shadow: var(--shadow-card);
     transition: box-shadow var(--transition), transform var(--transition);
   }
@@ -82,12 +100,16 @@ body {
 
   /* Buttons */
   .btn {
-    @apply inline-flex min-h-[42px] items-center justify-center gap-2 rounded-md px-6 py-2.5 text-sm font-semibold;
-    transition: all var(--transition);
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-6 py-2.5 text-sm font-semibold;
+    transition: color var(--transition), background-color var(--transition), border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  }
+
+  .btn:active {
+    transform: translateY(1px);
   }
 
   .btn-primary {
-    @apply btn bg-pine-950 text-white hover:bg-pine-800;
+    @apply btn bg-pine-950 text-white hover:bg-pine-800 hover:shadow-md;
   }
 
   .btn-ghost {
@@ -127,7 +149,7 @@ body {
 
   /* Section label */
   .section-label {
-    @apply flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-pine-400;
+    @apply flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-pine-500;
   }
 
   .section-label::before {
@@ -143,7 +165,7 @@ body {
 
   /* Affiliate box */
   .affiliate-box {
-    @apply rounded-xl border border-stone-200 bg-stone-50 p-6;
+    @apply rounded-xl border border-stone-200 bg-sand-100/70 p-5 sm:p-6;
   }
 
   /* Pull quote */
@@ -174,6 +196,17 @@ body {
 
   .table-premium tbody tr:first-child td:first-child {
     @apply font-bold text-pine-950;
+  }
+}
+
+@media (max-width: 389px) {
+  :root {
+    --header-h: 64px;
+  }
+
+  .prose-article {
+    font-size: 1rem;
+    line-height: 1.75;
   }
 }
 

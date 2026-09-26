@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X, Mountain, ChevronDown } from "lucide-react";
 
 const categories = [
@@ -20,6 +20,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [reviewsOpen, setReviewsOpen] = useState(false);
+  const reviewsRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -28,17 +29,57 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!reviewsOpen) return;
+
+    const closeOnOutsideClick = (event: MouseEvent) => {
+      if (!reviewsRef.current?.contains(event.target as Node)) {
+        setReviewsOpen(false);
+      }
+    };
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setReviewsOpen(false);
+    };
+
+    document.addEventListener("mousedown", closeOnOutsideClick);
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("mousedown", closeOnOutsideClick);
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [reviewsOpen]);
+
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 bg-white border-b border-stone-200 transition-shadow duration-200 ${
-        scrolled ? "shadow-sm" : ""
+      className={`fixed inset-x-0 top-0 z-50 border-b border-stone-200/90 bg-sand-50/95 transition-shadow duration-200 supports-[backdrop-filter]:backdrop-blur-xl ${
+        scrolled ? "shadow-[0_8px_30px_rgba(16,29,23,0.08)]" : ""
       }`}
     >
       <div className="container-site flex h-[var(--header-h)] items-center justify-between gap-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0" aria-label="TrailNestCo home">
-          <Mountain size={19} strokeWidth={2} className="text-ember-600" />
-          <span className="font-display text-[18px] font-bold text-pine-950 tracking-tight">
+        <Link href="/" className="group flex min-h-11 shrink-0 items-center gap-2.5 rounded-md" aria-label="TrailNestCo home">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-pine-950/10 bg-pine-950 text-ember-400 transition-colors group-hover:bg-pine-800">
+            <Mountain size={17} strokeWidth={1.8} />
+          </span>
+          <span className="font-display text-[18px] font-bold tracking-tight text-pine-950">
             TrailNestCo
           </span>
         </Link>
@@ -48,11 +89,18 @@ export function Header() {
           <ul className="flex items-center gap-0.5">
             {/* Reviews dropdown */}
             <li
+              ref={reviewsRef}
               className="relative"
               onMouseEnter={() => setReviewsOpen(true)}
               onMouseLeave={() => setReviewsOpen(false)}
             >
-              <button className="flex items-center gap-1 rounded-md px-4 py-2 text-[14px] font-medium text-pine-600 transition-colors hover:bg-stone-100 hover:text-pine-950">
+              <button
+                type="button"
+                aria-haspopup="true"
+                aria-expanded={reviewsOpen}
+                onClick={() => setReviewsOpen(true)}
+                className="flex min-h-11 items-center gap-1 rounded-md px-4 py-2 text-[14px] font-medium text-pine-700 transition-colors hover:bg-pine-50 hover:text-pine-950"
+              >
                 Reviews
                 <ChevronDown
                   size={13}
@@ -61,23 +109,25 @@ export function Header() {
               </button>
 
               {reviewsOpen && (
-                <div className="absolute left-0 top-full mt-1 w-52 overflow-hidden rounded-lg border border-stone-200 bg-white py-1.5 shadow-lg">
-                  <Link
-                    href="/reviews"
-                    className="block px-4 py-2.5 text-[13px] font-semibold text-pine-950 transition-colors hover:bg-stone-50"
-                  >
-                    All Reviews
-                  </Link>
-                  <div className="mx-3 my-1 border-t border-stone-100" />
-                  {categories.map((c) => (
+                <div className="absolute left-0 top-full w-56 pt-1.5">
+                  <div className="overflow-hidden rounded-xl border border-stone-200 bg-white py-2 shadow-[0_20px_45px_rgba(16,29,23,0.14)]">
                     <Link
-                      key={c.href}
-                      href={c.href}
-                      className="block px-4 py-2 text-[13px] text-pine-600 transition-colors hover:bg-stone-50 hover:text-pine-950"
+                      href="/reviews"
+                      className="block px-4 py-3 text-[13px] font-semibold text-pine-950 transition-colors hover:bg-pine-50"
                     >
-                      {c.label}
+                      All Reviews
                     </Link>
-                  ))}
+                    <div className="mx-3 my-1 border-t border-stone-100" />
+                    {categories.map((c) => (
+                      <Link
+                        key={c.href}
+                        href={c.href}
+                        className="block px-4 py-2.5 text-[13px] text-pine-700 transition-colors hover:bg-pine-50 hover:text-pine-950"
+                      >
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </li>
@@ -86,7 +136,7 @@ export function Header() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="rounded-md px-4 py-2 text-[14px] font-medium text-pine-600 transition-colors hover:bg-stone-100 hover:text-pine-950"
+                  className="inline-flex min-h-11 items-center rounded-md px-4 py-2 text-[14px] font-medium text-pine-700 transition-colors hover:bg-pine-50 hover:text-pine-950"
                 >
                   {l.label}
                 </Link>
@@ -99,12 +149,13 @@ export function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/reviews"
-            className="hidden md:inline-flex items-center rounded-md bg-pine-950 px-4 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-pine-800"
+            className="hidden min-h-11 items-center rounded-lg bg-pine-950 px-5 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-pine-800 md:inline-flex"
           >
             All Reviews
           </Link>
           <button
-            className="flex h-9 w-9 items-center justify-center rounded-md text-pine-600 hover:bg-stone-100 lg:hidden"
+            type="button"
+            className="flex h-11 w-11 items-center justify-center rounded-lg text-pine-700 transition-colors hover:bg-pine-50 lg:hidden"
             aria-label="Toggle menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -118,14 +169,14 @@ export function Header() {
       {open && (
         <nav
           aria-label="Mobile"
-          className="border-t border-stone-200 bg-white lg:hidden"
+          className="max-h-[calc(100dvh-var(--header-h))] overflow-y-auto border-t border-stone-200 bg-sand-50 lg:hidden"
         >
-          <ul className="container-site flex flex-col py-3">
+          <ul className="container-site flex flex-col py-3 pb-[max(1rem,env(safe-area-inset-bottom))]">
             <li className="border-b border-stone-100">
               <Link
                 href="/reviews"
                 onClick={() => setOpen(false)}
-                className="block py-3.5 text-[15px] font-semibold text-pine-950"
+                className="flex min-h-12 items-center py-3 text-[15px] font-semibold text-pine-950"
               >
                 All Reviews
               </Link>
@@ -135,7 +186,7 @@ export function Header() {
                 <Link
                   href={c.href}
                   onClick={() => setOpen(false)}
-                  className="block py-3 pl-4 text-[14px] text-pine-600"
+                  className="flex min-h-12 items-center py-3 pl-4 text-[14px] text-pine-700"
                 >
                   {c.label}
                 </Link>
@@ -146,7 +197,7 @@ export function Header() {
                 <Link
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block py-3.5 text-[15px] font-medium text-pine-800"
+                  className="flex min-h-12 items-center py-3 text-[15px] font-medium text-pine-800"
                 >
                   {l.label}
                 </Link>

@@ -68,14 +68,14 @@ export function Hero() {
       {/* Subtle texture overlay */}
       <div className="dark-shapes absolute inset-0 pointer-events-none" />
 
-      <div className="container-site relative z-10 flex flex-col items-center pb-12 pt-14 text-center sm:pt-20">
+      <div className="container-site relative z-10 flex flex-col items-center pb-10 pt-12 text-center sm:pb-14 sm:pt-20">
 
         {/* Trust badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease }}
-          className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-white/80 backdrop-blur-sm"
+          className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-white/85 sm:text-[11px]"
         >
           <ShieldCheck size={13} className="text-ember-400" />
           Independent Gear Reviews · Zero Pay-to-Play
@@ -86,7 +86,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease }}
-          className="mt-7 max-w-4xl font-display text-4xl font-bold leading-[1.1] tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl"
+          className="mt-7 max-w-4xl text-balance font-display text-[clamp(2.35rem,7vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.035em] text-white"
         >
           Independent Research.
           <br className="hidden sm:block" />{" "}
@@ -98,7 +98,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease }}
-          className="mt-5 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg"
+          className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-white/70 sm:text-lg"
         >
           Independent product reviews, comparisons and buying guides for
           camping &amp; outdoor, home essentials, and travel &amp; EDC.
@@ -109,7 +109,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.32, ease }}
-          className="mt-12 w-full max-w-5xl"
+          className="mt-10 w-full max-w-5xl sm:mt-12"
         >
           <HeroSlider articles={sliderArticles} />
         </motion.div>
@@ -117,7 +117,7 @@ export function Hero() {
 
       {/* Brand strip */}
       <div className="relative z-10 border-t border-white/8">
-        <div className="container-site flex flex-wrap items-center justify-center gap-x-10 gap-y-3 py-7">
+        <div className="container-site flex flex-wrap items-center justify-center gap-x-7 gap-y-3 py-6 sm:gap-x-10 sm:py-7">
           <span className="mr-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/30">
             Brands reviewed
           </span>

@@ -136,7 +136,7 @@ export default function HomePage() {
         <div className="container-site">
           <div className="mb-6 flex items-center justify-between">
             <span className="section-label">Featured Review</span>
-            <Link href="/reviews" className="text-[13px] font-medium text-pine-500 hover:text-pine-950 transition-colors">
+            <Link href="/reviews" className="inline-flex min-h-11 items-center text-[13px] font-medium text-pine-500 transition-colors hover:text-pine-950">
               All Reviews →
             </Link>
           </div>
@@ -285,9 +285,9 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-1 p-2">
                 {[
                   { src: "https://ketlmtn.com/cdn/shop/files/KETL-Shenanigan-Outdoor-Pant-Brown-PDP-2-2026.jpg?v=1784152795&width=800", alt: "KETL Mtn Shenanigan Outdoor Pants Brown" },
-                  { src: "https://ketlmtn.com/cdn/shop/files/KETL-Vent-Lightweight-Short-PDP-Green-1.webp?v=1&width=800", alt: "KETL Mtn Vent Lightweight Shorts Green" },
-                  { src: "https://ketlmtn.com/cdn/shop/files/KETL-Escapade-LW-Jacket-Green-4x5-PDP-11.webp?v=1&width=800", alt: "KETL Mtn Escapade Jacket Green" },
-                  { src: "https://ketlmtn.com/cdn/shop/files/KETL-Virtue-Hybrid-Short-Black-Brown-PDP-4x5-3.webp?v=1&width=800", alt: "KETL Mtn Virtue Hybrid Shorts" },
+                  { src: "/images/ketl/KETL-Vent-Lightweight-Short-PDP-Green-1.webp", alt: "KETL Mtn Vent Lightweight Shorts Green" },
+                  { src: "/images/ketl/KETL-Escapade-LW-Jacket-Green-4x5-PDP-11.webp", alt: "KETL Mtn Escapade Jacket Green" },
+                  { src: "/images/ketl/KETL-Virtue-Hybrid-Short-Black-Brown-PDP-4x5-3.webp", alt: "KETL Mtn Virtue Hybrid Shorts" },
                 ].map((img, i) => (
                   <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-lg bg-stone-100">
                     <Image src={img.src} alt={img.alt} fill sizes="25vw" className="object-cover" />
@@ -521,7 +521,7 @@ export default function HomePage() {
             </div>
             <a
               href={`mailto:${site.email}`}
-              className="mt-4 text-sm font-medium text-white/60 underline underline-offset-4 transition-colors hover:text-ember-400"
+              className="mt-4 inline-flex min-h-11 items-center text-sm font-medium text-white/60 underline underline-offset-4 transition-colors hover:text-ember-400"
             >
               {site.email}
             </a>
@@ -531,5 +531,3 @@ export default function HomePage() {
     </>
   );
 }
-
-

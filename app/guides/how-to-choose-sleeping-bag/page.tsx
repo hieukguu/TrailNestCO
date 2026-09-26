@@ -6,4 +6,5 @@ export default function RedirectPage() {
 
 export const metadata = {
   robots: { index: false, follow: true },
+  alternates: { canonical: "/guides/how-to-choose-a-sleeping-bag/" },
 };

@@ -34,7 +34,7 @@ function SlideLink({
   tabIndex: number;
   children: React.ReactNode;
 }) {
-  const cls = "absolute inset-0 flex cursor-pointer flex-col justify-end p-7 sm:p-10 lg:p-12";
+  const cls = "absolute inset-0 flex cursor-pointer flex-col justify-end p-5 pb-12 min-[390px]:p-6 min-[390px]:pb-12 sm:p-10 lg:p-12";
   if (href.endsWith(".html")) {
     return (
       <a href={href} className={cls} tabIndex={tabIndex}>
@@ -81,12 +81,24 @@ export function HeroSlider({ articles }: HeroSliderProps) {
     };
   }, [emblaApi, onSelect]);
 
+  useEffect(() => {
+    if (!emblaApi) return;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const syncAutoplay = () => {
+      if (reducedMotion.matches) autoplay.current.stop();
+      else autoplay.current.play();
+    };
+    syncAutoplay();
+    reducedMotion.addEventListener("change", syncAutoplay);
+    return () => reducedMotion.removeEventListener("change", syncAutoplay);
+  }, [emblaApi]);
+
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
   const scrollTo = useCallback((i: number) => emblaApi?.scrollTo(i), [emblaApi]);
 
   return (
-    <div className="relative w-full overflow-hidden rounded-[20px] shadow-[0_32px_80px_rgba(0,0,0,0.5)]">
+    <div className="relative w-full overflow-hidden rounded-[16px] border border-white/10 bg-pine-900 shadow-[0_28px_70px_rgba(4,12,8,0.42)] sm:rounded-[22px]">
       {/* Embla viewport */}
       <div ref={emblaRef} className="overflow-hidden">
         <div className="flex touch-pan-y">
@@ -99,8 +111,7 @@ export function HeroSlider({ articles }: HeroSliderProps) {
             return (
               <div
                 key={article.slug}
-                className="relative min-w-0 flex-[0_0_100%]"
-                style={{ aspectRatio: "16/9" }}
+                className="relative min-w-0 flex-[0_0_100%] aspect-[4/5] min-[430px]:aspect-[4/3] sm:aspect-[16/9]"
               >
                 {/* Ken Burns image */}
                 <motion.div
@@ -180,7 +191,7 @@ export function HeroSlider({ articles }: HeroSliderProps) {
       </div>
 
       {/* Slide counter — top right */}
-      <div className="absolute right-5 top-5 z-10 rounded-full bg-black/40 px-3 py-1.5 text-[11px] font-bold text-white/80 backdrop-blur-sm">
+      <div className="absolute right-4 top-4 z-10 rounded-full border border-white/15 bg-black/45 px-3 py-1.5 text-[11px] font-bold tabular-nums text-white/90 backdrop-blur-sm sm:right-5 sm:top-5">
         {selectedIndex + 1} / {articles.length}
       </div>
 
@@ -188,29 +199,29 @@ export function HeroSlider({ articles }: HeroSliderProps) {
       <button
         onClick={scrollPrev}
         aria-label="Previous slide"
-        className="absolute left-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/30 text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-black/50 sm:left-6 sm:h-12 sm:w-12"
+        className="absolute left-4 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/35 text-white backdrop-blur-sm transition-colors hover:border-white/60 hover:bg-black/55 sm:left-6 sm:flex sm:h-12 sm:w-12"
       >
         <ChevronLeft size={20} />
       </button>
       <button
         onClick={scrollNext}
         aria-label="Next slide"
-        className="absolute right-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/30 text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-black/50 sm:right-6 sm:h-12 sm:w-12"
+        className="absolute right-4 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/35 text-white backdrop-blur-sm transition-colors hover:border-white/60 hover:bg-black/55 sm:right-6 sm:flex sm:h-12 sm:w-12"
       >
         <ChevronRight size={20} />
       </button>
 
       {/* Pagination dots */}
-      <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1.5">
+      <div className="absolute bottom-3 left-1/2 z-10 flex min-h-11 -translate-x-1/2 items-center gap-1 sm:bottom-4 sm:gap-1.5">
         {articles.map((_, i) => (
           <button
             key={i}
             onClick={() => scrollTo(i)}
             aria-label={`Slide ${i + 1}`}
-            className={`rounded-full transition-all duration-350 ${
+            className={`flex h-11 min-w-7 items-center justify-center rounded-full transition-all duration-300 before:block before:h-2 before:rounded-full before:content-[''] ${
               i === selectedIndex
-                ? "h-2 w-8 bg-ember-400"
-                : "h-2 w-2 bg-white/40 hover:bg-white/70"
+                ? "w-9 before:w-7 before:bg-ember-400"
+                : "w-5 before:w-2 before:bg-white/50 hover:before:bg-white/80"
             }`}
           />
         ))}

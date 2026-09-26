@@ -9,31 +9,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        /* Ink — near-black neutrals (Web Rocket style) */
+        /* Forest ink — deep natural greens for the outdoor editorial system */
         pine: {
-          50: "#f5f6f7",
-          100: "#eceef0",
-          200: "#d8dbdf",
-          300: "#b6bac2",
-          400: "#8b909c",
-          500: "#636876",
-          600: "#464a56",
-          700: "#31343e",
-          800: "#22242c",
-          900: "#16181d",
-          950: "#0f1013",
+          50: "#f2f6f3",
+          100: "#e3ebe5",
+          200: "#c7d8cc",
+          300: "#9fbaa8",
+          400: "#72947e",
+          500: "#52745f",
+          600: "#3d5948",
+          700: "#31473b",
+          800: "#293a32",
+          900: "#213029",
+          950: "#101d17",
         },
-        /* Lime accent */
+        /* Trail blaze — restrained safety orange, never decorative neon */
         ember: {
-          300: "#e4fb8a",
-          400: "#d6f55e",
-          500: "#c6ef37",
-          600: "#71950c",
+          300: "#f3b77a",
+          400: "#e99a4b",
+          500: "#d77d2f",
+          600: "#a9541d",
         },
         sand: {
-          50: "#ffffff",
-          100: "#f4f5f6",
-          200: "#e6e8ea",
+          50: "#fffdf8",
+          100: "#f6f2e9",
+          200: "#e8e0d1",
         },
       },
       fontFamily: {
