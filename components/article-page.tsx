@@ -10,6 +10,7 @@ export function ArticlePage({ article }: { article: Article }) {
   const hubHref = article.type === "review" ? "/reviews" : "/guides";
   const hubLabel = article.type === "review" ? "Reviews" : "Guides";
   const typeLabel = article.type === "review" ? "Review" : "Buying Guide";
+  const heroImageCredit = article.imageCredit ?? (article.image.startsWith("/images/editorial/") ? "Photo: Unsplash" : undefined);
 
   const canonicalUrl = `${site.url}/${article.type === "review" ? "reviews" : "guides"}/${article.slug}/`;
 
@@ -146,6 +147,11 @@ export function ArticlePage({ article }: { article: Article }) {
                   />
                 </div>
                 <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+                {heroImageCredit && (
+                  <figcaption className="absolute bottom-0 right-0 bg-pine-950/80 px-2.5 py-1 text-[10px] font-medium text-white/65 backdrop-blur-sm">
+                    {heroImageCredit}
+                  </figcaption>
+                )}
               </figure>
             </div>
           </div>
@@ -172,6 +178,24 @@ export function ArticlePage({ article }: { article: Article }) {
               <p key={p.slice(0, 40)}>{p}</p>
             ))}
           </div>
+
+          {article.supportingImage && (
+            <figure className="mt-9 overflow-hidden rounded-2xl border border-stone-200 bg-stone-100">
+              <div className="relative aspect-[16/8]">
+                <Image
+                  src={article.supportingImage}
+                  alt={article.supportingImageAlt ?? article.alt}
+                  fill
+                  sizes="(max-width: 768px) 92vw, 896px"
+                  loading="lazy"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="border-t border-stone-200 bg-white px-4 py-2.5 text-[12px] text-pine-500">
+                Field illustration · {article.supportingImageCredit ?? "Source: TrailNestCo"}
+              </figcaption>
+            </figure>
+          )}
 
           {/* Key takeaways — scannable summary above the fold */}
           {article.keyTakeaways && article.keyTakeaways.length > 0 && (
@@ -251,11 +275,11 @@ export function ArticlePage({ article }: { article: Article }) {
               {/* Product image. Lazy, since these all sit below the fold.
                   Width is capped: these are studio shots on a plain background
                   and at full body width they dwarf the copy around them. */}
-              {pick.image && (
+              {(pick.image || (i === 0 && article.type === "review")) && (
                 <figure className="mt-6 max-w-md">
                   <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-stone-200 bg-stone-50">
                     <Image
-                      src={pick.image}
+                      src={pick.image ?? article.image}
                       alt={pick.imageAlt ?? pick.name}
                       fill
                       sizes="(max-width: 640px) 92vw, 448px"
@@ -263,9 +287,9 @@ export function ArticlePage({ article }: { article: Article }) {
                       className="object-contain p-4"
                     />
                   </div>
-                  {pick.imageCredit && (
+                  {(pick.imageCredit || !pick.image) && (
                     <figcaption className="mt-2 text-[12px] text-pine-400">
-                      {pick.imageCredit}
+                      {pick.imageCredit ?? "Editorial reference image — confirm current model details on the manufacturer’s page."}
                     </figcaption>
                   )}
                 </figure>

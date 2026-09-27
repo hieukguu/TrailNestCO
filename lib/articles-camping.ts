@@ -35,7 +35,7 @@ const campingChairs: Article = {
   metaDescription:
     "Compare camping chairs on weight, pack size, seat height and stability. Which design suits backpacking, car camping or festival use, and what to avoid.",
   image:
-    "https://images.unsplash.com/photo-1563299796-17596ed6b017?w=1600&q=70&auto=format&fit=crop",
+    "/images/editorial/camping-chairs.webp",
   alt: "View from the open boot of a car at dusk over a valley, with camp bedding and a dog",
   imageCredit: CREDIT,
   howWeEvaluated:
@@ -303,7 +303,7 @@ const campingLanterns: Article = {
   metaDescription:
     "Camping lanterns compared on light quality, runtime and hanging options. Which suits a tent, a picnic table or a power cut, and why lumens mislead.",
   image:
-    "https://images.unsplash.com/photo-1487730116645-74489c95b41b?w=1600&q=70&auto=format&fit=crop",
+    "/images/editorial/camping-lanterns.webp",
   alt: "Two tents glowing from lights inside, pitched among tall pines under a night sky",
   imageCredit: CREDIT,
   howWeEvaluated:

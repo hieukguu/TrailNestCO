@@ -61,6 +61,10 @@ export type Article = {
   metaDescription?: string;
   /** Credit line for the hero image. */
   imageCredit?: string;
+  /** An additional real-world visual displayed in the article body. */
+  supportingImage?: string;
+  supportingImageAlt?: string;
+  supportingImageCredit?: string;
 
   intro: string[];
   /** Scannable summary shown above the fold. */
@@ -118,7 +122,7 @@ export const articles: Article[] = [
     excerpt:
       "Six air fryer models evaluated on wattage, basket design, cooking evenness, and capacity — covering fries, chicken wings, frozen snacks, vegetables, and reheated pizza.",
     image:
-      "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/air-fryers-home.webp",
     alt: "Basket of crispy golden fries from air fryer testing",
     intro: [
       "Air fryers became a kitchen staple because they genuinely deliver on their core promise: faster, crispier results than a conventional oven with far less oil than deep frying.",
@@ -251,7 +255,7 @@ export const articles: Article[] = [
     excerpt:
       "Eight weeks of scheduled runs across six models on hardwood, carpet, tile, and pet hair — mapped, measured, and emptied so you know what to expect.",
     image:
-      "https://images.unsplash.com/photo-1603618090561-412154b4bd1b?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/robot-vacuums.webp",
     alt: "Robot vacuum cleaning a hardwood floor during testing",
     intro: [
       "Robot vacuums have improved dramatically over the past three years — modern flagships offer accurate navigation, real-time obstacle avoidance, and automatic self-emptying. But performance varies substantially between models, and manufacturer claims about suction and mapping don't always reflect reality.",
@@ -379,7 +383,7 @@ export const articles: Article[] = [
     excerpt:
       "Seven headlamps, three scenarios, two months — campsite chores, night hiking, and cold-weather runtime tests at 0°C and -10°C.",
     image:
-      "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/headlamps-camping.webp",
     alt: "Illuminated tent under the Milky Way during night testing",
     intro: [
       "A headlamp is essential gear that's usually overlooked until it fails. For this guide, we evaluated seven headlamps across three key use scenarios: campsite use (cooking, gear setup, tent reading), trail hiking at night, and cold-weather runtime at 0°C and -10°C.",
@@ -509,7 +513,7 @@ export const articles: Article[] = [
     excerpt:
       "We compared five carry-on travel packs on airline size compliance, organization, comfort, and durability to find the bags that actually work in transit.",
     image:
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/travel-backpack.webp",
     alt: "Travel backpack product shot against a minimal wall",
     intro: [
       "For this guide, we evaluated five travel backpacks across key criteria: carry-on compliance with major airlines, overhead-bin fit, organization, harness comfort for long transit days, and overall durability.",
@@ -627,7 +631,7 @@ export const articles: Article[] = [
     excerpt:
       "Over 200 cups brewed across eight machines. The problem with most home coffee isn't the beans — it's water temperature.",
     image:
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/coffee-makers.webp",
     alt: "Latte art coffees held over a café table",
     intro: [
       "Bad home coffee usually comes from inadequate equipment, not bad beans. Cheap drip coffee makers rarely reach the brewing temperature the Specialty Coffee Association recommends (92–96°C), which leads to under-extraction — sour, weak coffee.",
@@ -749,7 +753,7 @@ export const articles: Article[] = [
     excerpt:
       "We put seven pairs through 200+ miles of mixed terrain — wet granite, muddy forest trails, and scree fields — to find the boots that genuinely protect your feet.",
     image:
-      "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/hiking-boots.webp",
     alt: "Hiker at a mountain summit at sunrise",
     intro: [
       "A bad pair of boots doesn't just cause blisters — it turns a three-day trip into two days of suffering and one day of limping out. We evaluated seven models across 200+ miles of varied terrain including forest trails, wet granite slabs, loose scree, and stream crossings to find what actually protects your feet.",
@@ -895,7 +899,7 @@ export const articles: Article[] = [
     excerpt:
       "Nalgene is a fine default — but no insulation and a rigid shape aren't right for everyone. We compared seven alternatives against the classic 32oz.",
     image:
-      "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/water-bottles.webp",
     alt: "Insulated steel water bottle on a minimal background",
     intro: [
       "Nalgene bottles are a reasonable default, but they're not the best fit for every use case. Water reaches ambient temperature within about an hour in warm conditions, the rigid body takes full volume in your pack even when empty, and the wide mouth is less ideal for sipping on the move.",
@@ -994,7 +998,7 @@ export const articles: Article[] = [
     excerpt:
       "You don't need an $80 stove. We boiled identical 500ml loads in calm and windy conditions to find where budget models hold up — and where they don't.",
     image:
-      "https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/backpacking-stoves.webp",
     alt: "Tent pitched at sunset in the mountains",
     intro: [
       "A quality backpacking stove doesn't have to cost $80+. For this guide, we evaluated budget options under $50 on key criteria: boil time, wind performance, weight, and pack size — the areas where ultralight budget stoves most commonly diverge.",
@@ -1090,7 +1094,7 @@ export const articles: Article[] = [
     excerpt:
       "Pump, gravity, and squeeze filters compared for flow rate, weight, and ease of cleaning across two backcountry trips.",
     image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/water-filters.webp",
     alt: "Sunlit forest trail near a backcountry water source",
     intro: [
       "We compared pump, gravity, and squeeze water filters for flow rate, weight, and ease of cleaning. Each system processed water from an identical backcountry stream across two trips, measuring flow rate per liter, total packed weight, and performance degradation without maintenance.",
@@ -1189,7 +1193,7 @@ export const articles: Article[] = [
     excerpt:
       "We drained each unit with a standardized real-world load — phones, a fan, and headlamps — and measured actual capacity against the box claims.",
     image:
-      "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/portable-power-stations.webp",
     alt: "Campsite with a lit camper trailer at dusk",
     intro: [
       "Portable power stations have become a genuinely useful category for camping and travel — a step up from basic power banks without the noise and fumes of a generator.",
@@ -1286,7 +1290,7 @@ export const articles: Article[] = [
     excerpt:
       "Identical 45-quart models, 20 lbs of ice, 85°F heat, 72 hours. The gap is real — but it only matters for some trips.",
     image:
-      "https://images.unsplash.com/photo-1544376798-89aa6b82c6cd?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/coolers.webp",
     alt: "Wooden rowing boats moored on a still alpine lake below mist-covered peaks",
     intro: [
       "Does YETI's premium price buy better performance than RTIC's near-identical construction? For this comparison, we evaluated 45-quart models from both brands on published ice retention specifications, construction quality, and hardware durability.",
@@ -1365,7 +1369,7 @@ export const articles: Article[] = [
     excerpt:
       "Six 3-season tents evaluated and compared on weather resistance specifications, weight, setup design, and verified user data to find the best options for car camping and backpacking.",
     image:
-      "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/camping-tents.webp",
     alt: "Tent glowing under a starry night sky",
     intro: [
       "For this guide, we evaluated six 3-season tents across the scenarios that matter most: car-camping comfort, backpacking weight efficiency, and wet-weather weather resistance.",
@@ -1457,7 +1461,7 @@ export const articles: Article[] = [
     excerpt:
       "Where your gear goes inside a pack matters more than how much you carry. A zone-based system that saves your back and your patience.",
     image:
-      "https://images.unsplash.com/photo-1622260614153-03223fb72052?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/pack-a-backpack.webp",
     alt: "Green hiking backpack standing on rocks at the edge of a lake",
     intro: [
       "Where your gear goes inside a pack matters more than how much you carry. A systematic approach based on weight distribution relative to your center of gravity prevents back pain and keeps essentials reachable on the trail.",
@@ -1529,7 +1533,7 @@ export const articles: Article[] = [
     excerpt:
       "From arriving at your campsite to being fully storm-ready — including the parts most setup guides skip.",
     image:
-      "https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/set-up-a-tent.webp",
     alt: "Person sitting with a dog in the doorway of a pitched tent looking out over a lake",
     intro: [
       "This guide covers everything from arriving at your campsite to being fully storm-ready — including the parts most setup guides skip.",
@@ -1609,7 +1613,7 @@ export const articles: Article[] = [
     excerpt:
       "Waterproofing isn't a one-time feature — it's a coating that wears off. How to renew tents, boots, and jackets before they fail on you.",
     image:
-      "https://images.unsplash.com/photo-1527489377706-5bf97e608852?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/waterproof-gear.webp",
     alt: "Fast-flowing turquoise river running through a forested mountain valley",
     intro: [
       "Waterproofing isn't a one-time feature — it's a coating that wears off with use, washing, and UV exposure, and it needs periodic renewal.",
@@ -1678,7 +1682,7 @@ export const articles: Article[] = [
     excerpt:
       "Car camping means you can bring almost anything — which makes it easy to forget something specific. A category-by-category checklist.",
     image:
-      "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/car-camping.webp",
     alt: "Flat lay of a paper map, camera, notebook and small backpack laid out for trip planning",
     intro: [
       "Car camping allows far more flexibility than backpacking thanks to vehicle storage — but that same advantage makes it easy to forget something specific. Run through this checklist by category before you leave.",
@@ -1770,7 +1774,7 @@ export const articles: Article[] = [
     excerpt:
       "Temperature ratings are frequently misunderstood — here is how to read them correctly and match a bag to your actual conditions, insulation type, and budget.",
     image:
-      "https://images.unsplash.com/photo-1496545672447-f699b503d270?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/sleeping-bag.webp",
     alt: "Tent and an unrolled sleeping bag on a ridge with the sun low on the horizon",
     intro: [
       "A sleeping bag is one of the few pieces of gear where getting the spec wrong directly ruins a trip — too warm and you're sweating and sleepless; too cold and you're miserable or, in bad cases, at real risk.",
@@ -1837,7 +1841,7 @@ export const articles: Article[] = [
     excerpt:
       "Kitchen disorganization comes from items stored where they landed, not where they're used. A zone system that fixes it — without buying more bins.",
     image:
-      "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/kitchen-cabinets.webp",
     alt: "Bright organized kitchen with produce on the counter",
     intro: [
       "Kitchen disorganization stems from items being stored where they landed rather than where they're used. The fix is a zone-based system — not more storage products.",
@@ -1924,7 +1928,7 @@ export const articles: Article[] = [
     excerpt:
       "The OutdoorMaster Ski Goggles PRO sits at #1 on Amazon's Snow Sports Goggles chart with 10,000+ reviews. We evaluated their optics, lens system, fit, and construction to find out if they deserve that ranking — or if it's just marketing.",
     image:
-      "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/ski-goggles-pro.webp",
     alt: "Skier carving down a steep powder slope wearing ski goggles at golden hour",
     intro: [
       "At $39.99, the OutdoorMaster Ski Goggles PRO shouldn't be as good as it is. Frameless design, magnetic interchangeable lenses, 100% UV400 protection — these are features you normally pay $120–$180 for from Oakley or Smith. For this review, we evaluated them on optical quality, lens system, fit, and ventilation to see where they hold up and where they compromise.",
@@ -1933,7 +1937,7 @@ export const articles: Article[] = [
     picks: [
       {
         name: "OutdoorMaster Ski Goggles PRO — Rose Gold / Revo Lens",
-        image: "https://outdoormaster.com/cdn/shop/files/PRO_GOGGLES.jpg",
+        image: "/images/products/outdoormaster-pro-goggles.jpg",
         imageAlt: "OutdoorMaster Ski Goggles PRO frameless snow goggle with a mirrored revo lens",
         imageCredit: "Image: OutdoorMaster",
         award: "Best Overall Pick",
@@ -2063,7 +2067,7 @@ export const articles: Article[] = [
     excerpt:
       "Skiing with prescription glasses underneath ski goggles is one of the most annoying problems in winter sports — fogging, pressure points, distortion. The OutdoorMaster OTG Snow Goggles with 430 Amazon reviews promise to solve it. We evaluated their design, fit geometry, and ventilation system to find out if they actually do.",
     image:
-      "https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/ski-goggles-otg.webp",
     alt: "Close-up of colorful ski goggles with mountain snow slope reflected in the lens",
     intro: [
       "Approximately 164 million Americans wear prescription eyeglasses. A significant portion of them ski. And nearly all of them have experienced the slow, miserable fog-up that ruins an otherwise perfect run when you stack glasses inside goggles not designed for them.",
@@ -2072,7 +2076,7 @@ export const articles: Article[] = [
     picks: [
       {
         name: "OutdoorMaster OTG Snow Goggles — Blue Revo Lens",
-        image: "https://outdoormaster.com/cdn/shop/files/outdoormaster-otg_snow_goggles-ski-goggles-black_frame_vlt_10_00001.webp",
+        image: "/images/products/outdoormaster-otg-goggles.webp",
         imageAlt: "OutdoorMaster OTG snow goggle with a black frame and mirrored lens, shown side on",
         imageCredit: "Image: OutdoorMaster",
         award: "Best for Glasses-Wearers",
@@ -2203,7 +2207,7 @@ export const articles: Article[] = [
     excerpt:
       "Full-face mountain bike helmets from Smith or Fox cost $250–$350 and earn 5-star Virginia Tech safety ratings. The OutdoorMaster RHINO MIPS costs $159 and earned the same rating. We rode with it for 8 weeks on technical trails to find out what $100 in savings actually costs you.",
     image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/mtb-helmet.webp",
     alt: "Mountain biker descending a rocky trail through pine forest wearing a full-face helmet",
     intro: [
       "The Virginia Tech Helmet Ratings program is the most credible independent safety assessment in cycling. Their 5-star rating requires a helmet to score in the top 11% across a battery of impact tests covering linear, rotational, and oblique forces — the kind of impacts that cause traumatic brain injury in real crashes.",
@@ -2212,7 +2216,7 @@ export const articles: Article[] = [
     picks: [
       {
         name: "OutdoorMaster RHINO MIPS Full Face — Meteorite Black",
-        image: "https://outdoormaster.com/cdn/shop/files/OutdoorMaster-RHINO_Full_Face_Bike_Helmets-Meteorite_Black-01.webp",
+        image: "/images/products/outdoormaster-rhino-helmet.webp",
         imageAlt: "OutdoorMaster RHINO MIPS full-face mountain bike helmet in meteorite black",
         imageCredit: "Image: OutdoorMaster",
         award: "Best Full-Face Helmet Under $200",
@@ -2235,7 +2239,7 @@ export const articles: Article[] = [
       },
       {
         name: "OutdoorMaster RHINO MIPS Full Face — Emerald Green",
-        image: "https://outdoormaster.com/cdn/shop/files/04-emerald_green-rhino_full_face_bike_helmets_42926468-6c72-489b-8b87-df9677aae432.jpg",
+        image: "/images/products/outdoormaster-rhino-helmet-green.jpg",
         imageAlt: "OutdoorMaster RHINO MIPS full-face mountain bike helmet in emerald green",
         imageCredit: "Image: OutdoorMaster",
         award: "Best for Visibility on Trail",
@@ -2348,7 +2352,7 @@ export const articles: Article[] = [
     excerpt:
       "We evaluated ANC performance across key noise environments — engine rumble, HVAC hum, and ambient conversation — to find the headphones that genuinely block the world out.",
     image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/noise-cancelling-headphones.webp",
     alt: "Premium over-ear headphones on a clean desk with travel passport",
     intro: [
       "Active noise cancellation varies wildly between headphones that both claim 'industry-leading ANC.' We measured attenuation at 60Hz (engine rumble), 250Hz (HVAC hum), and 1kHz (conversation) using a calibrated measurement rig on three different aircraft and two subway systems.",
@@ -2461,7 +2465,7 @@ export const articles: Article[] = [
     excerpt:
       "R-value determines how much heat your pad keeps between you and the ground. Most campers pick the wrong number — here is how to get it right.",
     image:
-      "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/sleeping-pad-r-value.webp",
     alt: "Campfire burning beside a lit tent in a forest under a sky full of stars",
     intro: [
       "Your sleeping bag rating means nothing if your pad can't hold body heat against the ground. Cold ground pulls warmth away faster than cold air — a R-2 pad on a 40°F night will leave you shivering in a bag rated to 20°F.",
@@ -2545,7 +2549,7 @@ export const articles: Article[] = [
     excerpt:
       "A 2-person tent rarely fits two adults comfortably. Here is how to read capacity ratings honestly and choose the right size for your actual trip.",
     image:
-      "https://images.unsplash.com/photo-1445308394109-4ec2920981b1?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/tent-size.webp",
     alt: "Yellow and grey dome tent pitched at a desert campsite below red rock cliffs",
     intro: [
       "Tent capacity ratings are optimistic. A manufacturer's '2-person' tent typically means two people lying flat with no gear inside — no bags, no pads, nothing between you and the tent walls. Understanding what those numbers actually mean helps you pick a tent that matches your real sleeping situation.",
@@ -2626,7 +2630,7 @@ export const articles: Article[] = [
     excerpt:
       "Every US airline sets different size limits, and a bag that fits on United may not fit on Spirit. Here is what the rules actually say and how to pack for both.",
     image:
-      "https://images.unsplash.com/photo-1502301197179-65228ab57f78?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/carry-on-personal-item.webp",
     alt: "Open suitcase on a floor packed with folded clothes, a sun hat and a camera",
     intro: [
       "The difference between a carry-on and a personal item is not just size — it determines where the bag goes (overhead bin vs under the seat in front of you), whether you pay extra, and whether the bag gets gate-checked on a full flight.",
@@ -2716,7 +2720,7 @@ export const articles: Article[] = [
     excerpt:
       "200 lumens handles most camping tasks. 400+ is for trail running and technical work. More lumens is not always better — here is what actually matters.",
     image:
-      "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/headlamp-lumens.webp",
     alt: "Headlamp illuminating a forest trail at night",
     intro: [
       "Headlamp marketing pushes high lumen counts because big numbers sell. A headlamp rated at 1,000 lumens sounds impressive, but at that output it drains batteries in under an hour and is genuinely too bright for reading in a tent.",
@@ -2789,7 +2793,7 @@ export const articles: Article[] = [
     excerpt:
       "A 2-quart air fryer can't cook enough food for two people without batches. A 7-quart air fryer may not fit on your counter. Here is how to match capacity to your household.",
     image:
-      "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/air-fryer-size.webp",
     alt: "Stir-fried noodles served on a wooden plate with chopsticks resting across it",
     intro: [
       "Air fryer capacity is measured in quarts, but quart ratings are not standardized — two models both labeled '5.8 QT' can have meaningfully different usable cooking areas depending on basket shape and design.",
@@ -2863,7 +2867,7 @@ export const articles: Article[] = [
     excerpt:
       "Most robot vacuums underperform not because they are broken, but because they have not been maintained. This checklist covers everything that actually needs attention and how often.",
     image:
-      "https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?w=1600&q=70&auto=format&fit=crop",
+      "/images/editorial/robot-vacuum-maintenance.webp",
     alt: "Minimalist living room with a wall-mounted television and storage bench on hardwood flooring",
     intro: [
       "A robot vacuum that ran perfectly for the first three months and now misses sections, struggles on carpet, or drains the battery faster than it used to usually has a maintenance problem, not a mechanical failure.",
@@ -2942,6 +2946,28 @@ export const articles: Article[] = [
 // file from growing further.
 articles.push(...newCampingArticles);
 articles.push(...ketlReviews);
+
+/* A second, relevant real-world image inside every guide. Keeping this map
+   separate from the copy makes future photo refreshes quick and auditable. */
+const guideSupportingMedia: Record<string, Pick<Article, "supportingImage" | "supportingImageAlt" | "supportingImageCredit">> = {
+  "how-to-pack-a-backpack": { supportingImage: "/images/editorial/car-camping.webp", supportingImageAlt: "Outdoor travel gear laid out for a trip", supportingImageCredit: "Photo: Unsplash" },
+  "how-to-set-up-a-tent": { supportingImage: "/images/editorial/camping-tents.webp", supportingImageAlt: "Tent pitched outdoors at dusk", supportingImageCredit: "Photo: Unsplash" },
+  "how-to-waterproof-gear": { supportingImage: "/images/editorial/waterproof-gear.webp", supportingImageAlt: "Mountain river in wet outdoor conditions", supportingImageCredit: "Photo: Unsplash" },
+  "car-camping-checklist": { supportingImage: "/images/editorial/pack-a-backpack.webp", supportingImageAlt: "Packed hiking backpack ready for an outdoor trip", supportingImageCredit: "Photo: Unsplash" },
+  "how-to-choose-a-sleeping-bag": { supportingImage: "/images/editorial/camping-lanterns.webp", supportingImageAlt: "Lit tents in a forest at night", supportingImageCredit: "Photo: Unsplash" },
+  "how-to-organize-kitchen-cabinets": { supportingImage: "/images/editorial/kitchen-cabinets.webp", supportingImageAlt: "Organized kitchen counter and cabinets", supportingImageCredit: "Photo: Unsplash" },
+  "sleeping-pad-r-value": { supportingImage: "/images/editorial/camping-tents.webp", supportingImageAlt: "Tent at a mountain campsite", supportingImageCredit: "Photo: Unsplash" },
+  "what-size-tent-do-i-need": { supportingImage: "/images/editorial/tent-size.webp", supportingImageAlt: "Dome tent at a desert campsite", supportingImageCredit: "Photo: Unsplash" },
+  "carry-on-vs-personal-item": { supportingImage: "/images/editorial/travel-backpack.webp", supportingImageAlt: "Travel backpack prepared for a journey", supportingImageCredit: "Photo: Unsplash" },
+  "headlamp-lumens-guide": { supportingImage: "/images/editorial/headlamps-camping.webp", supportingImageAlt: "Tent illuminated at night", supportingImageCredit: "Photo: Unsplash" },
+  "air-fryer-size-guide": { supportingImage: "/images/editorial/air-fryers-home.webp", supportingImageAlt: "Air-fried food prepared at home", supportingImageCredit: "Photo: Unsplash" },
+  "robot-vacuum-maintenance": { supportingImage: "/images/editorial/robot-vacuums.webp", supportingImageAlt: "Robot vacuum on a hardwood floor", supportingImageCredit: "Photo: Unsplash" },
+};
+
+for (const article of articles) {
+  const media = guideSupportingMedia[article.slug];
+  if (media) Object.assign(article, media);
+}
 
 export const reviewArticles = articles.filter((a) => a.type === "review");
 export const guideArticles = articles.filter((a) => a.type === "guide");
