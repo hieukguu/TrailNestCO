@@ -75,15 +75,26 @@ export default function ReviewsPage() {
                         <HoverLift key={r.slug}>
                           <Link
                             href={`/reviews/${r.slug}`}
-                            className="glass-card flex items-center justify-between gap-4 !rounded-xl p-5"
+                            className="glass-card group flex items-center justify-between gap-4 !rounded-xl p-3 sm:p-4"
                           >
-                            <div>
-                              <h3 className="font-semibold leading-snug">
-                                {r.title}
-                              </h3>
-                              <p className="mt-1 text-sm text-pine-900/60">
-                                {r.readTime}
-                              </p>
+                            <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+                              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-pine-100 sm:h-20 sm:w-20">
+                                <Image
+                                  src={r.image}
+                                  alt={r.alt}
+                                  fill
+                                  sizes="80px"
+                                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                              </div>
+                              <div className="min-w-0">
+                                <h3 className="font-semibold leading-snug">
+                                  {r.title}
+                                </h3>
+                                <p className="mt-1 text-sm text-pine-900/60">
+                                  {r.readTime}
+                                </p>
+                              </div>
                             </div>
                             <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-pine-100 px-3 py-1.5 text-sm font-bold text-pine-800">
                               Read →
