@@ -2969,7 +2969,27 @@ for (const article of articles) {
   if (media) Object.assign(article, media);
 }
 
-export const reviewArticles = articles.filter((a) => a.type === "review");
+// Keep the newest KETL product research at the front of every review surface:
+// homepage, review hub and category pages. The remaining reviews retain their
+// established editorial order.
+const newestReviewOrder = [
+  "ketl-bodbrella-rain-jacket-review",
+  "ketl-milesbound-jogger-review",
+  "ketl-skid-mark-mtb-shorts-review",
+  "ketl-alpine-dip-boardshorts-review",
+  "ketl-departed-tee-review",
+];
+
+export const reviewArticles = articles
+  .filter((a) => a.type === "review")
+  .sort((a, b) => {
+    const aPosition = newestReviewOrder.indexOf(a.slug);
+    const bPosition = newestReviewOrder.indexOf(b.slug);
+    if (aPosition === -1 && bPosition === -1) return 0;
+    if (aPosition === -1) return 1;
+    if (bPosition === -1) return -1;
+    return aPosition - bPosition;
+  });
 export const guideArticles = articles.filter((a) => a.type === "guide");
 
 export function getArticle(slug: string) {
