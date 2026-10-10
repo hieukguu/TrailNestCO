@@ -76,6 +76,9 @@ const featuredBrands: FeaturedBrand[] = [
   },
 ];
 
+// KETL content is paused site-wide but remains in the repository for a quick relaunch.
+const showKetlPromotion = false;
+
 export const metadata: Metadata = {
   title: "TrailNestCo — Independent Gear Reviews, Comparisons & Buying Guides",
   description: "Independent product reviews, comparisons and buying guides for camping & outdoor gear, home essentials, and travel & EDC. Zero paid placements.",
@@ -142,7 +145,7 @@ export default function HomePage() {
           </div>
 
           <h2 className="sr-only">Featured brand reviews</h2>
-          <FeaturedSlider brands={featuredBrands} />
+          <FeaturedSlider brands={featuredBrands.filter((brand) => showKetlPromotion || brand.id !== "ketl")} />
         </div>
       </section>
 
@@ -280,8 +283,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* ── KETL Mtn. ── */}
-            <div className="flex flex-col overflow-hidden rounded-xl border border-stone-200 bg-white">
+            {/* ── KETL Mtn. (temporarily paused) ── */}
+            {showKetlPromotion && <div className="flex flex-col overflow-hidden rounded-xl border border-stone-200 bg-white">
               <div className="grid grid-cols-2 gap-1 p-2">
                 {[
                   { src: "https://ketlmtn.com/cdn/shop/files/KETL-Shenanigan-Outdoor-Pant-Brown-PDP-2-2026.jpg?v=1784152795&width=800", alt: "KETL Mtn Shenanigan Outdoor Pants Brown" },
@@ -315,7 +318,7 @@ export default function HomePage() {
                   <a href="https://ketlmtn.com/collections/mens?ref=hpakmutk" target="_blank" rel="noopener nofollow sponsored" className="btn-ghost text-sm">Shop →</a>
                 </div>
               </div>
-            </div>
+            </div>}
 
             {/* ── Cellercise ── */}
             <div className="flex flex-col overflow-hidden rounded-xl border border-stone-200 bg-white">
