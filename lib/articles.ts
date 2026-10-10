@@ -2945,10 +2945,7 @@ export const articles: Article[] = [
 // Newer Camping & Outdoor round-ups live in their own module to keep this
 // file from growing further.
 articles.push(...newCampingArticles);
-// Kept in the codebase for a future relaunch, but intentionally excluded
-// from all pages and generated review routes for now.
-const showKetlReviews = false;
-if (showKetlReviews) articles.push(...ketlReviews);
+articles.push(...ketlReviews);
 
 /* A second, relevant real-world image inside every guide. Keeping this map
    separate from the copy makes future photo refreshes quick and auditable. */
