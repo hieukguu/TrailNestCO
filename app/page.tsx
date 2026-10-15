@@ -412,10 +412,10 @@ export default function HomePage() {
       </section>
 
       {/* ── Categories ───────────────────────────────────────────────── */}
-      <section className="bg-stone-50 py-16 border-y border-stone-200">
+      <section className="border-y border-emerald-950/10 bg-[radial-gradient(circle_at_12%_20%,rgba(197,247,218,0.72),transparent_27%),radial-gradient(circle_at_88%_80%,rgba(254,230,170,0.5),transparent_30%),#fafaf9] py-16">
         <div className="container-site">
           <div className="mb-8 text-center">
-            <span className="section-label justify-center">What we cover</span>
+            <span className="section-label justify-center text-emerald-700 before:bg-emerald-500">What we cover</span>
             <h2 className="mt-4 font-display text-2xl font-bold tracking-tight text-pine-950 sm:text-3xl">
               Three Categories, One Standard
             </h2>
@@ -429,13 +429,14 @@ export default function HomePage() {
               <Link
                 key={c.slug}
                 href={`/categories/${c.slug}/`}
-                className="group flex flex-col rounded-xl border border-stone-200 bg-white p-7 shadow-sm transition-all hover:border-stone-400 hover:shadow-md"
+                className={`group relative flex flex-col overflow-hidden rounded-2xl border p-7 shadow-[0_8px_24px_rgba(20,46,37,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(20,46,37,0.14)] focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 ${i === 0 ? "border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-lime-50 hover:border-emerald-400" : i === 1 ? "border-amber-200 bg-gradient-to-br from-amber-50 via-white to-orange-50 hover:border-amber-400" : "border-sky-200 bg-gradient-to-br from-sky-50 via-white to-indigo-50 hover:border-sky-400"}`}
               >
+                <span className={`absolute inset-x-0 top-0 h-1 ${i === 0 ? "bg-emerald-500" : i === 1 ? "bg-amber-500" : "bg-sky-500"}`} />
                 <div className="flex items-center justify-between">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-pine-950 text-ember-400">
+                  <span className={`flex h-11 w-11 items-center justify-center rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-110 ${i === 0 ? "bg-emerald-700 text-lime-200" : i === 1 ? "bg-amber-600 text-amber-50" : "bg-sky-700 text-sky-100"}`}>
                     <c.Icon size={18} />
                   </span>
-                  <span className="font-display text-4xl font-black text-pine-950/8 leading-none">
+                  <span className={`font-display text-4xl font-black leading-none ${i === 0 ? "text-emerald-900/10" : i === 1 ? "text-amber-900/10" : "text-sky-900/10"}`}>
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
@@ -444,12 +445,12 @@ export default function HomePage() {
                 <ul className="mt-4 space-y-2">
                   {c.points.map((p) => (
                     <li key={p} className="flex gap-2 text-sm leading-snug text-pine-600">
-                      <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-emerald-600" />
+                      <CheckCircle2 size={14} className={`mt-0.5 shrink-0 ${i === 0 ? "text-emerald-600" : i === 1 ? "text-amber-600" : "text-sky-600"}`} />
                       {p}
                     </li>
                   ))}
                 </ul>
-                <span className="mt-auto inline-flex items-center gap-1 pt-5 text-sm font-semibold text-ember-600 opacity-0 transition-opacity group-hover:opacity-100">
+                <span className={`mt-auto inline-flex items-center gap-1 pt-5 text-sm font-semibold opacity-70 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100 ${i === 0 ? "text-emerald-700" : i === 1 ? "text-amber-700" : "text-sky-700"}`}>
                   Explore category <ArrowRight size={13} />
                 </span>
               </Link>
@@ -459,11 +460,11 @@ export default function HomePage() {
       </section>
 
       {/* ── Guides ───────────────────────────────────────────────────── */}
-      <section className="bg-white py-16">
+      <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f8faf8_100%)] py-16">
         <div className="container-site">
           <div className="mb-8 flex items-center justify-between">
             <div>
-              <span className="section-label">Buying guides</span>
+              <span className="section-label text-violet-700 before:bg-violet-500">Buying guides</span>
               <h2 className="mt-3 font-display text-2xl font-bold tracking-tight text-pine-950 sm:text-3xl">
                 How-To Guides
               </h2>
@@ -478,18 +479,18 @@ export default function HomePage() {
               <Link
                 key={g.slug}
                 href={`/guides/${g.slug}`}
-                className="group flex flex-col rounded-xl border border-stone-200 bg-stone-50 p-6 transition-all hover:border-stone-400 hover:bg-white hover:shadow-sm"
+                className={`group relative flex flex-col overflow-hidden rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-600 focus-visible:ring-offset-2 ${i % 3 === 0 ? "border-violet-200 bg-violet-50/60 hover:border-violet-400" : i % 3 === 1 ? "border-cyan-200 bg-cyan-50/60 hover:border-cyan-400" : "border-rose-200 bg-rose-50/60 hover:border-rose-400"}`}
               >
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex h-7 w-7 items-center justify-center rounded bg-pine-950 font-display text-xs font-bold text-white">
+                  <span className={`inline-flex h-8 w-8 items-center justify-center rounded-lg font-display text-xs font-bold text-white shadow-sm ${i % 3 === 0 ? "bg-violet-700" : i % 3 === 1 ? "bg-cyan-700" : "bg-rose-700"}`}>
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-pine-400">{g.category}</span>
+                  <span className={`text-[10px] font-bold uppercase tracking-widest ${i % 3 === 0 ? "text-violet-500" : i % 3 === 1 ? "text-cyan-600" : "text-rose-500"}`}>{g.category}</span>
                 </div>
-                <h3 className="mt-4 font-display text-[15px] font-bold leading-snug text-pine-950 group-hover:text-ember-600 transition-colors">
+                <h3 className={`mt-4 font-display text-[15px] font-bold leading-snug text-pine-950 transition-colors ${i % 3 === 0 ? "group-hover:text-violet-700" : i % 3 === 1 ? "group-hover:text-cyan-700" : "group-hover:text-rose-700"}`}>
                   {g.title}
                 </h3>
-                <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-ember-600 opacity-0 transition-opacity group-hover:opacity-100">
+                <span className={`mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold opacity-70 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100 ${i % 3 === 0 ? "text-violet-700" : i % 3 === 1 ? "text-cyan-700" : "text-rose-700"}`}>
                   Read guide <ArrowRight size={13} />
                 </span>
               </Link>
