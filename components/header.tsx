@@ -69,17 +69,17 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b border-stone-200/90 bg-sand-50/95 transition-shadow duration-200 supports-[backdrop-filter]:backdrop-blur-xl ${
-        scrolled ? "shadow-[0_8px_30px_rgba(16,29,23,0.08)]" : ""
+      className={`fixed inset-x-0 top-0 z-50 border-b border-pine-950/10 bg-[#f7f8f2]/90 transition-all duration-300 supports-[backdrop-filter]:backdrop-blur-xl ${
+        scrolled ? "border-pine-950/15 bg-[#f7f8f2]/96 shadow-[0_10px_30px_rgba(16,29,23,0.07)]" : ""
       }`}
     >
       <div className="container-site flex h-[var(--header-h)] items-center justify-between gap-6">
         {/* Logo */}
-        <Link href="/" className="group flex min-h-11 shrink-0 items-center gap-2.5 rounded-md" aria-label="TrailNestCo home">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-pine-950/10 bg-pine-950 text-ember-400 transition-colors group-hover:bg-pine-800">
+        <Link href="/" className="group flex min-h-11 shrink-0 items-center gap-3 rounded-md" aria-label="TrailNestCo home">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-pine-950 text-lime-300 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105">
             <Mountain size={17} strokeWidth={1.8} />
           </span>
-          <span className="font-display text-[18px] font-bold tracking-tight text-pine-950">
+          <span className="font-sans text-[14px] font-black uppercase tracking-[-0.04em] text-pine-950 sm:text-[15px]">
             TrailNestCo
           </span>
         </Link>
@@ -99,7 +99,7 @@ export function Header() {
                 aria-haspopup="true"
                 aria-expanded={reviewsOpen}
                 onClick={() => setReviewsOpen(true)}
-                className="flex min-h-11 items-center gap-1 rounded-md px-4 py-2 text-[14px] font-medium text-pine-700 transition-colors hover:bg-pine-50 hover:text-pine-950"
+                className="flex min-h-11 items-center gap-1 rounded-full px-4 py-2 text-[12px] font-bold uppercase tracking-[0.08em] text-pine-700 transition-colors hover:bg-pine-950 hover:text-lime-300"
               >
                 Reviews
                 <ChevronDown
@@ -110,7 +110,7 @@ export function Header() {
 
               {reviewsOpen && (
                 <div className="absolute left-0 top-full w-56 pt-1.5">
-                  <div className="overflow-hidden rounded-xl border border-stone-200 bg-white py-2 shadow-[0_20px_45px_rgba(16,29,23,0.14)]">
+                  <div className="overflow-hidden rounded-2xl border border-pine-950/10 bg-white py-2 shadow-[0_20px_45px_rgba(16,29,23,0.14)]">
                     <Link
                       href="/reviews"
                       className="block px-4 py-3 text-[13px] font-semibold text-pine-950 transition-colors hover:bg-pine-50"
@@ -136,7 +136,7 @@ export function Header() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="inline-flex min-h-11 items-center rounded-md px-4 py-2 text-[14px] font-medium text-pine-700 transition-colors hover:bg-pine-50 hover:text-pine-950"
+                  className="inline-flex min-h-11 items-center rounded-full px-4 py-2 text-[12px] font-bold uppercase tracking-[0.08em] text-pine-700 transition-colors hover:bg-pine-950 hover:text-lime-300"
                 >
                   {l.label}
                 </Link>
@@ -149,7 +149,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/reviews"
-            className="hidden min-h-11 items-center rounded-lg bg-pine-950 px-5 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-pine-800 md:inline-flex"
+            className="hidden min-h-11 items-center rounded-full bg-pine-950 px-5 py-2 text-[12px] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-lime-300 hover:text-pine-950 md:inline-flex"
           >
             All Reviews
           </Link>

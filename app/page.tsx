@@ -18,6 +18,18 @@ import { FeaturedSlider, type FeaturedBrand } from "@/components/featured-slider
 /* Brand landing pages rotated in the Featured Review slider. */
 const featuredBrands: FeaturedBrand[] = [
   {
+    id: "residence-supply",
+    kicker: "Brand Spotlight · Designer Lighting",
+    title: "Residence Supply — Alabaster Lighting for Rooms with Presence",
+    excerpt: "A considered edit of sculptural alabaster chandeliers, pendants and wall lights for dining rooms, kitchens and layered interiors.",
+    readTime: "10 min read",
+    href: "/residence-supply-lighting.html",
+    shopHref: "https://residencesupply.com/collections/best-sellers?sca_ref=12168724.eo5Pfa6iix&utm_source=program-126078&utm_medium=program-10%25-comission-and-10%25-customer-discount&utm_campaign=affiliate-dang-lee",
+    shopLabel: "Shop Residence Supply →",
+    image: "/images/residence-supply/teva-round.webp",
+    alt: "Teva Round Alabaster Chandelier from Residence Supply",
+  },
+  {
     id: "ketl",
     kicker: "Brand Spotlight · Outdoor Apparel",
     title: "KETL Mtn. — The Best-Kept Secret in Outdoor Apparel",
@@ -131,18 +143,37 @@ export default function HomePage() {
       {/* ── Site H1 (screen-reader / SEO only) ─────────────────────── */}
       <h1 className="sr-only">TrailNestCo — Independent Gear Reviews, Comparisons and Buying Guides</h1>
 
-      {/* ── Featured Story ──────────────────────────────────────────── */}
-      <section className="border-b border-stone-200 bg-white pt-[calc(var(--header-h)+40px)] pb-14">
-        <div className="container-site">
-          <div className="mb-6 flex items-center justify-between">
-            <span className="section-label">Featured Review</span>
-            <Link href="/reviews" className="inline-flex min-h-11 items-center text-[13px] font-medium text-pine-500 transition-colors hover:text-pine-950">
-              All Reviews →
-            </Link>
+      {/* ── Editorial Hero ──────────────────────────────────────────── */}
+      <section className="relative overflow-hidden bg-[#f7efe3] pb-12 pt-[calc(var(--header-h)+42px)] text-[#523526] sm:pb-16 sm:pt-[calc(var(--header-h)+64px)]">
+        <div className="absolute inset-0 opacity-45 [background-image:linear-gradient(rgba(98,63,43,.09)_1px,transparent_1px),linear-gradient(90deg,rgba(98,63,43,.09)_1px,transparent_1px)] [background-size:64px_64px]" />
+        <div className="absolute -right-24 top-12 h-80 w-80 rounded-full bg-[#dfb981]/35 blur-3xl" />
+        <div className="container-site relative z-10 grid items-end gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+          <div className="pb-1">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#b9825b]/40 bg-[#fffaf2]/75 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#815238]">
+              Independent gear intelligence
+            </span>
+            <h2 className="mt-6 max-w-lg font-sans text-[clamp(2.8rem,6vw,5.2rem)] font-black uppercase leading-[0.9] tracking-[-0.075em] text-[#4e3022]">
+              Choose gear<br />with more <span className="text-[#a8633e]">certainty.</span>
+            </h2>
+            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-[#6f503e] sm:text-base">
+              Clear product research for the trips, routines and purchases that deserve more than marketing copy.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link href="/reviews" className="btn-primary !bg-[#70442f] !text-[#fffaf2] hover:!bg-[#4e3022]">Explore reviews <ArrowRight size={15} /></Link>
+              <Link href="/guides" className="btn-ghost-light">Read guides</Link>
+            </div>
+            <div className="mt-10 grid max-w-md grid-cols-3 border-t border-[#9b6b4d]/25 pt-5 text-[11px] uppercase tracking-[0.12em] text-[#8b6954]">
+              <span>Research first</span><span>Plain language</span><span>Updated often</span>
+            </div>
           </div>
-
-          <h2 className="sr-only">Featured brand reviews</h2>
-          <FeaturedSlider brands={featuredBrands} />
+          <div>
+            <div className="mb-4 flex items-center justify-between">
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#a8633e]">Featured field notes</span>
+              <Link href="/reviews" className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#76513b] transition-colors hover:text-[#4e3022]">All reviews →</Link>
+            </div>
+            <h2 className="sr-only">Featured brand reviews</h2>
+            <FeaturedSlider brands={featuredBrands} />
+          </div>
         </div>
       </section>
 

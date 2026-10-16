@@ -68,16 +68,16 @@ export function Hero() {
       {/* Subtle texture overlay */}
       <div className="dark-shapes absolute inset-0 pointer-events-none" />
 
-      <div className="container-site relative z-10 flex flex-col items-center pb-10 pt-12 text-center sm:pb-14 sm:pt-20">
+      <div className="container-site relative z-10 flex flex-col items-center pb-10 pt-14 text-center sm:pb-14 sm:pt-24">
 
         {/* Trust badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease }}
-          className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-white/85 sm:text-[11px]"
+          className="inline-flex items-center gap-2 rounded-full border border-lime-300/25 bg-lime-300/[0.08] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-lime-100 sm:text-[11px]"
         >
-          <ShieldCheck size={13} className="text-ember-400" />
+          <ShieldCheck size={13} className="text-lime-300" />
           Independent Gear Reviews · Zero Pay-to-Play
         </motion.div>
 
@@ -86,11 +86,11 @@ export function Hero() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease }}
-          className="mt-7 max-w-4xl text-balance font-display text-[clamp(2.35rem,7vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.035em] text-white"
+          className="mt-7 max-w-5xl text-balance font-sans text-[clamp(2.6rem,8vw,5.6rem)] font-black uppercase leading-[0.91] tracking-[-0.075em] text-white"
         >
-          Independent Research.
+          Gear intelligence.
           <br className="hidden sm:block" />{" "}
-          <span className="text-ember-400">Honest Advice.</span>
+          <span className="text-lime-300">Built for the next mile.</span>
         </motion.h1>
 
         {/* Subtext */}
@@ -98,7 +98,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease }}
-          className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-white/70 sm:text-lg"
+          className="mt-7 max-w-2xl text-pretty text-base leading-relaxed text-white/65 sm:text-lg"
         >
           Independent product reviews, comparisons and buying guides for
           camping &amp; outdoor, home essentials, and travel &amp; EDC.

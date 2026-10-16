@@ -149,26 +149,26 @@ export function FeaturedSlider({ brands }: { brands: FeaturedBrand[] }) {
 
                   {/* Editorial */}
                   <div>
-                    <span className="kicker">{b.kicker}</span>
-                    <h3 className="mt-3 font-display text-3xl font-bold leading-snug text-pine-950 sm:text-4xl">
+                    <span className="kicker !text-[#a8633e]">{b.kicker}</span>
+                    <h3 className="mt-3 font-display text-3xl font-bold leading-snug text-[#4e3022] sm:text-4xl">
                       {b.title}
                     </h3>
-                    <p className="mt-4 text-[16px] leading-relaxed text-pine-600">
+                    <p className="mt-4 text-[16px] leading-relaxed text-[#6f503e]">
                       {b.excerpt}
                     </p>
-                    <div className="mt-4 flex flex-wrap items-center gap-2 text-[13px] text-pine-400">
+                    <div className="mt-4 flex flex-wrap items-center gap-2 text-[13px] text-[#8b6954]">
                       <span>TrailNestCo Editorial</span>
                       <span>·</span>
                       <span>{b.readTime}</span>
                       <span>·</span>
-                      <span className="font-semibold text-ember-600">
+                      <span className="font-semibold text-[#a8633e]">
                         Affiliate brand spotlight
                       </span>
                     </div>
                     <div className="mt-6 flex flex-wrap gap-3">
                       <a
                         href={b.href}
-                        className="btn-primary"
+                        className="btn-primary !bg-[#70442f] !text-[#fffaf2] hover:!bg-[#4e3022]"
                         tabIndex={active ? 0 : -1}
                       >
                         Read Full Review <ArrowRight size={14} />
@@ -197,7 +197,7 @@ export function FeaturedSlider({ brands }: { brands: FeaturedBrand[] }) {
           type="button"
           onClick={prev}
           aria-label="Previous featured review"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-stone-200 bg-white text-pine-600 transition-colors hover:border-pine-950 hover:text-pine-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember-500"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-[#b9825b]/30 bg-[#fffaf2] text-[#70442f] transition-colors hover:border-[#b9825b] hover:bg-[#dfb981] hover:text-[#4e3022] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b9825b]"
         >
           <ChevronLeft size={18} />
         </button>
@@ -205,7 +205,7 @@ export function FeaturedSlider({ brands }: { brands: FeaturedBrand[] }) {
           type="button"
           onClick={next}
           aria-label="Next featured review"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-stone-200 bg-white text-pine-600 transition-colors hover:border-pine-950 hover:text-pine-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember-500"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-[#b9825b]/30 bg-[#fffaf2] text-[#70442f] transition-colors hover:border-[#b9825b] hover:bg-[#dfb981] hover:text-[#4e3022] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b9825b]"
         >
           <ChevronRight size={18} />
         </button>
@@ -224,8 +224,8 @@ export function FeaturedSlider({ brands }: { brands: FeaturedBrand[] }) {
               <span
                 className={`block rounded-full transition-all duration-300 motion-reduce:transition-none ${
                   i === selected
-                    ? "h-2 w-8 bg-pine-950"
-                    : "h-2 w-2 bg-stone-300 group-hover:bg-pine-400"
+                    ? "h-2 w-8 bg-[#a8633e]"
+                    : "h-2 w-2 bg-[#9b6b4d]/35 group-hover:bg-[#9b6b4d]/75"
                 }`}
               />
             </button>
@@ -236,7 +236,7 @@ export function FeaturedSlider({ brands }: { brands: FeaturedBrand[] }) {
           type="button"
           onClick={toggle}
           aria-label={playing ? "Pause automatic rotation" : "Resume automatic rotation"}
-          className="ml-auto flex h-11 items-center gap-1.5 rounded-full border border-stone-200 bg-white px-4 text-[12px] font-semibold text-pine-500 transition-colors hover:border-pine-950 hover:text-pine-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember-500"
+          className="ml-auto flex h-11 items-center gap-1.5 rounded-full border border-[#b9825b]/30 bg-[#fffaf2] px-4 text-[12px] font-semibold text-[#70442f] transition-colors hover:border-[#b9825b] hover:bg-[#dfb981] hover:text-[#4e3022] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b9825b]"
         >
           {playing ? <Pause size={13} /> : <Play size={13} />}
           <span className="hidden sm:inline">{playing ? "Pause" : "Play"}</span>

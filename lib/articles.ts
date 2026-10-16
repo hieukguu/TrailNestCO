@@ -1,6 +1,7 @@
 ﻿import { newCampingArticles } from "./articles-camping";
 
 import { ketlReviews } from "./articles-ketl";
+import { residenceSupplyReviews } from "./articles-residence-supply";
 
 export type ArticleSection = {
   heading: string;
@@ -2946,6 +2947,7 @@ export const articles: Article[] = [
 // file from growing further.
 articles.push(...newCampingArticles);
 articles.push(...ketlReviews);
+articles.push(...residenceSupplyReviews);
 
 /* A second, relevant real-world image inside every guide. Keeping this map
    separate from the copy makes future photo refreshes quick and auditable. */
@@ -2973,6 +2975,16 @@ for (const article of articles) {
 // homepage, review hub and category pages. The remaining reviews retain their
 // established editorial order.
 const newestReviewOrder = [
+  "residence-supply-teva-round-chandelier-review",
+  "residence-supply-gong-pendant-review",
+  "residence-supply-asta-pendant-review",
+  "residence-supply-csilla-pendant-review",
+  "residence-supply-cecelia-wall-lamp-review",
+  "residence-supply-scarlett-pendant-review",
+  "residence-supply-teva-rectangular-chandelier-review",
+  "residence-supply-emilia-wall-lamp-review",
+  "residence-supply-revina-pendant-review",
+  "residence-supply-flexus-pendant-review",
   "ketl-bodbrella-rain-jacket-review",
   "ketl-milesbound-jogger-review",
   "ketl-skid-mark-mtb-shorts-review",
